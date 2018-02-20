@@ -8,8 +8,12 @@
     height: 1px
     border-radius: 100px
     margin-bottom: 12px
+    transition: background-color $ease $transitionSpeed
 
-  &__bone--active
+  &--dark &__bone
+    background: $colorDimGray
+
+  & &__bone--active // Increase priority due to above rule
     background: $fishPagerSelectedColor
 
   &__bone:nth-child(1)
