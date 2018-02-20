@@ -1,6 +1,6 @@
 mixin photos(src1, src2, bgColor)
   - bgColor = bgColor || "#231F20"
-  .photos
+  .photos&attributes(attributes)
     +icon("icon-y-letter").photos__y-letter
     +icon("icon-o-letter").photos__o-letter
     .photos__background(style="background: " + bgColor)
