@@ -1,0 +1,31 @@
+.main_page
+  align-items: flex-start
+  justify-content: center
+  padding-left: 4vw
+  padding-right: 38vw
+
+  &__h1
+    position: relative
+    font-size: 5em
+    padding-bottom: 40px
+    color: $colorWhite
+    text-transform: initial
+
+    &::after
+      content: ''
+      display: block
+      position: absolute
+      left: 0
+      bottom: 0
+      border: 1px solid $colorWhite
+      width: 80px
+
+  &__text
+    +font_Lato()
+    font-style: normal
+    font-size: 1.25em
+    margin: 0
+    position: relative
+    color: $colorWhite
+    opacity: 0.8
+    line-height: 34px
