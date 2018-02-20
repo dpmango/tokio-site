@@ -5,7 +5,7 @@ mixin icon(name, modClass)
     - var modClass = ''
   else
     - var modClass = ' ' + modClass
-  svg(class="ico " + name + modClass)
+  svg(class="ico " + name + modClass)&attributes(attributes)
     use(xlink:href= svgSprite + '#' + name)
 
 mixin anchor()
