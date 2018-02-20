@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:svg="http://www.w3.org/2000/svg"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+        id="svg2"
+        viewBox="0 0 202 113">
+    <metadata
+            id="metadata42">
+        <rdf:RDF>
+            <cc:Work
+                    rdf:about="">
+                <dc:format>image/svg+xml</dc:format>
+                <dc:type
+                        rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+                <dc:title></dc:title>
+            </cc:Work>
+        </rdf:RDF>
+    </metadata>
+    <use
+            id="use4"
+            xlink:href="#path0_fill"
+            fill="#171717"/>
+    <use
+            id="use6"
+            xlink:href="#path1_fill"
+            transform="translate(37 37.2)"
+            fill="#FFF"/>
+    <use
+            id="use8"
+            xlink:href="#path2_fill"
+            transform="translate(92.6 37.2)"
+            fill="#99E540"/>
+    <use
+            id="use10"
+            xlink:href="#path3_fill"
+            transform="translate(63.6 36.4)"
+            fill="#FFF"/>
+    <use
+            id="use12"
+            xlink:href="#path4_fill"
+            transform="translate(145.1 36.4)"
+            fill="#FFF"/>
+    <use
+            id="use14"
+            xlink:href="#path5_fill"
+            transform="translate(120.3 36.4)"
+            fill="#FFF"/>
+    <use
+            transform="translate(73.5,69.3)"
+            xlink:href="#path6_fill"
+            id="use18"
+            style="fill:#ffffff"
+            x="0"
+            y="0"
+            width="100%"
+            height="100%"/>
+    <use
+            transform="translate(85.8,69.3)"
+            xlink:href="#path7_fill"
+            id="use20"
+            style="fill:#ffffff"
+            x="0"
+            y="0"
+            width="100%"
+            height="100%"/>
+    <use
+            transform="translate(98.7,69.3)"
+            xlink:href="#path6_fill"
+            id="use22"
+            style="fill:#ffffff"
+            x="0"
+            y="0"
+            width="100%"
+            height="100%"/>
+    <use
+            transform="translate(110.9,66.2)"
+            xlink:href="#path8_fill"
+            id="use24"
+            style="fill:#ffffff"
+            x="0"
+            y="0"
+            width="100%"
+            height="100%"/>
+    <use
+            transform="translate(124.4,66.3)"
+            xlink:href="#path9_fill"
+            id="use26"
+            style="fill:#ffffff"
+            x="0"
+            y="0"
+            width="100%"
+            height="100%"/>
+    <defs
+            id="defs28">
+        <path
+                d="M0 0h202v113H0V0z"
+                id="path0_fill"/>
+        <path
+                d="M16.4674-1e-8H0V2.98795h6.74706V16.5486h3.08763V2.98795h6.63271V-1e-8z"
+                id="path1_fill"/>
+        <path
+                d="M16.4674 2.98795V-1e-8H8.7e-7V2.98795H6.74706v5.63113L.114356 15.2845 2.17278 17.468l6.06092-6.0908 5.9466 6.0908 2.1727-2.1835-6.63266-6.66542V2.98795h6.74706z"
+                id="path2_fill"/>
+        <path
+                d="M9.03419 2.98795c3.31631 0 6.06091 2.7581 6.06091 6.09081 0 3.33274-2.7446 6.09084-6.06091 6.09084-3.31635 0-6.06091-2.7581-6.06091-6.09084 0-3.33271 2.74456-6.09081 6.06091-6.09081zm0-2.98795C4.00249 0-8.7e-7 4.02224-8.7e-7 9.07876c0 5.05654 4.00249087 9.07874 9.03419087 9.07874 5.03171 0 9.03421-4.0222 9.03421-9.07874C18.0684 4.02224 13.9515 0 9.03419 0z"
+                id="path3_fill"/>
+        <path
+                d="M9.03419 2.98795c3.31631 0 6.06091 2.7581 6.06091 6.09081 0 3.33274-2.7446 6.09084-6.06091 6.09084-3.31635 0-6.06091-2.7581-6.06091-6.09084 0-3.33271 2.74456-6.09081 6.06091-6.09081zm0-2.98795C4.00249 0-.00000174 4.02224-.00000174 9.07876c0 5.05654 4.00249174 9.07874 9.03419174 9.07874 5.03171 0 9.03421-4.0222 9.03421-9.07874C18.0684 4.02224 13.9515 0 9.03419 0z"
+                id="path4_fill"/>
+        <path
+                d="M14.1803 0L8.11934 6.09082 2.17278 0 .00000174 2.1835 6.6327 8.734v8.6191h2.97328V8.84892L16.2387 2.1835 14.1803 0z"
+                id="path5_fill"/>
+        <path
+                d="M0 7.1251l.800499-1.26413C1.71535 6.5505 2.63021 6.89526 3.43071 6.89526c.80049 0 1.25792-.34476 1.25792-.91937 0-.5746-.8005-.80444-1.71535-1.03428h-.11436C1.601 4.59684.34307 4.13716.34307 2.52826.34307.919368 1.601 4.4e-7 3.20199 4.4e-7c1.02921 0 2.17279.34476256 2.97328.91936756l-.8005 1.379052c-.80049-.45968-1.60099-.80445-2.28713-.80445s-1.14357.34477-1.14357.80445c0 .57461.8005.80445 1.71535 1.14921h.11436c1.14357.34477 2.51585.91937 2.51585 2.41334 0 1.72382-1.37228 2.52827-3.08764 2.52827-.91485 0-2.17278-.45969-3.20199-1.26414z"
+                id="path6_fill"/>
+        <path
+                d="M8.7e-7 5.28637V4.4e-7H1.82971V4.71176c0 1.26414.68614 1.95366 1.71535 1.95366s1.82971-.80445 1.82971-2.06858V4.4e-7h1.82971V8.27432H5.37477V7.01019c-.57178.80444-1.25792 1.49397-2.51585 1.49397C1.02921 8.38924 8.7e-7 7.12511 8.7e-7 5.28637z"
+                id="path7_fill"/>
+        <path
+                d="M-.00000349-4.4e-7H1.82971V4.367c.57179-.80445 1.25793-1.49397 2.51585-1.49397 1.82971 0 2.85892 1.26413 2.85892 3.21779v5.28638H5.37477V6.66542c0-1.26413-.68614-1.95366-1.71535-1.95366s-1.82971.80445-1.82971 2.06858v4.59686H-.00000349V-4.4e-7z"
+                id="path8_fill"/>
+        <path
+                d="M0 0h2.05843v1.83874H0V0zm.114355 2.98795H1.94406v8.27435H.114355V2.98795z"
+                id="path9_fill"/>
+    </defs>
+</svg>

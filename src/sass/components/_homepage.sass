@@ -1,0 +1,44 @@
+body
+  +font_BravoRG(100)
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+.homepage
+  flex: 1
+
+.home_page
+  align-items: flex-start
+  justify-content: center
+  padding-left: 4vw
+  padding-right: 38vw
+
+  &__h1
+    position: relative
+    font-size: 5em
+    padding-bottom: 40px
+    color: $colorWhite
+
+    &::after
+      content: ''
+      display: block
+      position: absolute
+      left: 0
+      bottom: 0
+      border: 1px solid $colorWhite
+      width: 80px
+
+  &__text
+    +font_Lato(400)
+    font-style: normal
+    font-size: 1.25em
+    margin: 0
+    position: relative
+    color: $colorWhite
+    opacity: 0.8
+    line-height: 34px
+
+  &__fish
+    position: absolute
+    right: 20px
+    bottom: 45%
