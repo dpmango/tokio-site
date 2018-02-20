@@ -1,0 +1,20 @@
+include _mixins
+doctype html
+html(lang="en")
+  head
+    include _head
+
+  body(class=bodyClass)
+    block header
+    include ../components/_header
+
+    // place where pjax bindings happen's
+    // what should be changed with every pjax
+    #barba-wrapper.page(class=outClass)
+      block content
+
+    block footer
+      include ../components/_footer
+
+    block scripts
+      include _scripts

@@ -1,0 +1,10 @@
+mixin photos(src1, src2, bgColor)
+  - bgColor = bgColor || "#231F20"
+  .photos
+    +icon("icon-y-letter").photos__y-letter
+    +icon("icon-o-letter").photos__o-letter
+    .photos__background(style="background: " + bgColor)
+    img.photos__photo.photos__photo_1(src=src1)
+    img.photos__photo.photos__photo_2(src=src2)
+    .photos__label_fish
+    .photos__label_k

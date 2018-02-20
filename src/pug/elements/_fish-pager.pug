@@ -1,0 +1,5 @@
+mixin fish(active)
+  - active = active || 0
+  .fish&attributes(attributes)
+    each val, index in [0,1,2,3,4,5]
+      +anchor().fish__bone(class=index === active ? "fish__bone--active" : "")
