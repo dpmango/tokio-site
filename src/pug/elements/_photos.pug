@@ -1,10 +1,10 @@
 mixin photos(src1, src2, bgColor)
-  - bgColor = bgColor || "#231F20"
+  - bgColor = bgColor || "#231F20" // TODO: https://stackoverflow.com/a/41923423/6119618
   .photos&attributes(attributes)
-    +icon("icon-y-letter").photos__y-letter
-    +icon("icon-o-letter").photos__o-letter
+    +icon("icon-y-letter").photos__letter.photos__letter-y
+    +icon("icon-o-letter").photos__letter.photos__letter-o
     .photos__background(style="background: " + bgColor)
     img.photos__photo.photos__photo_1(src=src1)
     img.photos__photo.photos__photo_2(src=src2)
-    .photos__label_fish
-    .photos__label_k
+    +icon("icon-fish-sushi-wine").photos__label.photos__label_fish
+    +icon("icon-tokio-k-symbol").photos__label.photos__label_k
