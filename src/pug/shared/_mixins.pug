@@ -15,3 +15,9 @@ mixin anchor()
   else
     a()&attributes(attributes)
       block
+
+mixin button()
+  +anchor().btn&attributes(attributes)
+    .btn_fill
+    .btn_content
+      block
