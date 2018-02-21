@@ -1,0 +1,47 @@
+.categories
+  display: flex
+  flex: 1
+  align-items: center
+  justify-content: center
+
+.category
+  position: relative
+  display: flex
+  flex: 1
+  height: 100%
+  max-height: 550px
+  margin: 0 10px
+
+  &__image, &__image_wrapper
+    display: flex
+    flex: 1
+
+  &__image_wrapper
+    overflow: hidden
+
+  &__image
+    background-size: cover
+    background-position: center
+    transition: transform $ease $transitionSpeed
+
+  &:hover &__image
+    transform: scale(1.1)
+
+  &__filter
+    +overlay
+    +linearGradient(transparent, #000, 40%)
+
+  &__title
+    z-index: 5
+    position: absolute
+    bottom: 20px
+    right: 20px
+    align-self: start
+
+    +font_BravoRG()
+    font-size: 2.5em
+    text-transform: uppercase
+    color: $colorWhite
+
+    transform: rotate(-90deg) translateX(100%)
+    transform-origin: 100% 100%

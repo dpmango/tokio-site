@@ -9,11 +9,12 @@ block content
   .slide#slide1
     include components/_slide-1
 
-  .slide.slide__active#slide2
+  .slide#slide2
     include components/_slide-2
 
-  .slide#slide3
+  .slide.slide__active#slide3
+    include components/_slide-3
 
   .slide#slide4
 
-  +fish(style=`position: absolute;right: 20px;bottom: 45%;`).fish--dark
+  +fish(style=`position: absolute;right: 20px;bottom: 45%;`).fish--dark // TODO: Extract inline style
