@@ -28,16 +28,19 @@
 
         .news__row
           each item in splicedNews
-            .news__row__story
-              .news__row__story__image(style=`background-image: url('img/news/${item[3]}.jpeg')`)
-                .news__row__story__image__filter
-                .news__row__story__date
-                  span.news__row__story__date_day
-                    =item[1]
-                  span.news__row__story__date_rest
-                    =item[2]
-              span.news__row__story__title
-                =item[0]
+            .story
+              .story__inner
+                .story__wrapper
+                  .story__image_wrapper
+                    .story__image(style=`background-image: url('img/news/${item[3]}.jpeg')`)
+                      .story__image__filter
+                  .story__date
+                    span.story__date_day
+                      =item[1]
+                    span.story__date_rest
+                      =item[2]
+                span.story__title
+                  =item[0]
     div
       .container_hor.justifyContentCenter
         +button

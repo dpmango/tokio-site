@@ -1,4 +1,7 @@
-.last-news
+$spaceBetweenNews: 60
+$storyLineHeight: 1.4em
+$storyBeforelineWidth: 35px
+$storyAfterlinePadding: 15px
 
 .news
   &_page
@@ -22,8 +25,6 @@
     align-items: flex-start
     justify-content: center
 
-  $spaceBetween: 60
-
   &__row
     display: flex
     flex-direction: row
@@ -35,76 +36,96 @@
     &:not(:last-child)
       margin-bottom: 60px
 
-    &__story
-      display: flex
-      flex-direction: column
+    .story:first-child
+      flex: 1.2
+      padding-top: 140px
+      min-height: 300px
+
+    .story:nth-child(2)
       flex: 1
-      margin: 0 $spaceBetween*1px
+      padding-top: 27px
+      padding-bottom: 34px
+      min-height: 500px
 
-      &:first-child
-        flex: 1.2
-        padding-top: 140px
-        min-height: 300px
+    .story:last-child
+      flex: 1.1
+      padding-top: 94px
+      padding-bottom: 55px
+      min-height: 350px
 
-      &:nth-child(2)
-        flex: 1
-        padding-top: 27px
-        padding-bottom: 34px
-        min-height: 500px
+.story
+  display: flex
+  flex-direction: column
+  flex: 1
+  margin: 0 $spaceBetweenNews*1px
 
-      &:last-child
-        flex: 1.1
-        padding-top: 94px
-        padding-bottom: 55px
-        min-height: 350px
+  &__inner
+    display: flex
+    flex: 1
+    flex-direction: column
+    
+    &:hover
+      .story__image
 
-      &__image
-        position: relative
-        flex: 1
-        background: black center
-        background-size: cover
-
-      &__title
-        $lineHeight: 1.4em
-        $beforelineWidth: 35px
-        $afterlinePadding: 15px
-
-        position: relative
-        padding: 10px $beforelineWidth+5px 10px $beforelineWidth+$afterlinePadding
-        line-height: $lineHeight
-        color: $newsCardTitleColor
-        font-size: 1.6em
-
-        //&:before
-        //  content: '\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0'
+      .story__title
+        padding-left: $storyBeforelineWidth + $storyAfterlinePadding + 10px
 
         &:after
-          content: ''
-          position: absolute
-          top: $lineHeight*4/5
-          left: 0
-          border-left: $beforelineWidth solid $newsCardTitleColor
-          width: 1px
-          height: 1px
+          border-left-width: $storyBeforelineWidth + 10px
 
+  &__wrapper, &__image_wrapper
+    display: flex
+    position: relative
+    flex: 1
 
-      &__date
-        color: $colorGreen
+  &__image_wrapper
+    overflow: hidden
 
-        &_day
-          +font_BravoRG()
-          font-size: 5em
+  &__image
+    position: relative
+    flex: 1
+    background: black center
+    background-size: cover
+    transition: transform $ease $transitionSpeed
 
-          position: absolute
-          left: -15px
-          top: -42px
+  &__title
+    position: relative
+    padding: 10px $storyBeforelineWidth + 5px 10px $storyBeforelineWidth + $storyAfterlinePadding
+    line-height: $storyLineHeight
+    color: $newsCardTitleColor
+    font-size: 1.6em
+    transition: all $ease $transitionSpeed
 
-          transform: rotate(-90deg)
+    //&:before
+    //  content: '\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0'
 
-        &_rest
-          +font_PT_Sans_Narrow()
-          font-size: 1.1em
+    &:after
+      content: ''
+      position: absolute
+      top: $storyLineHeight*4/5
+      left: 0
+      border-left: $storyBeforelineWidth solid $newsCardTitleColor
+      width: 1px
+      height: 1px
+      transition: all $ease $transitionSpeed
 
-          position: absolute
-          top: -30px
-          left: 55px
+  &__date
+    color: $colorGreen
+
+    &_day
+      +font_BravoRG()
+      font-size: 5em
+
+      position: absolute
+      left: -15px
+      top: -42px
+
+      transform: rotate(-90deg)
+
+    &_rest
+      +font_PT_Sans_Narrow()
+      font-size: 1.1em
+
+      position: absolute
+      top: -30px
+      left: 55px
