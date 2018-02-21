@@ -12,31 +12,32 @@
     flex: 1
     white-space: nowrap
     font-size: 1.1em
-    z-index: 3
+    z-index: $defaultZIndex + 1
 
     &_item
       color: $navItemColor
       transition: color $ease $transitionSpeed
       display: inline-block
-      margin: 0
-      margin-right: 25px
+      margin: 0 25px 0 0
 
       &:hover
         color: $navItemHoverColor
 
   &__logo
     flex: 0
-    zoom: 0.8 // TODO: Temp hack
+    zoom: 0.8
+    // TODO: Temp hack
     position: relative
     margin-bottom: -15px
-    z-index: 2
+    z-index: $defaultZIndex - 1
     display: flex
     align-items: center
     justify-content: center
 
   &__reserve
-    zoom: 0.7 // FIXME: Temp hack
-    z-index: 3
+    zoom: 0.7
+    // FIXME: Temp hack
+    z-index: $defaultZIndex + 1
     flex: 1
     display: flex
     align-items: center
