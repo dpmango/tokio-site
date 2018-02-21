@@ -1,5 +1,5 @@
 -
-  const items = [
+  var menuItems = [
   ["Роллы", "roll"],
   ['Сашими', 'sashimi'],
   ['Супы', 'soup'],
@@ -14,7 +14,7 @@
     +icon("icon-y-letter").menu_page__letter.menu_page__letter_y
     +icon("icon-o-letter").menu_page__letter.menu_page__letter_o
     .categories
-      each item in items
+      each item in menuItems
         // category
         .category
           span.category__title= item[0]
