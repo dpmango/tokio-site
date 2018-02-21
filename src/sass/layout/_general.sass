@@ -72,11 +72,21 @@ body, html
   +innerContainer
   flex-direction: column
 
-.alignItemsCenter
-  align-items: center
+.alignItems
+  &Start
+    align-items: flex-start
+  &Center
+    align-items: center
+  &End
+    align-items: flex-end
 
-.justifyContentCenter
-  justify-content: center
+.justifyContent
+  &Start
+    justify-content: flex-start
+  &Center
+    justify-content: center
+  &End
+    justify-content: flex-end
 
 //.container
   max-width: 1200px
