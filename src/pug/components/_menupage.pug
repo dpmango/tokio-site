@@ -9,14 +9,15 @@
   ]
 
 
-.container_hor.slide__inner.menu_page
-  +icon("icon-y-letter").menu_page__letter.menu_page__letter_y
-  +icon("icon-o-letter").menu_page__letter.menu_page__letter_o
-  .categories
-    each item in items
-      // category
-      .category
-        span.category__title= item[0]
-        .category__image_wrapper
-          .category__image(style=`background-image: url(${'img/menu/' + item[1] + '.jpeg'})`)
-            .category__filter
+.container.slide__inner.menu_page
+  .container_hor
+    +icon("icon-y-letter").menu_page__letter.menu_page__letter_y
+    +icon("icon-o-letter").menu_page__letter.menu_page__letter_o
+    .categories
+      each item in items
+        // category
+        .category
+          span.category__title= item[0]
+          .category__image_wrapper
+            .category__image(style=`background-image: url(${'img/menu/' + item[1] + '.jpeg'})`)
+              .category__filter

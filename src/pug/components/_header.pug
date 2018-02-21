@@ -2,25 +2,26 @@ include ../shared/_mixins
 
 // HEADER :: START
 header.header
-  .container_hor.header__wrapper
-    nav.header__nav
-      +anchor().header__nav_item
-        | Меню
-      +anchor().header__nav_item
-        | О нас
-      +anchor().header__nav_item
-        | Фотогалерея
-      +anchor().header__nav_item
-        | Новости
-      +anchor().header__nav_item
-        | Контакты
-    .header__logo
-      +anchor()
-        .icon-logo
-      //+icon('ico-logo')
-    .header__reserve
-      +anchor()
-        .icon-reserve
-        //+icon('ico-reserve')
+  .container
+    .container_hor.header__wrapper
+      nav.header__nav
+        +anchor().header__nav_item
+          | Меню
+        +anchor().header__nav_item
+          | О нас
+        +anchor().header__nav_item
+          | Фотогалерея
+        +anchor().header__nav_item
+          | Новости
+        +anchor().header__nav_item
+          | Контакты
+      .header__logo
+        +anchor()
+          .icon-logo
+        //+icon('ico-logo')
+      .header__reserve
+        +anchor()
+          .icon-reserve
+          //+icon('ico-reserve')
 
 // HEADER :: END

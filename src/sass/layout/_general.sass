@@ -40,31 +40,40 @@ body, html
   // header offset ex
   padding-top: 100px
 
-=container()
+.container
   display: flex
-  +mediaMinWidth($desktop)
-    max-width: 1200px
+  max-width: 90vw
+
+  //+mediaMinWidth($desktop)
+  //  max-width: 800px
   +mediaMinWidth($wide)
-    max-width: 1400px
+    max-width: 1200px !important // TODO: Check why <style> css overrides that?
 
   width: 100%
   height: 100%
   margin-left: auto
   margin-right: auto
 
-  & > .container__item
-    flex: 1
+.container__item
+  flex: 1
+
+=innerContainer()
+  position: relative
+  display: flex
+  flex: 1
 
 .container_hor
-  +container
+  +innerContainer
   flex-direction: row
 
 .container_ver
-  +container
+  +innerContainer
   flex-direction: column
 
-.container__center
+.alignItemsCenter
   align-items: center
+
+.justifyContentCenter
   justify-content: center
 
 //.container
