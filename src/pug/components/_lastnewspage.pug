@@ -1,0 +1,37 @@
+// TODO: Extract letters
+.container.menu_page
+  .container_hor
+    +icon("icon-y-letter").menu_page__letter.menu_page__letter_y
+    +icon("icon-o-letter").menu_page__letter.menu_page__letter_o
+
+    -
+      var newsItems = [
+      ["Новогодние корпоративы в сети BB Grill", "14", "Декабрь, 2017", "1"],
+      ["Новогоднее меню в Tokio", "04", "Декабрь, 2017", "2"],
+      ["Новогоднее меню в Tokio", "19", "Ноябрь, 2017", "3"]
+      ]
+
+      var itemsPerRow = 3
+
+
+    .news__container
+      h1 Последние новости
+
+      while newsItems.length > 0
+        - var splicedNews = newsItems.splice(0, itemsPerRow)
+
+        if splicedNews.length === 0
+          break
+
+        .news__row
+          each item in splicedNews
+            .news__row__story
+              .news__row__story__image(style=`background-image: url('img/news/${item[3]}.jpeg')`)
+                .news__row__story__image__filter
+                .news__row__story__date
+                  span.news__row__story__date_day
+                    =item[1]
+                  span.news__row__story__date_rest
+                    =item[2]
+              span.news__row__story__title
+                =item[0]
