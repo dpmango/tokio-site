@@ -1,7 +1,7 @@
 .main_page
   align-items: center
-  padding-left: 4vw
-  padding-right: 38vw
+  padding-left: 64px
+  padding-right: 530px
 
   &__h1
     position: relative
@@ -20,11 +20,9 @@
       width: 80px
 
   &__text
-    +font_Lato()
-    font-style: normal
-    font-size: 1.25em
+    +font_Lato(500)
+    font-size: 1.2em
     margin: 0
     position: relative
-    color: $colorWhite
-    opacity: 0.8
+    color: transparentize($colorWhite, 0.2)
     line-height: 34px

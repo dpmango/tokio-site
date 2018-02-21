@@ -1,4 +1,5 @@
 include _mixins
+
 doctype html
 html(lang="en")
   head
@@ -6,13 +7,14 @@ html(lang="en")
     block head
 
   body(class=bodyClass)
-    block header
-      include ../components/_header
+    #barba-wrapper
+      block header
+        include ../components/_header
 
-    // place where pjax bindings happen's
-    // what should be changed with every pjax
-    #barba-wrapper.page(class=outClass)
-      block content
+      // place where pjax bindings happen's
+      .page
+        block content
+      // what should be changed with every pjax
 
     block footer
       include ../components/_footer
