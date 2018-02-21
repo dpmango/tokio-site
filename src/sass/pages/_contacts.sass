@@ -1,0 +1,65 @@
+.contacts
+  &_page
+    padding: 30px 0 0
+
+    &__inner
+      padding-top: 50px
+
+  &__map
+    position: relative
+    background: url("../img/contacts/map_stub.png") no-repeat center
+    bottom: 0
+    left: -50%
+    -webkit-box-flex: 1
+    -webkit-flex: 1
+    -ms-flex: 1
+    flex: 1
+    width: 160%
+    height: 100%
+
+  &__content
+    flex: 1
+    padding-left: 160px
+
+    &_inner
+      padding-left: 0
+
+  &__descr
+    padding-top: 10px
+    padding-right: 85px
+
+  &__addresses
+    margin-top: 40px
+
+    .address:not(:last-child)
+      margin-bottom: 60px
+
+.address
+  display: flex
+  flex-direction: row
+
+  &__icon
+    flex: none
+    padding: 0 0 0 30px
+    margin-top: 2px
+
+  &__content
+    flex: 1
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    justify-content: flex-start
+
+  &__place
+    +font_BravoRG(400)
+    font-size: 1.6em
+
+  &__time
+    padding: 10px 0
+    +font_Lato(300)
+    color: transparentize($colorDimGray, 0.2)
+
+  &__phone
+    padding: 10px 0 0 0
+    color: $colorGreen
+    font-size: 1.6em

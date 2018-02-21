@@ -1,0 +1,29 @@
+mixin contactAddress(address, time, phone)
+  .address
+    .icon-geo.address__icon
+    .address__content
+      span.address__place= address
+      span.address__time= time
+      +anchor(href=`tel:${phone}`).address__phone= phone
+
+.container.contacts_page.layout__vertical_offset.justifyContentStart
+  .contacts_page__inner.container_hor
+    .container__item
+      .contacts__map
+    .contacts__content.container.container__item
+      .contacts__content_inner.container_ver.layout__offset
+        h1 Контакты
+        span.text.contacts__descr Модный Нью-Йоркский стиль, более урбанистический, но с привычными чистыми линиями.
+
+        .contacts__addresses
+          +contactAddress(
+          "Москва, Рожественский бульвар, д.1, ТЦ Центральный Рынок",
+          "Ежедневно с 10:00 до 23:00",
+          "+7 (495) 556-65-87"
+          )
+
+          +contactAddress(
+          "Москва, ул. Вавилова, д. 64/1, стр.1, Черёмнский рынок",
+          "Ежедневно с 10:00 до 23:00",
+          "+7 (495) 556-65-87"
+          )
