@@ -21,3 +21,23 @@ mixin button()
     .btn_fill
     .btn_content
       block
+
+mixin social(name)
+  +anchor(class=name).social&attributes(attributes)
+    block
+
+mixin facebook()
+  +social('facebook')&attributes(attributes)
+    block
+
+mixin twitter()
+  +social('twitter')&attributes(attributes)
+    block
+
+mixin vk()
+  +social('vk')&attributes(attributes)
+    block
+
+mixin instagram()
+  +social('instagram')&attributes(attributes)
+    block
