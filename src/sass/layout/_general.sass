@@ -18,17 +18,20 @@ img
   user-select: none
 
 body, html
+  display: flex
+  flex-direction: column
   background: $background
-  +font_BravoRG()
+  +font_BravoRG(300)
   font-size: 16px
   color: $fontColor
   line-height: 1
-  min-width: 320px
-  max-width: 100%
   margin: 0
   overflow-x: hidden
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
+  min-height: 100vh
+  min-width: 320px
+  max-width: 100%
 
 .page
   display: flex
