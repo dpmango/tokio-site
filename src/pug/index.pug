@@ -1,24 +1,11 @@
 ---
-title: Homepage title
-outClass: homepage
+title: Tokio
 ---
 extends shared/_layout
-include elements/_photos
 
 block content
-  .slide#slide1
-    include components/_homepage
-
-  .slide#slide2
-    include components/_conceptpage
-
-  .slide#slide3
-    include components/_menupage
-
-  .slide#slide4
-    include components/_lastnewspage
-
-  .slide.slide__active#slide5
-    include components/_contactspage
-
-  +fish(style=`position: absolute;right: 20px;bottom: 45%;`).fish--dark // TODO: Extract inline style
+  .page__background(style="background-image: url('img/slides/slide_1-main_bg.png')")
+  .container.main_page
+    .container_ver
+      h1.main_page__h1 Ресторан паназиатской кухни нового формата
+      p.main_page__text Суши бары работают на исключительно свежем и премиальном сырье. Еда не только вкусная, и что крайне важно для нашей целевой аудитории, здоровая и не тяжелая.

@@ -1,6 +1,5 @@
-- var svgSprite = 'img/sprite.svg'
-
 mixin icon(name, modClass)
+  - var svgSprite = 'img/sprite.svg'
   if modClass == undefined
     - var modClass = ''
   else
@@ -41,3 +40,20 @@ mixin vk()
 mixin instagram()
   +social('instagram')&attributes(attributes)
     block
+
+mixin photos(src1, src2, bgColor)
+  - bgColor = bgColor || "#231F20" // TODO: https://stackoverflow.com/a/41923423/6119618
+  .photos&attributes(attributes)
+    +icon("icon-y-letter").background_letter.photos__letter-y
+    +icon("icon-o-letter").background_letter.photos__letter-o
+    .photos__background(style="background: " + bgColor)
+    img.photos__photo.photos__photo_1(src=src1)
+    img.photos__photo.photos__photo_2(src=src2)
+    +icon("icon-fish-sushi-wine").photos__label.photos__label_fish
+    +icon("icon-tokio-k-symbol").photos__label.photos__label_k
+
+mixin fish(active)
+  - active = active || 0
+  .fish&attributes(attributes)
+    each val, index in [0,1,2,3,4,5]
+      +anchor().fish__bone(class=index === active ? "fish__bone--active" : "")

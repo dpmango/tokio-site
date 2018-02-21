@@ -1,0 +1,53 @@
+---
+title: News
+---
+extends shared/_layout
+include shared/_mixins
+
+block content
+  .container.news_page
+    .container_ver.layout__offset
+      +icon("icon-y-letter").background_letter.news_page__letter_y
+      +icon("icon-o-letter").background_letter.news_page__letter_o
+
+      -
+        var newsItems = [
+        ["Новогодние корпоративы в сети BB Grill", "14", "Декабрь, 2017", "1"],
+        ["Новогоднее меню в Tokio", "04", "Декабрь, 2017", "2"],
+        ["Новогоднее меню в Tokio", "19", "Ноябрь, 2017", "3"],
+        ["Новогодние корпоративы в сети BB Grill", "14", "Декабрь, 2017", "1"],
+        ["Новогоднее меню в Tokio", "04", "Декабрь, 2017", "2"],
+        ["Новогоднее меню в Tokio", "19", "Ноябрь, 2017", "3"]
+        ]
+
+        var itemsPerRow = 3
+
+
+      .news__container
+        h1 Последние новости
+
+        while newsItems.length > 0
+          - var splicedNews = newsItems.splice(0, itemsPerRow)
+
+          if splicedNews.length === 0
+            break
+
+          .news__row
+            each item in splicedNews
+              .story
+                .story__inner
+                  .story__wrapper
+                    .story__image_wrapper
+                      .story__image(style=`background-image: url('img/news/${item[3]}.jpeg')`)
+                        .story__image__filter
+                    .story__date
+                      span.story__date_day
+                        =item[1]
+                      span.story__date_rest
+                        =item[2]
+                  span.story__title
+                    =item[0]
+      div
+        .container_hor.justifyContentCenter
+          +button
+            | Все новости

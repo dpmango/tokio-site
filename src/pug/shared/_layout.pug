@@ -3,21 +3,22 @@ include _mixins
 doctype html
 html(lang="en")
   head
-    include _head
     block head
+      include _head
 
   body(class=bodyClass)
+    // place where pjax bindings happen's
     #barba-wrapper
       block header
         include ../components/_header
 
-      // place where pjax bindings happen's
-      .page
-        block content
       // what should be changed with every pjax
+      .page
+        .page__content
+          block content
 
-    block footer
-      include ../components/_footer
+        block footer
+          include ../components/_footer
 
-    block scripts
-      include _scripts
+      block scripts
+        include _scripts
