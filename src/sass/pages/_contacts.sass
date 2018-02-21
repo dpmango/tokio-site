@@ -30,9 +30,28 @@
 
   &__addresses
     margin-top: 40px
+    margin-bottom: 60px
 
     .address:not(:last-child)
       margin-bottom: 60px
+
+  &__socials
+    $socialsLineWidth: 140px
+    position: relative
+    padding-left: $socialsLineWidth
+
+    .social
+      display: inline-block
+      margin-right: 20px
+
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 20px
+      width: $socialsLineWidth - 40px
+      border-top: 1px solid $colorGreen
+
 
 .address
   display: flex
