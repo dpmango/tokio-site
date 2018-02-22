@@ -5,6 +5,9 @@
     &__inner
       padding-top: 50px
 
+      +mediaMaxHeight(740)
+        padding-top: 20px
+
   &__map
     display: block
     height: 100%
@@ -36,12 +39,22 @@
     padding-top: 10px
     padding-right: 85px
 
+    +mediaMaxHeight(670)
+      padding-top: 0
+
   &__addresses
     margin-top: 40px
     margin-bottom: 60px
 
+    +mediaMaxHeight(860)
+      margin-top: 20px
+      margin-bottom: 20px
+
     .address:not(:last-child)
       margin-bottom: 60px
+
+      +mediaMaxHeight(790)
+        margin-bottom: 20px
 
   &__socials
     $socialsLineWidth: 140px
@@ -59,7 +72,6 @@
       top: 20px
       width: $socialsLineWidth - 40px
       border-top: 1px solid $colorGreen
-
 
 .address
   display: flex
@@ -95,3 +107,16 @@
     @extend .size-big
     padding: 10px 0 0 0
     color: $colorGreen
+
+// Typography styles
+
+.contacts
+  &_page
+    +mediaMaxHeight(950)
+      font-size: 90%
+
+    +mediaMaxWidth($wide)
+      font-size: 90%
+
+    //+mediaMaxHeight(800)
+    //  font-size: 70%
