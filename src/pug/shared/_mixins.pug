@@ -21,24 +21,28 @@ mixin button()
     .btn_content
       block
 
-mixin social(name)
-  +anchor(class=name).social&attributes(attributes)
+mixin social(name, link)
+  +anchor(class=name, href=link, target="_blank").social&attributes(attributes)
     block
 
 mixin facebook()
-  +social('facebook')&attributes(attributes)
+  include _vars
+  +social('facebook', hrefFB)&attributes(attributes)
     block
 
 mixin twitter()
-  +social('twitter')&attributes(attributes)
+  include _vars
+  +social('twitter', hrefTW)&attributes(attributes)
     block
 
 mixin vk()
-  +social('vk')&attributes(attributes)
+  include _vars
+  +social('vk', hrefVK)&attributes(attributes)
     block
 
 mixin instagram()
-  +social('instagram')&attributes(attributes)
+  include _vars
+  +social('instagram', hrefIG)&attributes(attributes)
     block
 
 mixin photos(src1, src2, bgColor)
