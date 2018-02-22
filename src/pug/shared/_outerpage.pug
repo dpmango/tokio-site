@@ -1,4 +1,8 @@
 extends _layout
 
+block header
+  include ../components/_header
+  +header(true)
+
 block footer
   include ../components/_footer-expanded

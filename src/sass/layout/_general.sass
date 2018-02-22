@@ -6,6 +6,7 @@
 a
   color: inherit
   text-decoration: none
+  cursor: pointer
   &:hover, &:focus
     text-decoration: none
 
@@ -26,6 +27,10 @@ body, html
   min-height: 100vh
   min-width: 320px
   max-width: 100%
+
+.fullpage__section
+  all: inherit
+  position: relative
 
 .page, #barba-wrapper
   display: flex
@@ -52,6 +57,7 @@ body, html
   display: flex
   flex: 1
   max-width: 90vw
+  height: 100%
 
   +mediaMinWidth($wide)
     max-width: 1200px !important

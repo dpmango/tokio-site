@@ -15,10 +15,11 @@ html(lang="en")
     #barba-wrapper
       block header
         include ../components/_header
+        +header()
 
       // what should be changed with every pjax
       .page
-        .page__content
+        .page__content#fullpage
           block content
 
         block footer

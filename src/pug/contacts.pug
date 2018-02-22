@@ -1,9 +1,4 @@
-extends shared/_basepage
 include shared/_mixins
-
-block append vars
-  -
-    var title = "Контакты"
 
 mixin contactAddress(address, time, phone)
   .address
@@ -14,30 +9,29 @@ mixin contactAddress(address, time, phone)
       +anchor(href=`tel:${phone}`).address__phone= phone
 
 
-block content
-  .container.contacts_page.layout__vertical_offset.justifyContentStart
-    .contacts_page__inner.container_hor
-      .container__item.contacts__map
-        .contacts__map_inner
-      .contacts__content.container.container__item
-        .contacts__content_inner.container_ver.layout__offset
-          h1 Контакты
-          span.text.contacts__descr Модный Нью-Йоркский стиль, более урбанистический, но с привычными чистыми линиями.
+.container.contacts_page.layout__vertical_offset.justifyContentStart
+  .contacts_page__inner.container_hor
+    .container__item.contacts__map
+      .contacts__map_inner
+    .contacts__content.container.container__item
+      .contacts__content_inner.container_ver.layout__offset
+        h1 Контакты
+        span.text.contacts__descr Модный Нью-Йоркский стиль, более урбанистический, но с привычными чистыми линиями.
 
-          .contacts__addresses
-            +contactAddress(
-            "Москва, Рожественский бульвар, д.1, ТЦ Центральный Рынок",
-            "Ежедневно с 10:00 до 23:00",
-            "+7 (495) 556-65-87"
-            )
+        .contacts__addresses
+          +contactAddress(
+          "Москва, Рожественский бульвар, д.1, ТЦ Центральный Рынок",
+          "Ежедневно с 10:00 до 23:00",
+          "+7 (495) 556-65-87"
+          )
 
-            +contactAddress(
-            "Москва, ул. Вавилова, д. 64/1, стр.1, Черёмнский рынок",
-            "Ежедневно с 10:00 до 23:00",
-            "+7 (495) 556-65-87"
-            )
-          .contacts__socials
-            +twitter
-            +facebook
-            +vk
-            +instagram
+          +contactAddress(
+          "Москва, ул. Вавилова, д. 64/1, стр.1, Черёмнский рынок",
+          "Ежедневно с 10:00 до 23:00",
+          "+7 (495) 556-65-87"
+          )
+        .contacts__socials
+          +twitter
+          +facebook
+          +vk
+          +instagram

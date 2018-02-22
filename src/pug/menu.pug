@@ -1,11 +1,6 @@
-extends shared/_basepage
 include shared/_mixins
 
-block append vars
-  -
-    var title = "Меню"
-
-block content
+.container.layout__vertical_offset.layout__offset
   -
     var menuItems = [
     ["Роллы", "roll"],
@@ -15,15 +10,13 @@ block content
     ['Холодное', 'cold'],
     ['Напитки', 'drinks']
     ]
-
-  .container.layout__vertical_offset.layout__offset
-    .container_hor
-      +icon("icon-y-letter").background_letter.menu_page__letter_y
-      +icon("icon-o-letter").background_letter.menu_page__letter_o
-      .categories
-        each item in menuItems
-          .category
-            span.category__title= item[0]
-            .category__image_wrapper
-              .category__image(style=`background-image: url(${'img/menu/' + item[1] + '.jpeg'})`)
-                .category__filter
+  .container_hor
+    +icon("icon-y-letter").background_letter.menu_page__letter_y
+    +icon("icon-o-letter").background_letter.menu_page__letter_o
+    .categories
+      each item in menuItems
+        .category
+          span.category__title= item[0]
+          .category__image_wrapper
+            .category__image(style=`background-image: url(${'img/menu/' + item[1] + '.jpeg'})`)
+              .category__filter
