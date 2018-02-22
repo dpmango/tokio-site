@@ -1,10 +1,12 @@
 .error_page
   &__h1
-    font-size: 15em
+    font-size: 21.25rem
     margin: 0
 
   &__text
-    +font_Lato(500)
+    @extend .font-lato
+    @extend .weight-medium
+    @extend .size-normal2
     padding: 0 40px
     max-width: 500px
     text-align: center

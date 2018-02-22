@@ -4,9 +4,11 @@
   padding-right: 530px
 
   &__h1
+    @extend .size-biggest
+
     position: relative
-    font-size: 5em
-    padding-bottom: 40px
+    padding-bottom: 30px
+    margin-bottom: 30px
     color: $colorWhite
     text-transform: initial
 
@@ -17,12 +19,11 @@
       left: 0
       bottom: 0
       border: 1px solid $colorWhite
-      width: 80px
+      width: 60px
 
   &__text
-    +font_Lato(500)
-    font-size: 1.2em
+    @extend .size-normal2
     margin: 0
     position: relative
     color: transparentize($colorWhite, 0.2)
-    line-height: 34px
+    line-height: 2em

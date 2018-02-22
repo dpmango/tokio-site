@@ -21,14 +21,8 @@ body, html
   display: flex
   flex-direction: column
   background: $background
-  +font_BravoRG(300)
-  font-size: 16px
-  color: $fontColor
-  line-height: 1
   margin: 0
   overflow-x: hidden
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
   min-height: 100vh
   min-width: 320px
   max-width: 100%
@@ -38,13 +32,6 @@ body, html
   flex-direction: column
   flex: 1
   z-index: $defaultZIndex - 1
-//&__content
-  // used for sticky footer (flexbox way)
-  flex: 1 0 auto
-  display: flex
-  flex-direction: column
-  // header offset ex
-  padding-top: 100px
 
 .page__content
   display: flex
@@ -52,14 +39,14 @@ body, html
   position: relative
 
 .page__background
-    z-index: 0
-    position: absolute
-    left: 0
-    top: 0
-    right: 0
-    bottom: 0
-    background-size: cover
-    background: no-repeat center
+  z-index: 0
+  position: absolute
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  background-size: cover
+  background: no-repeat center
 
 .container
   display: flex
@@ -106,30 +93,10 @@ body, html
   &End
     justify-content: flex-end
 
-//.container
-  max-width: 1200px
-  width: 100%
-  margin-left: auto
-  margin-right: auto
-  padding-left: 40px
-  padding-right: 40px
-
 +mediaMaxWidth($mobile)
   .container
     padding-left: 20px
     padding-right: 20px
-
-// REMOVE FOR PRODUCTION !
-.dev-bp-debug
-  background: black
-  position: fixed
-  top: 0
-  right: 0
-  z-index: 9999
-  color: white
-  padding: 5px
-  font-size: 12px
-  border-bottom-left-radius: 5px
 
 .background_letter
   position: absolute
@@ -170,3 +137,15 @@ body, html
 .instagram
   background-size: 45% !important
   background-image: url("../img/socials/instagram.png") !important
+
+// REMOVE FOR PRODUCTION !
+.dev-bp-debug
+  background: black
+  position: fixed
+  top: 0
+  right: 0
+  z-index: 9999
+  color: white
+  padding: 5px
+  font-size: 12px
+  border-bottom-left-radius: 5px

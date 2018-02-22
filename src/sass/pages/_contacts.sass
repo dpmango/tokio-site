@@ -28,6 +28,11 @@
       padding-left: 0
 
   &__descr
+    @extend .font-lato
+    @extend .weight-light
+    @extend .size-normal2
+
+    line-height: 2rem
     padding-top: 10px
     padding-right: 85px
 
@@ -73,15 +78,20 @@
     justify-content: flex-start
 
   &__place
-    +font_BravoRG(400)
-    font-size: 1.6em
+    @extend .font-bravo-rg
+    @extend .weight-regular
+    @extend .size-big
 
   &__time
+    @extend .font-lato
+    @extend .weight-light
+    @extend .size-normal
     padding: 10px 0
-    +font_Lato(300)
     color: transparentize($colorDimGray, 0.2)
 
   &__phone
+    @extend .font-bravo-rg
+    @extend .weight-regular
+    @extend .size-big
     padding: 10px 0 0 0
     color: $colorGreen
-    font-size: 1.6em

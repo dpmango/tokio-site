@@ -3,14 +3,138 @@
 +font("Lato", "Lato")
 +font("BravoRG", "BravoRG")
 
-=font_PT_Sans_Narrow($weight: 400)
-  font-family: 'PT Sans Narrow', sans-serif
-  font-weight: $weight
+.font
+  &-lato
+    font-family: Lato, sans-serif
 
-=font_BravoRG($weight: 400)
-  font-family: BravoRG, sans-serif
-  font-weight: $weight
+  &-bravo-rg
+    font-family: BravoRG, sans-serif
 
-=font_Lato($weight: 300)
-  font-family: Lato, sans-serif
-  font-weight: $weight
+  &-pt-sans
+    font-family: 'PT Sans Narrow', sans-serif
+
+.weight
+  &-thin
+    font-weight: 100
+
+  &-light
+    font-weight: 300
+
+  &-regular
+    font-weight: 400
+
+  &-medium
+    font-weight: 500
+
+  &-bold
+    font-weight: 700
+
+  &-black
+    font-weight: 900
+
+.size
+  &-small
+    font-size: 0.875rem
+
+  &-normal
+    font-size: 1.125rem
+
+  &-normal2
+    font-size: 1.25rem
+
+  &-normal3
+    font-size: 1.375rem
+
+  &-big
+    font-size: 2rem
+
+  &-big2
+    font-size: 2.25rem
+
+  &-big3
+    font-size: 2.375rem
+
+  &-bigger
+    font-size: 4rem
+
+  &-bigger2
+    font-size: 4.75rem
+
+  &-biggest
+    font-size: 6rem
+
+html
+  font-size: 16px
+  +mediaMaxWidth($wide)
+    font-size: 14px
+
+body
+  @extend .font-lato
+  @extend .weight-regular
+  @extend .size-normal
+
+  color: $fontColor
+  line-height: 1
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+h1, h2, h3, h4, h5, h6
+  @extend .font-bravo-rg
+  @extend .weight-regular
+  text-transform: uppercase
+
+h1
+  @extend .size-bigger
+
+h2
+  font-size: 2.8rem
+
+h3
+  font-size: 2.4rem
+
+h4
+  font-size: 1.8rem
+
+h5
+  font-size: 1.4rem
+
+h6
+  font-size: 1.2rem
+
+.blockquote
+  text-align: left
+
+  &__text
+    @extend .font-lato
+    @extend .size-normal2
+    @extend .weight-light
+
+    margin-bottom: 20px
+    line-height: 1.6
+
+  &__caption
+    @extend .font-bravo-rg
+    @extend .weight-regular
+    @extend .size-big2
+
+    position: relative
+    display: flex
+    justify-content: flex-end
+    padding-right: 10px
+    color: $colorGreen
+
+    & > *
+      padding-left: 20px
+      padding-right: 20px
+      background: $background
+
+    &:before
+      content: ''
+      position: absolute
+      z-index: $defaultZIndex - 1
+      left: 0
+      top: 0.6rem
+      width: 100%
+      height: 1px
+      background: $colorGreen
+

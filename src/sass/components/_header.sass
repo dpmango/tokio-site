@@ -1,5 +1,8 @@
 .header
-  +font_PT_Sans_Narrow()
+  @extend .font-pt-sans
+  @extend .weight-regular
+  @extend .size-normal3
+
   color: $colorBlack
   background: $headerBackground
 
@@ -10,7 +13,6 @@
   &__nav
     flex: 1
     white-space: nowrap
-    font-size: 1.1em
     z-index: $defaultZIndex + 1
 
     &_item

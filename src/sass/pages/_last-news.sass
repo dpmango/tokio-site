@@ -63,7 +63,7 @@ $storyAfterlinePadding: 15px
     display: flex
     flex: 1
     flex-direction: column
-    
+
     &:hover
       .story__image
         transform: scale($imageScaleCoefficient)
@@ -90,11 +90,13 @@ $storyAfterlinePadding: 15px
     transition: transform $ease $transitionSpeed
 
   &__title
+    @extend .font-bravo-rg
+    @extend .size-big
+
     position: relative
     padding: 10px $storyBeforelineWidth + 5px 10px $storyBeforelineWidth + $storyAfterlinePadding
     line-height: $storyLineHeight
     color: $newsCardTitleColor
-    font-size: 1.6em
     transition: all $ease $transitionSpeed
 
     //&:before
@@ -114,19 +116,19 @@ $storyAfterlinePadding: 15px
     color: $colorGreen
 
     &_day
-      +font_BravoRG()
-      font-size: 5em
+      @extend .font-bravo-rg
+      font-size: 5rem
 
       position: absolute
       left: -15px
-      top: -42px
+      top: -36px
 
       transform: rotate(-90deg)
 
     &_rest
-      +font_PT_Sans_Narrow()
-      font-size: 1.1em
+      @extend .font-pt-sans
+      @extend .size-normal
 
       position: absolute
-      top: -30px
-      left: 55px
+      top: -25px
+      left: 50px

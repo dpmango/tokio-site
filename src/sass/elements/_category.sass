@@ -34,16 +34,17 @@
     +linearGradient(transparent, #000, 40%)
 
   &__title
+    @extend .font-bravo-rg
+    @extend .size-big3
+    @extend .weight-regular
+    color: $colorWhite
+
     z-index: $defaultZIndex+1
     position: absolute
     bottom: 20px
     right: 20px
     align-self: start
-
-    +font_BravoRG()
-    font-size: 2.5em
     text-transform: uppercase
-    color: $colorWhite
 
     transform: rotate(-90deg) translateX(100%)
     transform-origin: 100% 100%
