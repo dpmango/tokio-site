@@ -7,6 +7,10 @@ extends shared/_layout
 block header
 block footer
 
+block append vars
+  -
+    var title = "Список элементов"
+
 block prepend head
   style(type="text/css").
     .list > * {

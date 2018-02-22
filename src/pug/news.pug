@@ -1,8 +1,9 @@
----
-title: News
----
 extends shared/_layout
 include shared/_mixins
+
+block append vars
+  -
+    var title = "Новости"
 
 block content
   .container.news_page

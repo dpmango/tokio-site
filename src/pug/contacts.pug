@@ -1,8 +1,9 @@
----
-title: Contacts
----
 extends shared/_layout
 include shared/_mixins
+
+block append vars
+  -
+    var title = "Контакты"
 
 mixin contactAddress(address, time, phone)
   .address
@@ -16,8 +17,8 @@ mixin contactAddress(address, time, phone)
 block content
   .container.contacts_page.layout__vertical_offset.justifyContentStart
     .contacts_page__inner.container_hor
-      .container__item
-        .contacts__map
+      .container__item.contacts__map
+        .contacts__map_inner
       .contacts__content.container.container__item
         .contacts__content_inner.container_ver.layout__offset
           h1 Контакты
