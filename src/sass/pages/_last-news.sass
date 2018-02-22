@@ -20,8 +20,6 @@ $storyAfterlinePadding: 15px
     flex: 1
     height: 100%
     width: 100%
-    padding-top: 40px
-    padding-bottom: 40px
     align-items: flex-start
     justify-content: center
 
@@ -39,19 +37,25 @@ $storyAfterlinePadding: 15px
     .story:first-child
       flex: 1.2
       padding-top: 140px
-      min-height: 300px
+      max-height: 390px
 
     .story:nth-child(2)
       flex: 1
       padding-top: 27px
       padding-bottom: 34px
-      min-height: 500px
+      max-height: 400px
+
+      +mediaMaxHeight(720)
+        padding-top: 40px
+
+      +mediaMaxHeight(685)
+        padding-top: 50px
 
     .story:last-child
       flex: 1.1
       padding-top: 94px
       padding-bottom: 55px
-      min-height: 350px
+      max-height: 430px
 
 .story
   display: flex
@@ -93,11 +97,16 @@ $storyAfterlinePadding: 15px
     @extend .font-bravo-rg
     @extend .size-big
 
+    height: 0
     position: relative
     padding: 10px $storyBeforelineWidth + 5px 10px $storyBeforelineWidth + $storyAfterlinePadding
     line-height: $storyLineHeight
     color: $newsCardTitleColor
     transition: all $ease $transitionSpeed
+    //overflow: hidden
+    //text-overflow: ellipsis
+    //max-height: 3em
+    //word-break: normal
 
     //&:before
     //  content: '\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0'

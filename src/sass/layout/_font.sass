@@ -34,34 +34,34 @@
 
 .size
   &-small
-    font-size: 0.875rem
+    font-size: 0.875em
 
   &-normal
-    font-size: 1.125rem
+    font-size: 1.125em
 
   &-normal2
-    font-size: 1.25rem
+    font-size: 1.25em
 
   &-normal3
-    font-size: 1.375rem
+    font-size: 1.375em
 
   &-big
-    font-size: 2rem
+    font-size: 2em
 
   &-big2
-    font-size: 2.25rem
+    font-size: 2.25em
 
   &-big3
-    font-size: 2.375rem
+    font-size: 2.375em
 
   &-bigger
-    font-size: 4rem
+    font-size: 4em
 
   &-bigger2
-    font-size: 4.75rem
+    font-size: 4.75em
 
   &-biggest
-    font-size: 6rem
+    font-size: 6em
 
 html
   font-size: 16px
@@ -78,28 +78,37 @@ body
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
+body, body *
+  font-size: 100%
+
 h1, h2, h3, h4, h5, h6
   @extend .font-bravo-rg
   @extend .weight-regular
   text-transform: uppercase
 
 h1
+  margin: 1rem 0
   font-size: 4rem
 
 h2
+  margin: 0.8rem 0
   font-size: 3rem
 
 h3
+  margin: 0.6rem 0
   font-size: 2.4rem
 
 h4
+  margin: 0.4rem 0
   font-size: 1.8rem
 
 h5
+  margin: 0.2rem 0
   font-size: 1.4rem
 
 h6
-  font-size: 1.2rem
+  margin: 0.1rem 0
+  font-size: 1.2em
 
 .blockquote
   text-align: left
@@ -133,7 +142,7 @@ h6
       position: absolute
       z-index: $defaultZIndex - 1
       left: 0
-      top: 0.6rem
+      top: 0.6em
       width: 100%
       height: 1px
       background: $colorGreen
