@@ -1,0 +1,16 @@
+extends shared/_errorpage
+
+block append vars
+  -
+    var title = "404"
+
+block errorcode
+  | 404
+
+block errortext
+  | Что то пошло не так... Страница не найдена. #[br]Вернуться на&nbsp;
+  +anchor(href="index.html").error_page__link
+    | главную
+  | &nbsp;или перести в&nbsp;
+  +anchor(href="menu.html").error_page__link
+    | меню
