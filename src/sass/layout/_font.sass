@@ -63,6 +63,9 @@
   &-biggest
     font-size: 6em
 
+*
+  font-size: inherit
+
 html
   font-size: 16px
   +mediaMaxWidth($wide)
@@ -78,7 +81,7 @@ body
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
-body, body *
+body
   font-size: 100%
 
 h1, h2, h3, h4, h5, h6
@@ -110,42 +113,64 @@ h6
   margin: 0.1rem 0
   font-size: 1.2em
 
-.blockquote
-  text-align: left
+span, p
+  @extend .font-lato
+  @extend .size-normal2
+  @extend .weight-light
+
+  line-height: 1.6
+
+.heading
+  @extend .font-bravo-rg
+  @extend .size-big
+  line-height: 1
+
+.caption
+  @extend .font-bravo-rg
+  @extend .weight-regular
+  @extend .size-normal3
+
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  position: relative
+  color: $colorGreen
+
+  &:before
+    content: ''
+    position: absolute
+    z-index: -1
+    left: 0
+    top: 1.6em
+    width: 100%
+    height: 1px
+    background: $colorGreen
 
   &__text
-    @extend .font-lato
-    @extend .size-normal2
-    @extend .weight-light
-
-    margin-bottom: 20px
-    line-height: 1.6
-
-  &__caption
-    @extend .font-bravo-rg
-    @extend .weight-regular
-    @extend .size-big2
-
+    white-space: nowrap
+    line-height: 1.6em
     position: relative
-    display: flex
-    justify-content: flex-end
-    padding-right: 10px
-    color: $colorGreen
+    background: $background
+    padding: 0 20px
+    margin-right: 20px
+    align-self: flex-end
+    display: inline-block
 
-    & > *
-      padding-left: 20px
-      padding-right: 20px
-      background: $background
+  &.with-hash-tags
+    padding-left: 30%
+
+    .caption__text
+      margin-left: -20px
+      align-self: flex-start
 
     &:before
-      content: ''
-      position: absolute
-      z-index: $defaultZIndex - 1
-      left: 0
-      top: 0.6em
-      width: 100%
-      height: 1px
-      background: $colorGreen
+      width: 30%
+
+  .hash_tags
+    @extend .size-small
+    line-height: 1
+    padding-top: 10px
+    max-width: 70%
 
 //
   16px base

@@ -61,3 +61,11 @@ mixin fish(active)
   .fish&attributes(attributes)
     each val, index in [0,1,2,3,4]
       .fish__bone(class=index === active ? "fish__bone--active" : "")
+
+mixin caption(hashtags)
+  - hashtags = hashtags || ''
+  .caption(class=!!hashtags ? 'with-hash-tags' : '')&attributes(attributes)
+    .heading.caption__text
+      block
+    if !!hashtags
+      span.hash_tags= hashtags
