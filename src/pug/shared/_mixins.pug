@@ -45,6 +45,10 @@ mixin instagram()
   +social('instagram', hrefIG)&attributes(attributes)
     block
 
+mixin buttonBack()
+  +anchor().btn-back&attributes(attributes)
+    | &larr;&nbsp;назад
+
 mixin photos(src1, src2, bgColor)
   - bgColor = bgColor || "#231F20" // TODO: https://stackoverflow.com/a/41923423/6119618
   .photos&attributes(attributes)
