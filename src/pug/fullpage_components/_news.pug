@@ -26,7 +26,7 @@ include ../shared/_mixins
 
         .news__row
           each item in splicedNews
-            .story
+            +anchor(href="story_inner.html").story
               .story__inner
                 .story__wrapper
                   .story__image_wrapper
