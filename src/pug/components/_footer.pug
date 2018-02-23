@@ -1,12 +1,30 @@
 // FOOTER :: START
-footer.footer#footer
-  .container
-    .container_hor.layout__offset.footer__wrapper
-      p.font-lato.size-normal.weight-light
-        | Copyright © 2017 TOKIOSUSHIBAR. All rights reserved
-      .footer__made
-        .icon-made
-        //+icon('ico-made')
+
+mixin footer(isBig)
+  - isBig = isBig || false
+
+  footer.footer(class=isBig?'footer__big':'')#footer
+    .container.footer__inner
+      if isBig
+        .footer__top
+          .footer__socials
+            +twitter
+            +facebook
+            +vk
+            +instagram
+          .footer__logo
+            +anchor
+              .icon-logo_no_bg
+          .footer__reserve
+            +anchor
+              .icon-reserve-white
+
+      .footer__bottom
+        p.font-lato.size-normal.weight-light
+          | Copyright © 2017 TOKIOSUSHIBAR. All rights reserved
+        .footer__made
+          .icon-made
+          //+icon('ico-made')
 
 
 // FOOTER :: END
