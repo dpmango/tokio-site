@@ -418,6 +418,10 @@ $(document)
 
     Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
 
+      if ($.fn.fullpage) {
+        $.fn.fullpage.reBuild();
+      }
+
       pageReady();
       closeMobileMenu();
 
@@ -459,13 +463,6 @@ $(document)
         }
       });
 
-    $('.fullpage__anchor')
-      .click(function() {
-        var section = $(this)
-          .attr('data-href');
-        $.fn.fullpage.moveTo(section);
-      });
-
     //////////
     // DEVELOPMENT HELPER
     //////////
@@ -498,12 +495,18 @@ function initMap() {
   let map,
     marker;
 
+  const mapElement = document.getElementById('map');
+
+  if (!mapElement) {
+    return;
+  }
+
   const mapInitPos = {
     lat: 40.757483,
     lng: -73.971084
   };
 
-  map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(mapElement, {
     center: mapInitPos,
     zoom: 17,
     mapTypeControlOptions: {
