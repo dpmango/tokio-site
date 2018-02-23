@@ -62,6 +62,7 @@ mixin buttonBack()
     | &larr;&nbsp;назад
 
 mixin photos(bgColor)
+  include _svgs
   block
   - bgColor = bgColor || "#231F20" // TODO: https://stackoverflow.com/a/41923423/6119618
   .photos&attributes(attributes)
@@ -79,7 +80,8 @@ mixin photos(bgColor)
         - blocks.photo1()
       .photos__photo.photos__photo_2(src=src2)
         - blocks.photo2()
-    +icon("icon-fish-sushi-wine").photos__label.photos__label_fish
+    +fish-sushi-wine.icon-fish-sushi-wine.photos__label_fish
+    //+icon("icon-fish-sushi-wine").photos__label.photos__label_fish
     +icon("icon-tokio-k-symbol").photos__label.photos__label_k
   +clear
 
