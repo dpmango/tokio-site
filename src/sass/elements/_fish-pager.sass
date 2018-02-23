@@ -1,32 +1,45 @@
-.fish
-  transform: scaleX(-1)
+.fish__pagination
+  $shortenRatio: 0.6
 
-  &__bone
+  .slick-dots
+
+    li
+      display: block
+
+    li:nth-child(1) .fish__bone:after
+      width: 33px*$shortenRatio
+
+    li:nth-child(2) .fish__bone:after
+      width: 18px*$shortenRatio
+
+    li:nth-child(3) .fish__bone:after
+      width: 39px*$shortenRatio
+
+    li:nth-child(4) .fish__bone:after
+      width: 50px*$shortenRatio
+
+    li:nth-child(5) .fish__bone:after
+      width: 33px*$shortenRatio
+
+    li:nth-child(6) .fish__bone:after
+      width: 15px*$shortenRatio
+
+  .fish__bone
+    position: relative
     display: block
-    background: $fishPagerDefaultColor
     width: 20px
-    height: 2px
-    border-radius: 100px
-    margin-bottom: 12px
-    transition: background-color $ease $transitionSpeed
+    height: 8px
+    margin: 4px 0
 
-  &--dark &__bone
-    background: $colorDimGray
+    &:after
+      content: ''
+      position: absolute
+      left: 0
+      top: 50%
+      height: 1px
+      transition: background-color $ease $transitionSpeed
+      background: $fishPagerDefaultColor
 
-  & &__bone--active // Increase priority due to above rule
-    background: $fishPagerSelectedColor
-
-  &__bone:nth-child(1)
-    width: 18px
-
-  &__bone:nth-child(2)
-    width: 10px
-
-  &__bone:nth-child(3)
-    width: 20px
-
-  &__bone:nth-child(4)
-    width: 23px
-
-  &__bone:nth-child(5)
-    width: 14px
+  .slick-active
+    .fish__bone:after
+      background: $fishPagerSelectedColor

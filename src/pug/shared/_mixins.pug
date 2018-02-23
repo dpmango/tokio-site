@@ -92,12 +92,6 @@ mixin date(day, rest)
     .corner__date_day= day
     .corner__date_rest= rest
 
-mixin fish(active)
-  - active = active || 0
-  .fish&attributes(attributes)
-    each val, index in [0,1,2,3,4]
-      .fish__bone(class=index === active ? "fish__bone--active" : "")
-
 mixin caption
   block
   // block is required to handle passed blocks

@@ -188,8 +188,26 @@ $(document)
         });
 
       // other individual sliders goes here
-      $('[js-myCustomSlider]')
-        .slick({});
+      $('[js-main-page-slider]')
+        .slick({
+          autoplay: 20,
+          dots: true,
+          customPaging : function(slider, i) {
+            return '<a class="fish__bone">';
+          },
+          arrows: false,
+          prevArrow: slickNextArrow,
+          nextArrow: slickPrevArrow,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 1,
+          accessibility: false,
+          adaptiveHeight: false,
+          draggable: true,
+          swipe: true,
+          swipeToSlide: true,
+          touchMove: true
+        });
 
     }
 
@@ -435,31 +453,31 @@ $(document)
         .resize();
     }
 
-    const fullpagePager = $('#fullpage__pager');
-    const fullpagePagerMap = [0, 1, 1, 1, 1]; // 1 - black, 0 - white
+    // const fullpagePager = $('#fullpage__pager');
+    // const fullpagePagerMap = [0, 1, 1, 1, 1]; // 1 - black, 0 - white
     $('#fullpage')
       .fullpage({
         anchors: ['home', 'about', 'menu', 'news', 'contacts'],
         paddingTop: '70px',
         paddingBottom: '60px',
-        fixedElements: '#header, #footer, #fullpage__pager',
+        fixedElements: '#header, #footer',
         scrollOverflow: true,
 
         //Custom selectors
         sectionSelector: '.fullpage__section',
         onLeave: function(index, nextIndex, direction) {
-          fullpagePager
-            .find('.fish__bone--active')
-            .removeClass('fish__bone--active');
-
-          fullpagePager
-            .find('.fish__bone')
-            .eq(nextIndex - 1)
-            .addClass('fish__bone--active');
-
-          fullpagePagerMap[nextIndex - 1] ?
-            fullpagePager.addClass('fish--dark') :
-            fullpagePager.removeClass('fish--dark');
+          // fullpagePager
+          //   .find('.fish__bone--active')
+          //   .removeClass('fish__bone--active');
+          //
+          // fullpagePager
+          //   .find('.fish__bone')
+          //   .eq(nextIndex - 1)
+          //   .addClass('fish__bone--active');
+          //
+          // fullpagePagerMap[nextIndex - 1] ?
+          //   fullpagePager.addClass('fish--dark') :
+          //   fullpagePager.removeClass('fish--dark');
         }
       });
 
