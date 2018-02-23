@@ -1,0 +1,42 @@
+.agreement_page
+  @extend .font-lato
+  line-height: 1.6rem
+
+  padding: 5em 10rem
+
+  &__title
+    text-align: center
+    margin-bottom: 40px
+
+  li
+    padding: 0.6rem 0
+
+  span, em, b, a, li
+    line-height: 2.15rem
+
+  span, li, a
+    @extend .size-normal2
+    @extend .weight-light
+    color: $colorDimGray
+
+  em
+    @extend .size-normal3
+    @extend .weight-medium
+    color: $colorBlack
+
+  b
+    @extend .size-normal2
+    @extend .weight-bold
+    color: $colorBlack
+
+  a
+    @extend .size-normal2
+    @extend .weight-bold
+    border-bottom: 1px solid $colorBlack
+    color: $colorBlack
+
+  ul
+    padding-left: 20px
+    list-style: disc
+    li
+      display: list-item
