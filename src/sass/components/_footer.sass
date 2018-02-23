@@ -13,6 +13,16 @@
   @at-root .footer-offset
     padding-bottom: $footerNormalHeight
 
+  &__big
+    position: relative
+    background: $bigFooterBackground
+    display: flex
+    flex-direction: column
+    flex: none
+    align-items: center
+    justify-content: center
+    height: auto
+
   &__inner
     display: flex
     flex-direction: column
@@ -33,15 +43,8 @@
       &:not(:last-child)
         margin-right: 20px
 
-  &__big
-    position: relative
-    background: $bigFooterBackground
-    display: flex
-    flex-direction: column
-    flex: none
-    align-items: center
-    justify-content: center
-    height: auto
+  &__reserve
+    transform-origin: right
 
   &__logo, &__reserve
     transform: scale(0.7)
