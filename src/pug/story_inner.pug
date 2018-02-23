@@ -8,7 +8,7 @@ block vars
 block content
   .container.storypage.header-offset
     .container_hor.layout__vertical_offset
-      +photos().container__item
+      +photos.container__item
         +set('photo1')
           .crop
             +image('img/menu/hot.jpeg')
@@ -16,22 +16,19 @@ block content
 
       .storypage__content.container__item
         .storypage__content_inner
-          +buttonBack(href='index.html#news')
-          h1 Новогоднее меню в Tokyo
-          p Золотистый картофель, сочные колбаски барбекю, аппетитные кальмаровые щупальца, ароматный репчатый лук, пряный чеснок, припущенные томаты черри, свежая зелень и всё это тщательно обжарено на подсолнечном масле.
-          br
-          p Встречайте, яркий и очень вкусный хит зимнего меню Tokio!
-          br
-          +caption
-            +set('content')
-              | Приятного аппетита!
-            +set('hashtags')
-              | #boraboracafe #москва #россия
-              br
-              | #десерты#итальянскаякухня
-              br
-              | #москварестораны#осеннееменю
-      //('#boraboracafe #москва #россия #десерты#итальянскаякухня #москварестораны#осеннееменю')
-            block content
-              | Приятного аппетита!
-            block hashtags
+          .note
+            +buttonBack(href='index.html#news')
+            h1 Новогоднее меню в Tokyo
+            p Золотистый картофель, сочные колбаски барбекю, аппетитные кальмаровые щупальца, ароматный репчатый лук, пряный чеснок, припущенные томаты черри, свежая зелень и всё это тщательно обжарено на подсолнечном масле.
+            br
+            p Встречайте, яркий и очень вкусный хит зимнего меню Tokio!
+            br
+            +caption
+              +set('content')
+                | Приятного аппетита!
+              +set('hashtags')
+                | #boraboracafe #москва #россия
+                br
+                | #десерты#итальянскаякухня
+                br
+                | #москварестораны#осеннееменю
