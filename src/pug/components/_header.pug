@@ -6,8 +6,7 @@ mixin header(absoluteLinks)
   - absoluteLinks = absoluteLinks || false
 
   header.header#header
-    .container
-      .container_hor.layout__offset.header__wrapper
+    .container.layout__offset.header__wrapper
         nav.header__nav
           -
             var navigation = [
@@ -18,14 +17,9 @@ mixin header(absoluteLinks)
             ]
           each navItem in navigation
             +anchor(
-            href=absoluteLinks ? 'index.html#' + navItem[1] : null,
-            class=!absoluteLinks ? 'fullpage__anchor' : '',
-            data-href=!absoluteLinks ? navItem[1] : null).header__nav_item= navItem[0]
+              href='index.html#' + navItem[1]).header__nav_item= navItem[0]
         .header__logo
-          +anchor(
-          href=absoluteLinks ? 'index.html#home' : null,
-          class=!absoluteLinks ? 'fullpage__anchor' : '',
-          data-href=!absoluteLinks ? 'home' : null)
+          +anchor(href='index.html#home')
             .icon-logo
         .header__reserve
           +anchor()
