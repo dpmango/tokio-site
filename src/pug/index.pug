@@ -6,14 +6,15 @@ block append vars
 
 block append content
   #fullpage
-    .fullpage__section.active
-      include fullpage_components/_home
-    .fullpage__section
-      include fullpage_components/_about
-    .fullpage__section
-      include fullpage_components/_menu
-    .fullpage__section
-      include fullpage_components/_news
-    .fullpage__section
-      include fullpage_components/_contacts
-  +fish#fullpage__pager
+    div
+      .fullpage__section.active
+        include fullpage_components/_home
+      .fullpage__section
+        include fullpage_components/_about
+      .fullpage__section
+        include fullpage_components/_menu
+      .fullpage__section
+        include fullpage_components/_news
+      .fullpage__section
+        include fullpage_components/_contacts
+    +fish#fullpage__pager
