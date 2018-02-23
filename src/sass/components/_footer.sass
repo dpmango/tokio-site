@@ -4,12 +4,14 @@
   bottom: 0
   left: 0
   right: 0
-  height: 60px
-
+  height: $footerNormalHeight
   @extend .font-lato
   font-size: 0.8em
   color: $colorGray
   background: $footerBackground
+
+  @at-root .footer-offset
+    padding-bottom: $footerNormalHeight
 
   &__inner
     display: flex

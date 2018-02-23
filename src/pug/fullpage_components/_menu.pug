@@ -1,19 +1,19 @@
 include ../shared/_mixins
 
-.container.layout__vertical_offset.layout__offset
-  -
-    var menuItems = [
-    ["Роллы", "roll"],
-    ['Сашими', 'sashimi'],
-    ['Супы', 'soup'],
-    ['Горячее', 'hot'],
-    ['Холодное', 'cold'],
-    ['Напитки', 'drinks']
-    ]
-  .container_hor
+.container
+  .container_hor.layout__offset
     +icon("icon-y-letter").background_letter.menu_page__letter_y
     +icon("icon-o-letter").background_letter.menu_page__letter_o
     .categories
+      -
+        var menuItems = [
+        ["Роллы", "roll"],
+        ['Сашими', 'sashimi'],
+        ['Супы', 'soup'],
+        ['Горячее', 'hot'],
+        ['Холодное', 'cold'],
+        ['Напитки', 'drinks']
+        ]
       each item in menuItems
         .category
           span.category__title= item[0]
