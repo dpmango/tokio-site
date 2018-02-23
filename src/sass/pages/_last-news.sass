@@ -73,10 +73,11 @@ $storyAfterlinePadding: 15px
         transform: scale($imageScaleCoefficient)
 
       .story__title
-        padding-left: $storyBeforelineWidth + $storyAfterlinePadding + 10px
+        transform: translateX($storyAfterlinePadding)
 
         &:after
-          border-left-width: $storyBeforelineWidth + 10px
+          transform: translateX(-$storyAfterlinePadding)
+          border-left-width: $storyBeforelineWidth + $storyAfterlinePadding
 
   &__wrapper, &__image_wrapper
     display: flex
