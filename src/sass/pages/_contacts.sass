@@ -105,8 +105,27 @@
     @extend .font-bravo-rg
     @extend .weight-regular
     @extend .size-big
+    position: relative
     padding: 10px 0 0 0
     color: $colorGreen
+    transition: color $ease $transitionSpeed
+
+    &:after
+      content: ''
+      position: absolute
+      bottom: -2px
+      height: 1px
+      width: 0
+      left: 50%
+      transform: translateX(-50%)
+      background: $colorGreen2
+      transition: width $ease $transitionSpeed
+
+    &:hover
+      color: $colorGreen2
+
+      &:after
+        width: 100%
 
 // Typography styles
 
