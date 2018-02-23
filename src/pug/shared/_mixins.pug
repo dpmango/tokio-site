@@ -1,3 +1,15 @@
+block globs
+  - var blocks = {}
+  // Named blocks for mixins
+  // Example at mixin 'caption'
+
+mixin set(key)
+  - blocks[key] = this.block
+
+mixin clear()
+  - blocks = {}
+  ////////////////////////////
+
 mixin icon(name, modClass)
   - var svgSprite = 'img/sprite.svg'
   if modClass == undefined
@@ -66,10 +78,16 @@ mixin fish(active)
     each val, index in [0,1,2,3,4]
       .fish__bone(class=index === active ? "fish__bone--active" : "")
 
-mixin caption(hashtags)
-  - hashtags = hashtags || ''
-  .caption(class=!!hashtags ? 'with-hash-tags' : '')&attributes(attributes)
+mixin caption
+  block
+  // block is required to handle passed blocks
+  .caption(class=blocks.hashtags ? 'with-hash-tags' : '')&attributes(attributes)
     .heading.caption__text
-      block
-    if !!hashtags
-      span.hash_tags= hashtags
+      if blocks.content
+        // Check if required
+        - blocks.content()
+    if blocks.hashtags
+      span.hash_tags
+         - blocks.hashtags()
+  // Don't forget to clear to avoid unwanted block reusing
+  +clear
