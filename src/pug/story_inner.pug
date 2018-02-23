@@ -7,8 +7,13 @@ block vars
 
 block content
   .container.storypage.header-offset
-    .container_hor.layout__vertical_oaffset
-      +photos("", "").container__item
+    .container_hor.layout__vertical_offset
+      +photos().container__item
+        +set('photo1')
+          .crop
+            +image('img/menu/hot.jpeg')
+          +date('04', 'Декабрь, 2017')
+
       .storypage__content.container__item
         .storypage__content_inner
           +buttonBack(href='index.html#news')

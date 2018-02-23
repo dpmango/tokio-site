@@ -2,7 +2,13 @@ include ../shared/_mixins
 
 .container.layout__offset
   .container_hor
-    +photos("img/slides/slide_2-osnovnoy_zal.jpeg", "img/slides/slide_2-pavel_li.jpeg").container__item
+    +photos.container__item
+      +set('photo1')
+        .crop
+          +image('img/slides/slide_2-osnovnoy_zal.jpeg')
+      +set('photo2')
+        .crop
+          +image('img/slides/slide_2-pavel_li.jpeg')
     .container__item
       .container
         .container_ver.justifyContentCenter
