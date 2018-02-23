@@ -1,0 +1,155 @@
+// Basic logic
+.select_container
+  .select_container-block
+    display: none
+
+    &--active
+      display: flex
+
+// Styling
+.menu_select
+  max-width: 800px
+  flex: 1
+
+  &__nav
+    border-top: 1px solid $colorGray5
+    border-bottom: 1px solid $colorGray5
+    padding: 1.2rem 0
+    display: flex
+    align-items: center
+    justify-content: space-around
+    user-select: none
+
+    &_item
+      @extend .font-bravo-rg
+      font-size: 1.7rem
+      margin: 0 1.3rem
+      color: $colorGray4
+      transition: color $ease $transitionSpeed
+
+      &.select_container-control--active
+        color: $colorBlack
+
+      &:hover
+        color: $colorGray
+
+  &__bottom
+    display: flex
+    flex-direction: row
+    justify-content: stretch
+    padding-top: 40px
+
+    &_left
+      flex: 3
+
+  &__image
+    position: relative
+    flex: 2
+    margin-right: -100px
+    min-height: 400px
+    max-height: 400px
+
+    &_text
+      @extend .font-bravo-rg
+      @extend .size-bigger
+      position: absolute
+      bottom: 20px
+      left: 20px
+      color: $colorWhite
+
+    &-frame
+      background: no-repeat center
+      background-size: cover
+      width: 100%
+      height: 100%
+
+    &-filter
+      +overlay
+      +linearGradient(transparent, #000, 40%)
+
+
+  &__content_wrapper
+    flex: 3
+    padding-right: 25px
+    padding-bottom: 4rem
+    height: calc(100% - 50px)
+
+  &__content
+    display: flex
+    flex-direction: column
+
+    .select__title
+      @extend .font-bravo-rg
+      font-size: 3rem
+      margin-bottom: 3rem
+
+  $productItemHeight: 60px
+  $productSpacing: 10px
+
+  &__product_list
+    display: flex
+    flex-direction: column
+  //max-height: $productItemHeight*4 + $productSpacing*4
+  //overflow: auto
+
+  &__product
+    display: flex
+    flex-direction: column
+    min-height: $productItemHeight
+    max-height: $productItemHeight
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+    &_heading
+      @extend .size-normal2
+      @extend .font-lato
+      @extend .weight-bold
+      color: $colorBlack
+
+      & + .menu_select__product_inner
+        margin-top: 8px
+
+    &_content
+      flex: 1
+
+    &_description
+      display: flex
+      flex-direction: row
+      align-items: baseline
+      @extend .font-lato
+      @extend .weight-light
+      @extend .size-normal
+      color: transparentize($colorDimGray, 0.2)
+
+    &_info
+      flex: 0
+      display: flex
+      flex-direction: row
+      align-items: baseline
+
+    &_price, &_weight
+      span
+        @extend .font-bravo-rg
+        @extend .weight-regular
+
+    &_price
+      span
+        @extend .size-big
+
+      .currency
+        @extend .size-normal2
+        color: $colorGray6
+
+      &:after
+        content: '/'
+        position: relative
+        @extend .font-bravo-rg
+        @extend .weight-regular
+        @extend .size-normal3
+        color: $colorGray6
+        margin: 0 5px
+
+    &_weight
+      span
+        @extend .size-normal

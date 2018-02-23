@@ -481,6 +481,79 @@ $(document)
         }
       });
 
+
+      /// Select box
+
+      const selectContainer = {
+        $base: $('.select_container'),
+        exists: function() {
+          return !!this.$base;
+        },
+        init: function() {
+          if (!this.exists()) {
+            return null
+          }
+          const _this = this;
+
+          const $controls = this.$base.find('.select_container-control');
+
+          const firstHref = $controls.eq(0).attr('data-link');
+          this.setActiveMenu(firstHref);
+
+          $controls.click(function(event) {
+            event.preventDefault();
+            _this.setActiveMenu($(this).attr('data-link'));
+          })
+        },
+        getActive: function() {
+          if (!this.exists()) {
+            return null
+          }
+
+          return parseInt(this.$base.attr('data-select-container-active'))
+        },
+        onMenuChange: function(newHref) {},
+        menuCount: function() {
+          if (!this.exists()) {
+            return null
+          }
+
+          return this.$base.find('.select_container-control').length
+        },
+        setActiveMenu: function(href) {
+          if (!this.exists()) {
+            return null
+          }
+
+          if (!this.$base.find(`.select_container-block[data-id=${href}]`)) {
+            return
+          }
+
+          this.$base.find(`.select_container-block`).removeClass('select_container-block--active');
+          this.$base.find(`.select_container-block[data-id=${href}]`).addClass('select_container-block--active');
+
+          this.$base.find(`.select_container-control`).removeClass('select_container-control--active');
+          this.$base.find(`.select_container-control[data-link=${href}]`).addClass('select_container-control--active');
+
+          this.onMenuChange(href)
+        }
+      };
+
+      selectContainer.init();
+      selectContainer.onMenuChange = function(href) {
+        const $imgEl = $('.menu_select__image')
+
+        if (!$imgEl) {
+          return
+        }
+
+        const $controller = $(`.select_container-control[data-link=${href}]`)
+
+        const imageURL = $controller.attr('data-img')
+        $imgEl.find('.menu_select__image-frame').eq(0).css('background-image', `url("${imageURL}")`)
+        $imgEl.find('.menu_select__image_text').eq(0).text($controller.text())
+      };
+
     //////////
     // DEVELOPMENT HELPER
     //////////
