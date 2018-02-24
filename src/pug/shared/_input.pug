@@ -1,0 +1,10 @@
+mixin select(opts, initialActive)
+  - initialActive = initialActive || 0
+  //opt = ["Text", "Value"]
+  select(js-select).address__select&attributes(attributes)
+    each opt, index in opts
+      if index === initialActive
+        option(value=opt[1], selected, disabled)
+          span= opt[0]
+      else
+        option(value=opt[1])= opt[0]

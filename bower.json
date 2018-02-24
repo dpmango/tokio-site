@@ -25,6 +25,7 @@
     "barba.js": "luruke/barba.js#^1.0.0",
     "jquery-lazy": "^1.7.7",
     "animejs": "^2.2.0",
-    "fullpage": "^2.9.6"
+    "fullpage": "^2.9.6",
+    "chosen": "^1.8.3"
   }
 }

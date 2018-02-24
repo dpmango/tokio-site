@@ -1,0 +1,11 @@
+extends shared/_basepage
+
+block append vars
+  -
+    var title = "Модальное окно"
+
+block content
+  .page__background(style="background-image: url('img/slides/slide_1-main_bg.png')")
+
+  script.
+    document.querySelector('.modal').classList.add('modal--open')

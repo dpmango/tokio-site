@@ -33,6 +33,7 @@ $(document)
       initScrollMonitor();
       initMasks();
       initLazyLoad();
+      initFormElements();
 
       // development helper
       _window.on('resize', debounce(setBreakpoint, 200));
@@ -288,6 +289,8 @@ $(document)
         .mask('99.99.99', { placeholder: 'ДД.ММ.ГГ' });
       $('input[type=\'tel\']')
         .mask('+7 (000) 000-0000', { placeholder: '+7 (___) ___-____' });
+      $('input[data-js-timeMask]')
+        .mask('00:00', { placeholder: $(this).attr('placeholder') });
     }
 
 
@@ -363,6 +366,21 @@ $(document)
             // element.attr('style', '')
           }
         });
+    }
+
+    //////////
+    // CUSTOM FORM ELEMENTS
+    //////////
+
+    function initFormElements() {
+      const $selects = _document.find('[js-select]');
+      $selects.chosen({
+        disable_search: true
+      });
+      $selects.each(function() { // Add data-class attribute from original select classes
+        const classes = $(this)[0].classList;
+        $(this).next('.chosen-container').attr('data-class', classes);
+      });
     }
 
     //////////

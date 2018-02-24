@@ -1,0 +1,44 @@
+include ../shared/_input
+
+.modal
+  .modal__inner
+    h1.modal__heading Бронирование
+    span.modal__descr Вы можете заказать столик для банкета в одном из наших заведений. Для лиц старше 18 лет.
+    +anchor.modal__close &times;
+    form.modal__form_wrapper
+      .modal__form_wrapper_left
+        .modal__form_wrapper_left_top.form__field
+          +select([
+            ['Выберите адрес', null],
+            ['Москва, Ореховый б-р.14.корп.3 ТРЦ "Домодедовский" 3 этаж', "1"],
+            ['Малый Афанасьевский пер., 14/34 строение 2', "2"]
+          ])
+        .modal__form_wrapper_left_bottom.form__field_multi
+          .form__field
+            input(name='name', type='text', placeholder='Ваше имя')
+          .form__field
+            input(name='phone', type='tel', placeholder='Номер телефона')
+      .modal__form_wrapper_right
+        .modal__form_wrapper_right_top.form__field_multi
+          .form__field
+            input(data-js-timeMask, name='time', placeholder='Время')
+          // datepicker
+          .form__field
+            input(name='time', placeholder='Date')
+        .modal__form_wrapper_right_bottom
+          .form__field
+            select.user_count__select
+              option(selected, disabled, value='') 1-2 человека
+              option(value='1') 1
+              option(value='2') 2
+    +button()
+      | Забронировать
+    .form__info
+      span.form__small_text
+        | Нажимая на кнопку вы даете согласие на обработку своих персональных данных
+      br
+      br
+      +anchor(href='agreement.html#').form__small_text
+        | Пользовательское соглашение
+  .modal__logo
+    .icon-modal-fish-label

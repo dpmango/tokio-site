@@ -1,0 +1,137 @@
+$inputHeight: 40px
+
+@mixin placeholder
+  &::-webkit-input-placeholder
+    @content
+
+  &:-moz-placeholder
+    @content
+
+  &::-moz-placeholder
+    @content
+
+  &:-ms-input-placeholder
+    @content
+
+.form__small_text
+  display: inline-block
+  @extend .font-lato
+  @extend .weight-light
+  font-size: 0.875em
+  color: $formDimTextColor
+  line-height: 1
+
+a.form__small_text
+  border-bottom: 1px solid transparentize($formDimTextColor, 0.4)
+
+.form__info
+  font-size: 16px
+  padding: 2rem 70% 0 0
+
+.form__field
+  display: flex
+  flex-direction: row
+  align-items: stretch
+  justify-content: stretch
+  flex: 1
+
+  select, input, .chosen-container
+    flex: 1
+
+$formInputHorizontalPadding: 1.5rem
+$formInputPadding: 0 $formInputHorizontalPadding
+$formInputBorder: 1px solid $formInputDefaultBorderColor
+
+input, select, .chosen-single span, .chosen-results li
+  font-size: 1.1rem
+  font-family: 'Lato', sans-serif
+  font-weight: 500
+  color: $formInputColor !important
+
+input, select, .chosen-single
+  cursor: pointer
+  @extend .size-normal
+  @extend .weight-medium
+  height: $inputHeight
+  box-shadow: none !important
+  background: $background !important
+  border: $formInputBorder
+  color: $formInputColor !important
+  padding: $formInputPadding
+  transition: border-color $ease $transitionSpeed !important
+
+  &:hover
+    border-color: $formInputHoverBorderColor
+
+//  TODO: Check why global Lato font resets
+//input
+  @include placeholder
+    @extend .font-lato
+    @extend .weight-medium
+    @extend .size-small
+    color: $formInputPlaceholderColor !important
+
+.chosen-single
+  height: 100% !important
+  border-radius: 0 !important
+  box-shadow: none !important
+  border: $formInputBorder !important
+  padding: $formInputPadding !important
+  background: none !important
+  display: flex !important
+  align-items: center !important
+
+.chosen-drop
+  height: auto
+  border: $formInputBorder !important
+  padding: 0 !important
+
+.chosen-results
+  padding: 0 !important
+  margin: 0 !important
+
+// Chosen select handle (Collapsed)
+.chosen-container-single .chosen-single div b
+  background-image: url("../img/select-handle.png")
+  background-size: 60%
+  background-position: center
+  transition: transform $ease 0.1s
+
+// Chosen select handle (Expanded)
+.chosen-container-active.chosen-with-drop .chosen-single div b
+  background-position: center
+  transform: rotate(180deg)
+
+.chosen-results li
+  // Item in select box
+  cursor: pointer !important
+  display: flex !important
+  align-items: baseline
+  justify-content: flex-start
+  padding: 10px $formInputHorizontalPadding 14px !important
+  min-height: $inputHeight
+  background: $background !important
+  transition: background $ease $transitionSpeed
+
+  &:not(:last-child)
+    border-bottom: $formInputBorder
+
+  &:hover
+    background: darken($background, 2%) !important
+
+// Hide placeholder dummy option
+.chosen-results li:first-child.disabled-result
+  display: none !important
+
+//
+
+[data-class*='address__select']
+  .chosen-single, .chosen-results li
+    &:before
+      @extend .icon-geo
+      transform: scale(.8) translateY(40%)
+      content: ''
+      padding-right: 1rem
+
+  .chosen-single:before
+    transform: scale(.8) translateY(-20%)
