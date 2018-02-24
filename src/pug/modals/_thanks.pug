@@ -1,0 +1,11 @@
+include ../shared/_input
+
+.modal#modal-thanks
+  .modal__inner
+    h1.modal__heading Спасибо!
+    span.modal__descr Мы свяжемся с вами в ближайшее время для подтверждения заказа.
+    +anchor(js-modal-closer="true").modal__close &times;
+    +button(href="index.html#")
+      | На главную
+  .modal__logo
+    .icon-modal-fish-label
