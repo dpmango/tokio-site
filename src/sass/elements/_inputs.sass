@@ -48,7 +48,7 @@ input, select, .chosen-single span, .chosen-results li
   font-weight: 500
   color: $formInputColor !important
 
-input, select, .chosen-single
+input, select, .chosen-container
   cursor: pointer
   @extend .size-normal
   @extend .weight-medium
@@ -62,6 +62,10 @@ input, select, .chosen-single
 
   &:hover
     border-color: $formInputHoverBorderColor
+
+.chosen-container
+  padding: 0
+  border: 0
 
 //  TODO: Check why global Lato font resets
 //input
@@ -125,13 +129,22 @@ input, select, .chosen-single
 
 //
 
-[data-class*='address__select']
+@mixin icon-on-select
   .chosen-single, .chosen-results li
     &:before
-      @extend .icon-geo
+      @content
       transform: scale(.8) translateY(40%)
       content: ''
-      padding-right: 1rem
+      padding: 0 5px
+      margin-right: 0.5rem
 
   .chosen-single:before
-    transform: scale(.8) translateY(-20%)
+    transform: scale(.8) translateY(-10%)
+
+[data-class*='address__select']
+  @include icon-on-select
+    @extend .icon-geo
+
+[data-class*='user__select']
+  @include icon-on-select
+    @extend .icon-man

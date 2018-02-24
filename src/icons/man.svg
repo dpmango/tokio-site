@@ -1,0 +1,16 @@
+<svg width="15" height="17" viewBox="0 0 15 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Page 1</title>
+    <desc>Created using Figma</desc>
+    <g id="Canvas" transform="translate(-14303 10589)">
+        <g id="Ellipse (Stroke)">
+            <use xlink:href="#path0_fill" transform="translate(14305.1 -10589)" fill="#171717"/>
+        </g>
+        <g id="Ellipse (Stroke)">
+            <use xlink:href="#path1_fill" transform="translate(14303.2 -10579.8)" fill="#171717"/>
+        </g>
+    </g>
+    <defs>
+        <path id="path0_fill" fill-rule="evenodd" d="M 5.41667 8.5C 7.69509 8.5 9.33333 6.82221 9.33333 5C 9.33333 3.17779 7.69509 1.5 5.41667 1.5C 3.13824 1.5 1.5 3.17779 1.5 5C 1.5 6.82221 3.13824 8.5 5.41667 8.5ZM 5.41667 10C 8.40821 10 10.8333 7.76142 10.8333 5C 10.8333 2.23858 8.40821 0 5.41667 0C 2.42512 0 0 2.23858 0 5C 0 7.76142 2.42512 10 5.41667 10Z"/>
+        <path id="path1_fill" fill-rule="evenodd" d="M 7.25 1.5C 4.12574 1.5 1.5 4.24491 1.5 7.75L 0 7.75C 0 3.5231 3.19456 0 7.25 0C 11.3054 0 14.5 3.5231 14.5 7.75L 13 7.75C 13 4.24491 10.3743 1.5 7.25 1.5Z"/>
+    </defs>
+</svg>

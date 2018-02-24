@@ -12,7 +12,7 @@ include ../shared/_input
             ['Выберите адрес', null],
             ['Москва, Ореховый б-р.14.корп.3 ТРЦ "Домодедовский" 3 этаж', "1"],
             ['Малый Афанасьевский пер., 14/34 строение 2', "2"]
-          ])
+          ]).address__select
         .modal__form_wrapper_left_bottom.form__field_multi
           .form__field
             input(name='name', type='text', placeholder='Ваше имя')
@@ -27,10 +27,11 @@ include ../shared/_input
             input(name='time', placeholder='Date')
         .modal__form_wrapper_right_bottom
           .form__field
-            select.user_count__select
-              option(selected, disabled, value='') 1-2 человека
-              option(value='1') 1
-              option(value='2') 2
+            +select([
+              ['1-2 человека', null],
+              ['1 человек', "1"],
+              ['2 человека', "2"]
+            ]).user__select.user_count__select
     +button()
       | Забронировать
     .form__info
