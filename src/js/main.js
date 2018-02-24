@@ -14,7 +14,7 @@ $(document)
       mobile: 568,
       tablet: 768,
       desktop: 992,
-      wide: 1336,
+      wide: 1366,
       hd: 1680
     };
 
