@@ -13,10 +13,10 @@ mixin footer(isBig)
             +vk
             +instagram
           .footer__logo
-            +anchor
+            +anchor(href='index.html#main')
               .icon-logo_no_bg
           .footer__reserve
-            +anchor
+            +anchor(js-modal-invoker="modal-reserve")
               .icon-reserve-white
 
       .footer__bottom

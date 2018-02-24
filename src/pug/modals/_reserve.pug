@@ -1,10 +1,10 @@
 include ../shared/_input
 
-.modal
+.modal#modal-reserve
   .modal__inner
     h1.modal__heading Бронирование
     span.modal__descr Вы можете заказать столик для банкета в одном из наших заведений. Для лиц старше 18 лет.
-    +anchor.modal__close &times;
+    +anchor(js-modal-closer="true").modal__close &times;
     form.modal__form_wrapper
       .modal__form_wrapper_left
         .modal__form_wrapper_left_top.form__field

@@ -572,6 +572,38 @@ $(document)
         $imgEl.find('.menu_select__image_text').eq(0).text($controller.text())
       };
 
+    const modalController = {
+      showModal: function(href) {
+        if (!href) {
+          return
+        }
+
+        const $modal = $('#' + href);
+
+        if (!$modal.length) {
+          console.error(`Modal with id ${href} doesn't exist`);
+          return
+        }
+
+        $.fn.fullpage.setAllowScrolling(false);
+        $modal.addClass('modal--open');
+        $('html, body').addClass('global-modal--open');
+      },
+      closeAllModals: function() {
+        $.fn.fullpage.setAllowScrolling(true);
+        $('.modal--open').removeClass('modal--open')
+        $('html, body').removeClass('global-modal--open');
+      }
+    };
+
+    $('[js-modal-invoker]').click(function() {
+      modalController.showModal($(this).attr('js-modal-invoker'));
+    });
+
+    $('[js-modal-closer]').click(function() {
+      modalController.closeAllModals();
+    });
+
     //////////
     // DEVELOPMENT HELPER
     //////////
