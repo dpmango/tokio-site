@@ -585,12 +585,18 @@ $(document)
           return
         }
 
-        $.fn.fullpage.setAllowScrolling(false);
+        try {
+          $.fn.fullpage.setAllowScrolling(false);
+        } catch (e){}
+
         $modal.addClass('modal--open');
         $('html, body').addClass('global-modal--open');
       },
       closeAllModals: function() {
-        $.fn.fullpage.setAllowScrolling(true);
+        try {
+          $.fn.fullpage.setAllowScrolling(true);
+        } catch (e){}
+
         $('.modal--open').removeClass('modal--open')
         $('html, body').removeClass('global-modal--open');
       }
