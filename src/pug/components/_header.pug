@@ -18,12 +18,15 @@ mixin header(absoluteLinks)
           each navItem in navigation
             +anchor(
               href='index.html#' + navItem[1]).header__nav_item= navItem[0]
+        +anchor.hamburger-btn.hidden
         .header__logo
           +anchor(href='index.html#home')
-            .icon-logo
+            .icon-logo.b-normal
+            .icon-tokio-icon.b-tab.b-mob
         .header__reserve
           +anchor(js-modal-invoker="modal-reserve")
-            .icon-reserve
-            //+icon('ico-reserve')
+            .icon-reserve.b-normal
+            .icon-reserve-white.b-tab
+            .icon-reserve-mobile.b-mob
 
 // HEADER :: END

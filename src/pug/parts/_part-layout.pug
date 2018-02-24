@@ -1,0 +1,21 @@
+include ../shared/_mixins
+
+block vars
+  -
+    var title = "Parts"
+
+doctype html
+html(lang="en")
+  head
+    block head
+      include ../shared/_head
+
+  body
+    block modals
+      include ../modals/_reserve
+      include ../modals/_thanks
+
+    block content
+
+    block scripts
+      include ../shared/_scripts

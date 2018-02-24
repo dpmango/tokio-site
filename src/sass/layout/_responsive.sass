@@ -1,0 +1,60 @@
+@function to-list($value, $keep: 'both')
+  $keep: if(index('keys' 'values', $keep), $keep, 'both')
+
+  @if type-of($value) == 'map'
+    $keys: ()
+    $values: ()
+
+    @each $key, $val in $value
+      $keys: append($keys, $key)
+      $values: append($values, $val)
+
+    @if $keep == 'keys'
+      @return $keys
+    @else if $keep == 'values'
+      @return $values
+    @else
+      @return zip($keys, $values)
+
+  @return if(type-of($value) != 'list', ($value,), $value)
+
+@mixin generate-breakpoints($params)
+  $keys: to-list($params, 'keys')
+  $values: to-list($params, 'values')
+  $allCount: length($keys)
+
+  $mappedKeys: ()
+  @for $i from 1 through $allCount
+    $key: nth($keys, $i)
+    $dot: unquote('.')
+    $comma: unquote(', ')
+
+    @if $i == $allCount
+      $comma: ''
+
+    $mappedKeys: append($mappedKeys, #{$dot}#{$key}#{$comma})
+
+  &
+    #{$mappedKeys}
+      display: none
+
+  $index: 0
+  $lastWid: 0
+  @each $breakName, $wid in $params
+    @if $index == 0
+      +mediaMaxWidth($wid)
+        & .#{$breakName}
+          display: block
+
+    @else if $index != $allCount - 1
+      +mediaMinWidth($lastWid + 1)
+        +mediaMaxWidth($wid)
+          & .#{$breakName}
+              display: block
+    @else
+      +mediaMinWidth($lastWid + 1)
+        & .#{$breakName}
+          display: block
+
+    $index: $index + 1
+    $lastWid: $wid

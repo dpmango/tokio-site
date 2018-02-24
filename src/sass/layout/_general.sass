@@ -28,6 +28,9 @@ body, html
   min-width: 320px
   max-width: 100%
 
+.hidden
+  display: none
+
 .fullpage__section
   all: inherit
   position: relative
@@ -164,6 +167,34 @@ body, html
   background-size: 45% !important
   background-image: url("../img/socials/instagram.png") !important
 
+@mixin hamburger($color: $colorWhite)
+  $borderWidth: 1px
+
+  position: relative
+  height: 35%
+  width: 25px
+  border: 0 solid $color
+  border-top-width: $borderWidth
+
+  &:after, &:before
+    position: absolute
+    display: block
+    content: ''
+    border: inherit
+    height: 100%
+    width: 100%
+    top: -$borderWidth
+    left: 0
+
+  &:after
+    border-bottom-width: $borderWidth
+
+  &:before
+    height: 50%
+    top: 50%
+    border-top-width: $borderWidth
+
+
 // REMOVE FOR PRODUCTION !
 .dev-bp-debug
   background: black
@@ -175,3 +206,7 @@ body, html
   padding: 5px
   font-size: 12px
   border-bottom-left-radius: 5px
+
+
+.hamburger-btn
+  @include hamburger

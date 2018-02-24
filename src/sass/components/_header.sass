@@ -1,3 +1,5 @@
+@import ../layout/responsive
+
 .header
   position: fixed
   top: 0
@@ -38,10 +40,7 @@
 
   &__logo
     flex: 0
-    //transform-origin: top
     transform: scale(0.8)
-    //zoom: 0.8
-    // TODO: Temp hack
     position: relative
     margin-bottom: -15px
     z-index: $defaultZIndex - 1
@@ -52,10 +51,67 @@
   &__reserve
     transform-origin: right
     transform: scale(0.7)
-    //zoom: 0.7
-    // FIXME: Temp hack
     z-index: $defaultZIndex + 1
     flex: 1
     display: flex
     align-items: center
     justify-content: flex-end
+
+  // .header
+  +generate-breakpoints((b-mob: 650, b-tab: 800, b-normal: null))
+
+  .b-nav
+    display: none
+
+  +mediaMaxWidth(835)
+    &__logo
+      transform: scale(0.7)
+
+  +mediaMaxWidth(800)
+    height: $headerMobileHeight
+    background: $colorBlack
+
+    &__wrapper
+      justify-content: center
+      align-items: center
+
+    &__nav_item
+      color: $colorWhite
+
+    &__logo
+      transform-origin: center
+      margin: 0 -80px 0 0
+
+  +mediaMaxWidth(650)
+    &__logo
+      margin: 0
+      flex: 0
+
+    &__reserve
+      flex: 0
+
+    .icon-reserve-white
+      display: none
+
+  +mediaMaxWidth(480)
+    &__wrapper
+      justify-content: flex-start
+      margin: 0
+      padding: 0
+
+    &__nav
+      display: none
+
+    &__logo
+      flex: 1
+      order: 1
+      justify-content: flex-start
+
+    &__reserve
+      order: 2
+      margin-right: 20px
+
+    .hamburger-btn
+      display: block
+      order: 3
+
