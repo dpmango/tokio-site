@@ -3,7 +3,7 @@
 mixin footer(isBig)
   - isBig = isBig || false
 
-  footer.footer(class=isBig?'footer__big':'')#footer
+  footer.footer(class=isBig ? 'footer__big' : '')#footer
     .container.footer__inner
       if isBig
         .footer__top
@@ -14,10 +14,12 @@ mixin footer(isBig)
             +instagram
           .footer__logo
             +anchor(href='index.html#main')
-              .icon-logo_no_bg
+              .icon-logo_no_bg.b-break-black
+              .icon-tokio-icon.b-tab.b-mob
           .footer__reserve
             +anchor(js-modal-invoker="modal-reserve")
-              .icon-reserve-white
+              .icon-reserve-white.b-tab.b-break-black
+              .icon-reserve-mobile.b-mob
 
       .footer__bottom
         p.font-lato.size-normal.weight-light

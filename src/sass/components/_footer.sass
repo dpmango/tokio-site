@@ -1,5 +1,10 @@
+@import ../layout/responsive
+
 // FOOTER
 .footer
+
+  $blackFooterBorder: 1px solid $colorGray2
+
   position: fixed
   bottom: 0
   left: 0
@@ -49,7 +54,7 @@
 
   &__logo, &__reserve
     transform: scale(0.7)
-    //zoom: 0.7
+  //zoom: 0.7
 
   &__top, &__bottom
     display: flex
@@ -59,8 +64,53 @@
 
   &__top
     padding-bottom: 10px
-    border-bottom: 1px solid $colorGray2
+    border-bottom: $blackFooterBorder
 
   &__bottom
     padding-top: 15px
     padding-bottom: 15px
+
+  // .footer
+
+  +generate-breakpoints((b-mob: 580, b-tab: 745, b-break-black: 0))
+
+  +mediaMaxWidth(745)
+    &__top
+      flex-wrap: wrap
+      justify-content: space-between
+
+    &__socials
+      flex-grow: 1
+      flex-shrink: 0
+      flex-basis: 100%
+      order: 3
+      justify-content: center
+      padding: 2rem 0
+      border-top: $blackFooterBorder
+
+    &__logo, &__reserve
+      flex-grow: 1
+      flex-basis: 50%
+      flex-shrink: 0
+      display: flex
+      padding: 2rem 0
+      transform: initial
+
+    &__logo
+      justify-content: flex-start
+
+    &__reserve
+      justify-content: flex-end
+
+  +mediaMaxWidth(550)
+    height: auto
+
+    &__top
+      justify-content: center
+
+    &__bottom
+      padding: 1.4rem 0
+      flex-direction: column
+
+      & > *:not(:last-child)
+        margin-bottom: 10px
