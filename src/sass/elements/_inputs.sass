@@ -1,4 +1,9 @@
 $inputHeight: 40px
+$inputWidth: 220px
+$inputIconScale: .8
+$formInputHorizontalPadding: 1.5rem
+$formInputPadding: 0 $formInputHorizontalPadding
+$formInputBorder: 1px solid $formInputDefaultBorderColor
 
 @mixin placeholder
   &::-webkit-input-placeholder
@@ -29,6 +34,7 @@ a.form__small_text
   padding: 2rem 70% 0 0
 
 .form__field
+  position: relative
   display: flex
   flex-direction: row
   align-items: stretch
@@ -38,9 +44,19 @@ a.form__small_text
   select, input, .chosen-container
     flex: 1
 
-$formInputHorizontalPadding: 1.5rem
-$formInputPadding: 0 $formInputHorizontalPadding
-$formInputBorder: 1px solid $formInputDefaultBorderColor
+.input_with_icon
+  input
+    padding-left: calc(#{$formInputHorizontalPadding} + 32px)
+
+  .input__icon
+    position: absolute
+    left: $formInputHorizontalPadding
+    top: 0
+    transform: scale($inputIconScale) translateY(50%)
+
+input
+  flex: none !important
+  width: $inputWidth !important
 
 input, select, .chosen-single span, .chosen-results li
   font-size: 1.1rem
@@ -133,13 +149,13 @@ input, select, .chosen-container
   .chosen-single, .chosen-results li
     &:before
       @content
-      transform: scale(.8) translateY(40%)
+      transform: scale($inputIconScale) translateY(40%)
       content: ''
       padding: 0 5px
       margin-right: 0.5rem
 
   .chosen-single:before
-    transform: scale(.8) translateY(-10%)
+    transform: scale($inputIconScale) translateY(-10%)
 
 [data-class*='address__select']
   @include icon-on-select
@@ -148,3 +164,10 @@ input, select, .chosen-container
 [data-class*='user__select']
   @include icon-on-select
     @extend .icon-man
+
+.input__time_icon
+  @extend .icon-geo
+
+.input__date_icon
+  @extend .icon-calendar
+  top: 4px !important

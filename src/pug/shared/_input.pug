@@ -8,3 +8,8 @@ mixin select(opts, initialActive)
           span= opt[0]
       else
         option(value=opt[1])= opt[0]
+
+mixin inputWithIcon()
+  .input_with_icon
+    block
+    label.input__icon&attributes(attributes)

@@ -1,3 +1,6 @@
+@import inputs
+$formPaddings: 10px
+
 .modal
   display: none
   z-index: $modalZIndex
@@ -44,7 +47,6 @@
     padding-right: 50%
     margin-bottom: 2rem
 
-  $formPaddings: 10px
   &__form_wrapper
     display: flex
     flex-direction: row
@@ -68,6 +70,7 @@
         align-items: stretch
         justify-content: stretch
         margin-bottom: $formPaddings
+        //max-width: calc(#{$formPaddings} + #{$inputWidth * 2})
 
       &_bottom
         display: flex

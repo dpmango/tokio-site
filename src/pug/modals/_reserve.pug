@@ -21,10 +21,12 @@ include ../shared/_input
       .modal__form_wrapper_right
         .modal__form_wrapper_right_top.form__field_multi
           .form__field
-            input(data-js-timeMask, name='time', placeholder='Время')
+            +inputWithIcon().input__time_icon
+              input(data-js-timeMask, name='time', placeholder='Время')
           // datepicker
           .form__field
-            input(name='time', placeholder='Date')
+            +inputWithIcon().input__date_icon
+              input(name='time', placeholder='Date')
         .modal__form_wrapper_right_bottom
           .form__field
             +select([
