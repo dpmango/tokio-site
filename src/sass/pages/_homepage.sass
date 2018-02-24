@@ -1,7 +1,13 @@
 .main_page
-  align-items: center
-  padding-left: 64px
-  padding-right: 480px
+  //display: flex
+  //flex-direction: column
+  flex: 1
+  //height: 100%
+
+  &__slider
+    align-items: center
+    padding-left: 64px
+    padding-right: 480px
 
   &__h1
     @extend .size-biggest
@@ -33,3 +39,37 @@
     right: 0
     top: 50%
     transform: scaleX(-1) translateY(-50%) translateX(-150%)
+
+  +mediaMaxWidth(1120)
+    &__slider
+      padding-right: 30%
+
+  +mediaMaxWidth(900)
+    &__slider
+      padding-left: 0
+      padding-right: 20px
+
+  +mediaMaxWidth(750)
+    &__h1
+      font-size: 4rem
+
+    &__slider
+      padding-right: 0
+
+    .slick-dots
+      display: none !important
+
+  +mediaMaxWidth(640)
+    padding-left: 3rem
+    padding-right: 3rem
+
+    &__h1
+      font-size: 3em
+
+    &__slider
+      margin-top: -22vh
+      font-size: 0.9rem
+
+//+mediaMaxWidth(480)
+//  align-items: flex-end
+//  justify-content: flex-end
