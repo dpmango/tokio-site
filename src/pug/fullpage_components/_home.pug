@@ -1,5 +1,11 @@
 // replace with video
-.fp-sect__background(style="background-image: url('img/slides/slide_1-main_bg.png')")
+
+.fp-sect__background_video
+  video(loop, muted, autoplay, playsinline, data-keepplaying, poster="img/Running-Sushi.jpg")
+    source(src="media/Running-Sushi.mp4" type="video/mp4")
+    source(src="media/Running-Sushi.ogv" type="video/ogg")
+    source(src="media/Running-Sushi.webm" type="video/webm")
+  .fp-sect__background_dark_overlay
 .fp-sect__inner.fish__pagination.mainpage.mobile-chrome-fix-height
   .container.mainpage__slider(js-main-page-slider)
 

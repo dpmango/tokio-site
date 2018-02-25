@@ -57,14 +57,33 @@ body, html
   position: relative
 
   &__background
-    z-index: 0
-    position: absolute
-    left: 0
-    top: 0
-    right: 0
-    bottom: 0
+    z-index: -100
+    +overlay
     background-size: cover
     background: no-repeat center
+
+  &__background_dark_overlay
+    +overlay
+    background: black
+    opacity: 0.66
+
+  &__background_video
+    z-index: -100
+    +overlay
+    overflow: hidden
+
+    video
+      position: absolute
+      top: 0
+      left: 0
+      //object-fit: cover
+
+      @media all and (orientation: landscape)
+        width: 100%
+
+      @media all and (orientation: portrait)
+        height: 100%
+
 
   &__inner
     display: flex
