@@ -1,4 +1,8 @@
-.menu_page
+.menupage
+  display: flex
+  flex-direction: column
+  width: 100%
+
   &__letter
     &_y
       left: -130px
@@ -7,3 +11,29 @@
     &_o
       right: -130px
       bottom: 17%
+
+    &_o2
+      right: -130px
+      bottom: 17%
+
+  +generate-breakpoints((b-tab: 700, b-wide: 0))
+
+  +mediaMaxWidth(700)
+    margin: 0 0 8rem
+    padding: 0 0 40px
+    max-width: initial !important
+    @include categoriesMobileView
+
+    &__wrapper
+      padding: 0
+
+    &__letter
+      &_o
+        left: 0
+        top: 0
+        transform: translate(-50%, -50%)
+
+      &_o2
+        left: 100%
+        top: calc(100% - 8rem)
+        transform: translate(-50%, -60%)

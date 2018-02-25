@@ -46,3 +46,26 @@
 
     transform: rotate(-90deg) translateX(100%)
     transform-origin: 100% 100%
+
+@mixin categoriesMobileView()
+  .categories
+    flex-direction: column
+
+    .category
+      min-height: 140px
+      margin-right: 0
+      margin-left: 0
+
+      &:not(:last-child)
+        margin-bottom: 2rem
+
+  .category
+    font-size: 1.1rem
+
+    &__filter
+      +horizontal-gradient(#000, transparent, -5%, 80%)
+
+    &__title
+      transform: none
+      right: initial
+      left: 20px

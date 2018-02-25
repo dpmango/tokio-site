@@ -1,9 +1,14 @@
 include ../shared/_mixins
 
-.container
-  .container_hor.layout__offset
-    +icon("icon-y-letter").background_letter.menu_page__letter_y
-    +icon("icon-o-letter").background_letter.menu_page__letter_o
+.container.menupage
+  .layout__offset.menupage__wrapper
+    +icon("icon-y-letter").background_letter.menupage__letter_y.b-wide
+    +icon("icon-o-letter").background_letter.menupage__letter_o.b-mob
+    +icon("icon-o-letter").background_letter.menupage__letter_o2.b-mob
+
+    .container.b-tab
+      .container_hor
+        h1 Наше меню
     .categories
       -
         var menuItems = [
