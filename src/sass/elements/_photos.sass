@@ -1,27 +1,35 @@
 .photos
-  $baseSize: 200
-  $aspectRatio: 1.5
+
+  $baseSize: 250
+  $frameSize: $baseSize*2
+  $aspectRatio: 1.7
 
   position: relative
   margin: auto 0
-  min-height: 400px
+
+  max-width: $frameSize*1px
+  max-height: $frameSize*1px
+  min-width: $frameSize*1px
+  min-height: $frameSize*1px
 
   &__letter
+    position: absolute
+
     &-o
-      left: 61%
-      top: 54%
+      left: $frameSize*0.64px
+      top: $frameSize*0.61px
 
     &-y
-      left: 3%
-      top: 5%
+      left: $frameSize*-0.05px
+      top: $frameSize*0.03px
 
   &__background
     z-index: 2
     position: absolute
     bottom: 0
-    left: 6%
-    width: 50%
-    height: 50%
+    left: $frameSize*0.06px
+    width: $baseSize*1.2px
+    height: $baseSize*0.8px
   // TODO: CHECK. Could cause bugs
 
   &__photo
@@ -33,18 +41,18 @@
 
     &_1
       height: $baseSize*$aspectRatio*1px
-      left: 20%
+      left: $frameSize*0.2px
       top: 0
 
     &_2
       height: $baseSize*$aspectRatio*1px
-      left: 10%
+      left: $frameSize*0.1px
       top: 60px
 
     &_only
       height: $baseSize*$aspectRatio*1.1px
       width: $baseSize*$aspectRatio*1.1px
-      left: 20%
+      left: $frameSize*0.2px
       top: 0
 
   &__label
@@ -54,10 +62,55 @@
     //zoom: 0.6
 
     &_fish
-      top: 240px
-      left: -43%
+      top: $frameSize*0.6px
+      left: $frameSize*-0.5px
       transform: scale(0.7)
 
     &_k
-      top: 87%
-      left: 10%
+      top: $frameSize*0.87px
+      left: $frameSize*0.1px
+
+@mixin photosMobileLayout()
+  .photos
+    max-width: initial
+    width: 100%
+
+    &__letter
+      position: absolute
+
+      &-o
+        display: none
+
+      &-y
+        left: initial
+        right: 50%
+        top: -40px
+        transform: translateX(180%)
+
+    &__background
+      left: -100%
+      width: 300%
+      bottom: 50%
+      transform: translateY(50%)
+
+    &__label
+      &_k
+        display: none
+
+      &_fish
+        position: absolute !important
+        right: 25%
+        left: initial
+
+    &__photo
+      position: absolute
+
+      &_1
+        left: 50%
+        top: 0
+        transform: translateX(-80%)
+
+      &_2
+        left: initial
+        right: 50%
+        transform: translateX(80%)

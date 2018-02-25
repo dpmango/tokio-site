@@ -66,8 +66,8 @@ mixin photos(bgColor)
   block
   - bgColor = bgColor || "#231F20" // TODO: https://stackoverflow.com/a/41923423/6119618
   .photos&attributes(attributes)
-    +icon("icon-y-letter").background_letter.photos__letter-y
-    +icon("icon-o-letter").background_letter.photos__letter-o
+    +icon("icon-y-letter").background_letter.photos__letter.photos__letter-y
+    +icon("icon-o-letter").background_letter.photos__letter.photos__letter-o
     .photos__background(style="background: " + bgColor)
     if !blocks.photo2
       // Only one photo

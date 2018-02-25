@@ -1,0 +1,34 @@
+.aboutpage
+  display: flex
+  flex-direction: row
+
+  &__wrapper
+    justify-content: center
+    align-items: center
+
+  &__photos
+    margin-right: 10%
+
+  &__descr
+    max-width: 38%
+
+  +mediaMaxWidth(1200)
+    &__photos
+      margin-right: 0
+
+    &__descr
+      max-width: 100%
+
+  +mediaMaxWidth(910)
+    @include noteMobileView
+    @include photosMobileLayout
+
+    &__wrapper
+      flex-direction: column
+
+    &__photos
+      order: 2
+      transform: scale(0.7)
+
+    &__descr
+      padding: 0
