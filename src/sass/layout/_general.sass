@@ -31,16 +31,6 @@ body, html
 .hidden
   display: none
 
-.fullpage__section
-  all: inherit
-  position: relative
-
-#fullpage__pager
-  position: fixed
-  right: 20px
-  top: 50%
-  transform: translateY(-50%) scaleX(-1)
-  z-index: 9999
 
 .page, #barba-wrapper
   display: flex
@@ -48,20 +38,38 @@ body, html
   flex: 1
   z-index: $defaultZIndex - 1
 
-.page__content
+.page
+  &__content
+    display: flex
+    flex: 1
+    position: relative
+
+.fullpage
+  &-wrapper
+    flex: 1
+
+    &.fullpage-active .fp-sect
+      min-height: 100vh
+
+.fp-sect
+  all: inherit
   display: flex
-  flex: 1
   position: relative
 
-.page__background
-  z-index: 0
-  position: absolute
-  left: 0
-  top: 0
-  right: 0
-  bottom: 0
-  background-size: cover
-  background: no-repeat center
+  &__background
+    z-index: 0
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    background-size: cover
+    background: no-repeat center
+
+  &__inner
+    display: flex
+    flex: 1
+    height: 100%
 
 .container
   display: flex
@@ -118,7 +126,7 @@ body, html
   position: absolute
   z-index: 1
   transform: scale(0.8)
-  //zoom: 0.8
+//zoom: 0.8
 
 .layout__offset
   padding-left: $paddingWrapperSide
@@ -194,7 +202,6 @@ body, html
     top: 50%
     border-top-width: $borderWidth
 
-
 // REMOVE FOR PRODUCTION !
 .dev-bp-debug
   background: black
@@ -206,7 +213,6 @@ body, html
   padding: 5px
   font-size: 12px
   border-bottom-left-radius: 5px
-
 
 .hamburger-btn
   @include hamburger

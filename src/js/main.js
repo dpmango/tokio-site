@@ -193,7 +193,7 @@ $(document)
         .slick({
           autoplay: 20,
           dots: true,
-          customPaging : function(slider, i) {
+          customPaging: function(slider, i) {
             return '<a class="fish__bone">';
           },
           arrows: false,
@@ -290,7 +290,10 @@ $(document)
       $('input[type=\'tel\']')
         .mask('+7 (000) 000-0000', { placeholder: '+7 (___) ___-____' });
       $('input[data-js-timeMask]')
-        .mask('00:00', { placeholder: $(this).attr('placeholder') });
+        .mask('00:00', {
+          placeholder: $(this)
+            .attr('placeholder')
+        });
     }
 
 
@@ -379,7 +382,9 @@ $(document)
       });
       $selects.each(function() { // Add data-class attribute from original select classes
         const classes = $(this)[0].classList;
-        $(this).next('.chosen-container').attr('data-class', classes);
+        $(this)
+          .next('.chosen-container')
+          .attr('data-class', classes);
       });
     }
 
@@ -471,144 +476,152 @@ $(document)
         .resize();
     }
 
-    // const fullpagePager = $('#fullpage__pager');
-    // const fullpagePagerMap = [0, 1, 1, 1, 1]; // 1 - black, 0 - white
-    $('#fullpage')
-      .fullpage({
-        anchors: ['home', 'about', 'menu', 'news', 'contacts'],
-        paddingTop: '70px',
-        paddingBottom: '60px',
-        fixedElements: '#header, #footer',
-        scrollOverflow: true,
+    if (_window.width() > bp.tablet && _window.height() > 500) {
+      const $fp = $('#fullpage');
 
-        //Custom selectors
-        sectionSelector: '.fullpage__section',
-        onLeave: function(index, nextIndex, direction) {
-          // fullpagePager
-          //   .find('.fish__bone--active')
-          //   .removeClass('fish__bone--active');
-          //
-          // fullpagePager
-          //   .find('.fish__bone')
-          //   .eq(nextIndex - 1)
-          //   .addClass('fish__bone--active');
-          //
-          // fullpagePagerMap[nextIndex - 1] ?
-          //   fullpagePager.addClass('fish--dark') :
-          //   fullpagePager.removeClass('fish--dark');
+        $fp.fullpage({
+          anchors: ['home', 'about', 'menu', 'news', 'contacts'],
+          paddingTop: '70px',
+          paddingBottom: '60px',
+          fixedElements: '#header, #footer',
+          scrollOverflow: true,
+
+          //Custom selectors
+          sectionSelector: '.fp-sect'
+        });
+
+      $fp.addClass('fullpage-active');
+    }
+
+
+    /// Select box
+
+    const selectContainer = {
+      $base: $('.select_container'),
+      exists: function() {
+        return !!this.$base;
+      },
+      init: function() {
+        if (!this.exists()) {
+          return null;
         }
-      });
+        const _this = this;
 
+        const $controls = this.$base.find('.select_container-control');
 
-      /// Select box
+        const firstHref = $controls.eq(0)
+          .attr('data-link');
+        this.setActiveMenu(firstHref);
 
-      const selectContainer = {
-        $base: $('.select_container'),
-        exists: function() {
-          return !!this.$base;
-        },
-        init: function() {
-          if (!this.exists()) {
-            return null
-          }
-          const _this = this;
-
-          const $controls = this.$base.find('.select_container-control');
-
-          const firstHref = $controls.eq(0).attr('data-link');
-          this.setActiveMenu(firstHref);
-
-          $controls.click(function(event) {
-            event.preventDefault();
-            _this.setActiveMenu($(this).attr('data-link'));
-          })
-        },
-        getActive: function() {
-          if (!this.exists()) {
-            return null
-          }
-
-          return parseInt(this.$base.attr('data-select-container-active'))
-        },
-        onMenuChange: function(newHref) {},
-        menuCount: function() {
-          if (!this.exists()) {
-            return null
-          }
-
-          return this.$base.find('.select_container-control').length
-        },
-        setActiveMenu: function(href) {
-          if (!this.exists()) {
-            return null
-          }
-
-          if (!this.$base.find(`.select_container-block[data-id=${href}]`)) {
-            return
-          }
-
-          this.$base.find(`.select_container-block`).removeClass('select_container-block--active');
-          this.$base.find(`.select_container-block[data-id=${href}]`).addClass('select_container-block--active');
-
-          this.$base.find(`.select_container-control`).removeClass('select_container-control--active');
-          this.$base.find(`.select_container-control[data-link=${href}]`).addClass('select_container-control--active');
-
-          this.onMenuChange(href)
-        }
-      };
-
-      selectContainer.init();
-      selectContainer.onMenuChange = function(href) {
-        const $imgEl = $('.menu_select__image')
-
-        if (!$imgEl) {
-          return
+        $controls.click(function(event) {
+          event.preventDefault();
+          _this.setActiveMenu($(this)
+            .attr('data-link'));
+        });
+      },
+      getActive: function() {
+        if (!this.exists()) {
+          return null;
         }
 
-        const $controller = $(`.select_container-control[data-link=${href}]`)
+        return parseInt(this.$base.attr('data-select-container-active'));
+      },
+      onMenuChange: function(newHref) {
+      },
+      menuCount: function() {
+        if (!this.exists()) {
+          return null;
+        }
 
-        const imageURL = $controller.attr('data-img')
-        $imgEl.find('.menu_select__image-frame').eq(0).css('background-image', `url("${imageURL}")`)
-        $imgEl.find('.menu_select__image_text').eq(0).text($controller.text())
-      };
+        return this.$base.find('.select_container-control').length;
+      },
+      setActiveMenu: function(href) {
+        if (!this.exists()) {
+          return null;
+        }
+
+        if (!this.$base.find(`.select_container-block[data-id=${href}]`)) {
+          return;
+        }
+
+        this.$base.find(`.select_container-block`)
+          .removeClass('select_container-block--active');
+        this.$base.find(`.select_container-block[data-id=${href}]`)
+          .addClass('select_container-block--active');
+
+        this.$base.find(`.select_container-control`)
+          .removeClass('select_container-control--active');
+        this.$base.find(`.select_container-control[data-link=${href}]`)
+          .addClass('select_container-control--active');
+
+        this.onMenuChange(href);
+      }
+    };
+
+    selectContainer.init();
+    selectContainer.onMenuChange = function(href) {
+      const $imgEl = $('.menu_select__image');
+
+      if (!$imgEl) {
+        return;
+      }
+
+      const $controller = $(`.select_container-control[data-link=${href}]`);
+
+      const imageURL = $controller.attr('data-img');
+      $imgEl.find('.menu_select__image-frame')
+        .eq(0)
+        .css('background-image', `url("${imageURL}")`);
+      $imgEl.find('.menu_select__image_text')
+        .eq(0)
+        .text($controller.text());
+    };
 
     const modalController = {
       showModal: function(href) {
         if (!href) {
-          return
+          return;
         }
 
         const $modal = $('#' + href);
 
         if (!$modal.length) {
           console.error(`Modal with id ${href} doesn't exist`);
-          return
+          return;
         }
 
         try {
           $.fn.fullpage.setAllowScrolling(false);
-        } catch (e){}
+        } catch (e) {
+        }
 
         $modal.addClass('modal--open');
-        $('html, body').addClass('global-modal--open');
+        $('html, body')
+          .addClass('global-modal--open');
       },
       closeAllModals: function() {
         try {
           $.fn.fullpage.setAllowScrolling(true);
-        } catch (e){}
+        } catch (e) {
+        }
 
-        $('.modal--open').removeClass('modal--open')
-        $('html, body').removeClass('global-modal--open');
+        $('.modal--open')
+          .removeClass('modal--open');
+        $('html, body')
+          .removeClass('global-modal--open');
       }
     };
 
-    $('[js-modal-invoker]').click(function() {
-      modalController.showModal($(this).attr('js-modal-invoker'));
-    });
+    $('[js-modal-invoker]')
+      .click(function() {
+        modalController.showModal($(this)
+          .attr('js-modal-invoker'));
+      });
 
-    $('[js-modal-closer]').click(function() {
-      modalController.closeAllModals();
-    });
+    $('[js-modal-closer]')
+      .click(function() {
+        modalController.closeAllModals();
+      });
 
     //////////
     // DEVELOPMENT HELPER

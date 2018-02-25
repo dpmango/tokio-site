@@ -19,6 +19,13 @@
   @at-root :not(#fullpage) .footer-offset
     padding-bottom: $footerNormalHeight
 
+  @at-root .fullpage-wrapper:not(.fullpage-active)
+    .fp-sect__inner
+      padding-bottom: $footerNormalHeight
+
+      +mediaMaxWidth(800)
+        padding-bottom: $footerNormalHeight * 2
+
   &__big
     position: relative
     background: $bigFooterBackground

@@ -11,6 +11,15 @@
   @at-root :not(#fullpage) .header-offset
     padding-top: $headerNormalHeight
 
+  @at-root .fullpage-wrapper:not(.fullpage-active)
+    .fp-sect__inner
+      padding-top: $headerNormalHeight
+
+      +mediaMaxWidth(800)
+        padding-top: $headerMobileHeight
+
+
+
   @extend .font-pt-sans
   @extend .weight-regular
   @extend .size-normal3

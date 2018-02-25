@@ -5,15 +5,15 @@ block append vars
     var title = "Главная"
 
 block append content
-  #fullpage
+  #fullpage.fullpage-wrapper
     div
-      .fullpage__section.active
+      section.fp-sect.active
         include fullpage_components/_home
-      .fullpage__section
+      section.fp-sect
         include fullpage_components/_about
-      .fullpage__section
+      section.fp-sect
         include fullpage_components/_menu
-      .fullpage__section
+      section.fp-sect
         include fullpage_components/_news
-      .fullpage__section
+      section.fp-sect
         include fullpage_components/_contacts
