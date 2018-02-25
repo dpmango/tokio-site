@@ -34,6 +34,7 @@ $(document)
       initMasks();
       initLazyLoad();
       initFormElements();
+      initFixers();
 
       // development helper
       _window.on('resize', debounce(setBreakpoint, 200));
@@ -369,6 +370,18 @@ $(document)
             // element.attr('style', '')
           }
         });
+    }
+
+    function initFixers() {
+      const mobChrome = $('.mobile-chrome-fix-height');
+
+      _window.on("orientationchange", function() {
+        legacySupport()
+        mobChrome.removeClass('mobile-chrome-fix-height-fix');
+        setTimeout(function() {
+          mobChrome.addClass('mobile-chrome-fix-height-fix');
+        }, 10)
+      });
     }
 
     //////////
