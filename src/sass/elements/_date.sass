@@ -1,14 +1,14 @@
-.corner__date
+.b-corner__date
   position: absolute
   left: 0
   top: 0
   color: $colorGreen
 
   &_day
-    line-height: 0
+    @extend .size-bigger2
     @extend .font-bravo-rg
-    font-size: 5rem
 
+    line-height: 0
     position: absolute
     left: -1.5rem
     top: 0
@@ -16,11 +16,33 @@
     transform: rotate(-90deg)
 
   &_rest
-    line-height: 0
+    @extend .size-normal4
     @extend .font-pt-sans
-    @extend .size-normal
 
+    line-height: 0
     white-space: nowrap
     position: absolute
     top: -1rem
     left: 2.5rem
+
+@mixin cornerDateAtTop()
+  .b-corner__date
+    display: flex
+    justify-content: flex-end
+    transform: translate(25%, -40%)
+
+    &_day
+      font-size: 6em
+      position: relative
+      left: 0
+      top: -5px
+      transform: none
+      height: auto
+      line-height: 1
+
+    &_rest
+      position: relative
+      top: 0
+      left: 1rem
+      height: auto
+      line-height: 2

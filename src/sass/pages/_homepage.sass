@@ -1,4 +1,4 @@
-.mainpage
+.b-mainpage
   min-height: 280px
 
   &__slider
@@ -7,8 +7,6 @@
     padding-right: 480px
 
     h1
-      @extend .size-biggest
-
       position: relative
       padding-bottom: 30px
       margin-bottom: 30px
@@ -24,14 +22,6 @@
         border: 1px solid $colorWhite
         width: 60px
 
-    p
-      @extend .weight-regular
-      @extend .size-normal2
-      margin: 0
-      position: relative
-      color: transparentize($colorWhite, 0.2)
-      line-height: 2em
-
   .slick-dots
     position: absolute
     right: 0
@@ -42,6 +32,7 @@
     &__slider
       padding-right: 30%
 
+
   +mediaMaxWidth(900)
     // Make screen to fit viewport dimensions
     height: 100vh
@@ -51,11 +42,11 @@
       padding-right: 20px
 
   +mediaMaxWidth(768)
-    &__slider
-      padding-right: 0
+    max-width: 100%
 
-      h1
-        font-size: 5rem
+    &__slider
+      width: 100%
+      padding-right: 0
 
     .slick-dots
       display: none !important
@@ -63,14 +54,3 @@
   +mediaMaxWidth(640)
     padding-left: 3rem
     padding-right: 3rem
-
-    &__slider
-      font-size: 0.9rem
-
-      h1
-        font-size: 4em
-
-  +mediaMaxHeight(400)
-    &__slider
-      h1
-        font-size: 4em

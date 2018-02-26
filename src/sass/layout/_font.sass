@@ -6,83 +6,95 @@
 .font
   &-lato
     font-family: Lato, sans-serif
-
   &-bravo-rg
     font-family: BravoRG, sans-serif
-
   &-pt-sans
     font-family: 'PT Sans Narrow', sans-serif
 
 .weight
   &-thin
     font-weight: 100
-
   &-light
     font-weight: 300
-
   &-regular
     font-weight: 400
-
   &-medium
     font-weight: 500
-
   &-bold
     font-weight: 700
-
   &-black
     font-weight: 900
 
-.size
-  &-small
-    font-size: 0.875em
+$sizeSmallest: 0.875
+$sizeSmaller: 0.9
+$sizeSmall: 1
+$sizeNormal: 1.125
+$sizeNormal2: 1.25
+$sizeNormal3: 1.375
+$sizeNormal4: 1.5
+$sizeBig: 2
+$sizeBig2: 2.25
+$sizeBig3: 2.375
+$sizeBigger: 4
+$sizeBigger2: 4.75
+$sizeBiggest: 6
 
-  &-normal
-    font-size: 1.125em
+@mixin font-size-block($size)
+  font-size: $size*1rem
 
-  &-normal2
-    font-size: 1.25em
+  +mediaMinWidth($hd)
+    font-size: $size*0.98rem
+  +mediaMaxWidth($wide)
+    font-size: $size*0.94rem
+  +mediaMaxWidth($desktop)
+    font-size: $size*0.9rem
+  +mediaMaxWidth($tablet)
+    font-size: $size*0.84rem
+  +mediaMaxWidth($mobile)
+    font-size: $size*0.7rem
 
-  &-normal3
-    font-size: 1.375em
+@mixin font-size-element($size, $descreaseStep: 0.1)
+  font-size: $size*1em
 
-  &-big
-    font-size: 2em
-
-  &-big2
-    font-size: 2.25em
-
-  &-big3
-    font-size: 2.375em
-
-  &-bigger
-    font-size: 4em
-
-  &-bigger2
-    font-size: 4.75em
-
-  &-biggest
-    font-size: 6em
-
-*
-  font-size: inherit
+  +mediaMaxWidth($hd)
+    font-size: $size*(1 - 1 * $descreaseStep)*1em
+  +mediaMaxWidth($wide)
+    font-size: $size*(1 - 2 * $descreaseStep)*1em
+  +mediaMaxWidth($desktop)
+    font-size: $size*(1 - 3 * $descreaseStep)*1em
+  +mediaMaxWidth($tablet)
+    font-size: $size*(1 - 4 * $descreaseStep)*1em
+  +mediaMaxWidth($mobile)
+    font-size: $size*(1 - 5 * $descreaseStep)*1em
 
 html
   font-size: 16px
-  +mediaMaxWidth($wide)
-    font-size: 12px
+
+  +mediaMinWidth($hd)
+    font-size: 18px
+
+*
+  font-size: inherit
+  font-family: inherit
+
+[class^='b-']
+  &.root-block
+    +font-size-block($sizeNormal)
 
 body
   @extend .font-lato
   @extend .weight-regular
-  @extend .size-normal
 
   color: $fontColor
   line-height: 1
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
-body
-  font-size: 100%
+p, span, em, b, .text
+  @extend .font-lato
+  @extend .weight-light
+
+  +font-size-element($sizeNormal)
 
 h1, h2, h3, h4, h5, h6
   @extend .font-bravo-rg
@@ -90,41 +102,73 @@ h1, h2, h3, h4, h5, h6
   text-transform: uppercase
   z-index: $defaultZIndex + 1
 
-h1
+.size
+  &-smallest
+    +font-size-element($sizeSmallest, 0.001)
+  &-smaller
+    +font-size-element($sizeSmaller, 0.002)
+  &-small
+    +font-size-element($sizeSmall, 0.004)
+  &-normal
+    +font-size-element($sizeNormal, 0.008)
+  &-normal2
+    +font-size-element($sizeNormal2, 0.01)
+  &-normal3
+    +font-size-element($sizeNormal3, 0.014)
+  &-normal4
+    +font-size-element($sizeNormal3, 0.017)
+  &-big
+    +font-size-element($sizeBig, 0.02)
+  &-big2
+    +font-size-element($sizeBig2, 0.03)
+  &-big3
+    +font-size-element($sizeBig3, 0.04)
+  &-bigger
+    +font-size-element($sizeBigger, 0.08)
+  &-bigger2
+    +font-size-element($sizeBigger2, 0.09)
+  &-biggest
+    +font-size-element($sizeBiggest, 0.1)
+  &-h1
+    +font-size-block(6)
+  &-h2
+    +font-size-block(4)
+  &-h3
+    +font-size-block(2.4)
+
+.white-transp
+  color: transparentize($colorWhite, 0.2)
+
+h1.bigger_h1
+  @extend .size-biggest
   margin: 1rem 0
-  font-size: 4rem
+
+h1
+  @extend .size-h1
+  margin: 1rem 0
 
 h2
+  @extend .size-h2
   margin: 0.8rem 0
-  font-size: 3rem
 
 h3
+  @extend .size-h3
   margin: 0.6rem 0
-  font-size: 2.4rem
 
 h4
+  // Not implemented
   margin: 0.4rem 0
   font-size: 1.8rem
 
 h5
+  // Not implemented
   margin: 0.2rem 0
   font-size: 1.4rem
 
 h6
+  // Not implemented
   margin: 0.1rem 0
   font-size: 1.2em
-
-span, p
-  @extend .font-lato
-  @extend .size-normal2
-  @extend .weight-light
-
-  line-height: 1.6
-
-.heading
-  @extend .font-bravo-rg
-  @extend .size-big
-  line-height: 1
 
 .caption
   @extend .font-bravo-rg
@@ -148,13 +192,12 @@ span, p
     background: $colorGreen
 
   &__text
-    font-size: 1.4em
     white-space: nowrap
     line-height: 1.3
     position: relative
     background: $background
     padding: 0 20px
-    margin-right: 20px
+    margin-right: 10px
     align-self: flex-end
     display: inline-block
 
@@ -170,7 +213,7 @@ span, p
 
   .hash_tags
     white-space: nowrap
-    @extend .size-small
+    @extend .size-smallest
     line-height: 1
     padding-top: 10px
     max-width: 70%

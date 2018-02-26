@@ -1,8 +1,8 @@
 .photos
 
-  $baseSize: 250
-  $frameSize: $baseSize*2
-  $aspectRatio: 1.7
+  $baseSize: 180
+  $frameSize: $baseSize*2.4
+  $aspectRatio: 1.7954
 
   position: relative
   margin: auto 0
@@ -33,8 +33,8 @@
   // TODO: CHECK. Could cause bugs
 
   &__photo
-    z-index: 3
-    position: relative
+    z-index: $defaultZIndex + 1
+    position: absolute
     width: $baseSize*1px
     height: $baseSize*1px
     object-fit: cover
@@ -46,7 +46,7 @@
 
     &_2
       height: $baseSize*$aspectRatio*1px
-      left: $frameSize*0.1px
+      left: $frameSize*0.5px
       top: 60px
 
     &_only
@@ -63,8 +63,8 @@
 
     &_fish
       top: $frameSize*0.6px
-      left: $frameSize*-0.5px
-      transform: scale(0.7)
+      left: $frameSize*0.2px
+      transform: scale(0.6)
 
     &_k
       top: $frameSize*0.87px

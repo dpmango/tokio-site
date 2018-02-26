@@ -1,24 +1,24 @@
 include ../shared/_mixins
 
 mixin contactAddress(address, time, phone)
-  .address
-    .icon-geo.address__icon
-    .address__content
-      span.address__place= address
-      span.address__time= time
-      +anchor(href=`tel:${phone}`).address__phone= phone
+  .b-address
+    .icon-geo.b-address__icon
+    .b-address__content
+      span.b-address__place= address
+      span.b-address__time= time
+      +anchor(href=`tel:${phone}`).b-address__phone= phone
 
 
-.container.contacts_page.justifyContentStart
-  .contacts_page__inner.container_hor
-    .container__item.contacts__map
-      .contacts__map_inner#map
-    .contacts__content.container.container__item.alignItemsCenter
-      .contacts__content_inner.container_ver.layout__offset
-        h1 Контакты
-        span.text.contacts__descr Модный Нью-Йоркский стиль, более урбанистический, но с привычными чистыми линиями.
+.container.justifyContentStart.b-contactspage.root-block
+  .b-contactspage__inner.container_hor
+    .container__item.b-contactspage__map
+      .b-contactspage__map_inner#map
+    .b-contactspage__content.container.container__item.alignItemsCenter
+      .b-contactspage__content_inner.container_ver.layout__offset
+        h2.center-mobile Контакты
+        span.b-contactspage__descr Модный Нью-Йоркский стиль, более урбанистический, но с привычными чистыми линиями.
 
-        .contacts__addresses
+        .b-contactspage__addresses
           +contactAddress(
           "Москва, Рожественский бульвар, д.1, ТЦ Центральный Рынок",
           "Ежедневно с 10:00 до 23:00",
@@ -30,7 +30,7 @@ mixin contactAddress(address, time, phone)
           "Ежедневно с 10:00 до 23:00",
           "+7 (495) 556-65-87"
           )
-        .contacts__socials
+        .b-contactspage__socials
           +twitter
           +facebook
           +vk

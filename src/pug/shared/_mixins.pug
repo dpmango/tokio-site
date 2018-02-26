@@ -89,10 +89,9 @@ mixin image(src)
   .image_within_div(style=`background-image: url(${src}) !important`)&attributes(attributes)
 
 mixin date(day, rest)
-  // Rename class
-  .corner__date
-    .corner__date_day= day
-    .corner__date_rest= rest
+  .b-corner__date.root-block
+    .b-corner__date_day= day
+    .b-corner__date_rest= rest
 
 mixin caption
   block

@@ -5,9 +5,9 @@ include ../shared/_mixins
 mixin header(absoluteLinks)
   - absoluteLinks = absoluteLinks || false
 
-  header.header#header
-    .container.layout__offset.header__wrapper
-        nav.header__nav
+  header.b-header.root-block#header
+    .container.layout__offset.b-header__wrapper
+        nav.b-header__nav
           -
             var navigation = [
             ['Меню', 'menu'],
@@ -17,13 +17,13 @@ mixin header(absoluteLinks)
             ]
           each navItem in navigation
             +anchor(
-              href='index.html#' + navItem[1]).header__nav_item= navItem[0]
+              href='index.html#' + navItem[1]).size-smallest.b-header__nav_item= navItem[0]
         +anchor.hamburger-btn.hidden
-        .header__logo
+        .b-header__logo
           +anchor(href='index.html#home')
             .icon-logo.b-normal
             .icon-tokio-icon.b-tab.b-mob
-        .header__reserve
+        .b-header__reserve
           +anchor(js-modal-invoker="modal-reserve")
             .icon-reserve.b-normal
             .icon-reserve-white.b-tab

@@ -39,6 +39,9 @@ body, html
   z-index: $defaultZIndex - 1
 
 .page
+  // TODO: Check
+  overflow: hidden
+
   &__content
     display: flex
     flex: 1
@@ -47,12 +50,13 @@ body, html
 .fullpage
   &-wrapper
     flex: 1
+    max-width: 100%
 
     &.fullpage-active .fp-sect
       min-height: 100vh
 
 .fp-sect
-  all: inherit
+  //all: inherit
   display: flex
   position: relative
 
@@ -76,13 +80,15 @@ body, html
       position: absolute
       top: 0
       left: 0
-      //object-fit: cover
+      object-fit: cover
 
-      @media all and (orientation: landscape) and (min-aspect-ratio: 16/9)
+      @media all and (min-aspect-ratio: 16/9)
         width: 100%
+        object-fit: initial
 
-      @media all and (orientation: portrait)
+      @media all and (max-aspect-ratio: 16/9)
         height: 100%
+        object-fit: initial
 
 
   &__inner
@@ -98,7 +104,6 @@ body, html
 
   +mediaMinWidth($wide)
     max-width: 1200px !important
-  // TODO: Check why <style> css overrides that?
 
   margin-left: auto
   margin-right: auto
@@ -143,7 +148,7 @@ body, html
 
 .background_letter
   position: absolute
-  z-index: 1
+  z-index: -10
   transform: scale(0.8)
 //zoom: 0.8
 

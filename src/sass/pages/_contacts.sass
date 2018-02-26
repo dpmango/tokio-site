@@ -1,12 +1,13 @@
-.contacts
-  &_page
-    padding: 30px 0 0
+.b-contactspage
+  +font-size-block($sizeNormal2)
 
-    &__inner
-      padding-top: 50px
+  padding: 30px 0 0
 
-      +mediaMaxHeight(740)
-        padding-top: 20px
+  &__inner
+    padding-top: 50px
+
+    +mediaMaxHeight(740)
+      padding-top: 20px
 
   &__map
     display: block
@@ -33,7 +34,6 @@
   &__descr
     @extend .font-lato
     @extend .weight-light
-    @extend .size-normal2
 
     line-height: 2rem
     padding-top: 10px
@@ -50,7 +50,7 @@
       margin-top: 20px
       margin-bottom: 20px
 
-    .address:not(:last-child)
+    .b-address:not(:last-child)
       margin-bottom: 40px
 
       +mediaMaxHeight(790)
@@ -73,7 +73,48 @@
       width: $socialsLineWidth - 40px
       border-top: 1px solid $colorGreen
 
-.address
+  +mediaMaxWidth(865)
+    padding-left: $paddingWrapperSide
+
+    +font-size-block($sizeBig2)
+
+    .b-address
+      +font-size-block($sizeBig2)
+
+    &__descr
+      display: none
+
+    &__socials
+      $socialsLineWidth: 80px
+      padding-left: $socialsLineWidth
+
+      .social
+        margin-right: 10px
+
+      &:before
+        width: $socialsLineWidth - 20px
+
+    &__inner
+      flex-direction: column
+
+    &__map
+      order: 2
+      margin-left: -$paddingWrapperSide * 2
+      margin-right: -$paddingWrapperSide
+
+      &_inner
+        left: initial
+        right: initial
+        width: 100%
+        height: 400px
+
+    &__content
+      padding: 0
+      display: block
+      margin-bottom: 30px
+
+.b-address
+  +font-size-block($sizeNormal4)
   display: flex
   flex-direction: row
 
@@ -92,19 +133,20 @@
   &__place
     @extend .font-bravo-rg
     @extend .weight-regular
-    @extend .size-big
+    +font-size-block($sizeBig)
 
   &__time
     @extend .font-lato
     @extend .weight-light
-    @extend .size-normal
+    +font-size-block($sizeNormal2)
+
     padding: 10px 0
     color: transparentize($colorDimGray, 0.2)
 
   &__phone
     @extend .font-bravo-rg
     @extend .weight-regular
-    @extend .size-big
+
     position: relative
     padding: 10px 0 0 0
     color: $colorGreen
@@ -123,19 +165,5 @@
 
     &:hover
       color: $colorGreen2
-
       &:after
         width: 100%
-
-// Typography styles
-
-.contacts
-  &_page
-    +mediaMaxHeight(950)
-      font-size: 90%
-
-    +mediaMaxWidth($wide)
-      font-size: 90%
-
-    //+mediaMaxHeight(800)
-    //  font-size: 70%

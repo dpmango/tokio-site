@@ -1,7 +1,18 @@
-.menupage
+.b-menupage
   display: flex
   flex-direction: column
   width: 100%
+  height: 100%
+  padding: 1rem 0
+
+  .center-mobile
+    padding-left: $paddingWrapperSide
+
+  &__wrapper
+    flex: 1
+    display: flex
+    justify-content: stretch
+    padding: $paddingWrapperVertical 0
 
   &__letter
     &_y
@@ -16,16 +27,20 @@
       right: -130px
       bottom: 17%
 
-  +generate-breakpoints((b-tab: 700, b-wide: 0))
+  +generate-breakpoints((br-tab: 700, br-wide: 0))
+
+  +mediaMaxWidth(1170)
+    padding: 0 0 3rem
 
   +mediaMaxWidth(700)
     margin: 0 0 8rem
-    padding: 0 0 40px
     max-width: initial !important
-    @include categoriesMobileView
+    +categoriesMobileView()
 
     &__wrapper
       padding: 0
+      flex-direction: column
+
 
     &__letter
       &_o

@@ -1,11 +1,13 @@
-.categories
+.b-categories
   display: flex
   flex: 1
 
-  .category:not(:last-child)
+  .b-category:not(:last-child)
     margin-right: 20px
 
-.category
+.b-category
+  +font-size-block($sizeBig2)
+
   position: relative
   display: flex
   flex: 1
@@ -33,7 +35,6 @@
 
   &__title
     @extend .font-bravo-rg
-    @extend .size-big3
     @extend .weight-regular
     color: $colorWhite
 
@@ -48,10 +49,10 @@
     transform-origin: 100% 100%
 
 @mixin categoriesMobileView()
-  .categories
+  .b-categories
     flex-direction: column
 
-    .category
+    .b-category
       min-height: 140px
       margin-right: 0
       margin-left: 0
@@ -59,8 +60,8 @@
       &:not(:last-child)
         margin-bottom: 2rem
 
-  .category
-    font-size: 1.1rem
+  .b-category
+    +font-size-block($sizeBigger)
 
     &__filter
       +horizontal-gradient(#000, transparent, -5%, 80%)

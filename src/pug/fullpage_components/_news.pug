@@ -1,9 +1,9 @@
 include ../shared/_mixins
 
-.container.news_page
-  .container_ver.layout__offset
-    +icon("icon-y-letter").background_letter.news_page__letter_y
-    +icon("icon-o-letter").background_letter.news_page__letter_o
+.container.b-newspage.root-block
+  .container_ver.layout__offset.b-newspage__wrapper
+    //+icon("icon-y-letter").background_letter.b-newspage__letter_y
+    //+icon("icon-o-letter").background_letter.b-newspage__letter_o
 
     -
       var newsItems = [
@@ -11,12 +11,11 @@ include ../shared/_mixins
       ["Новогоднее меню в Tokio", "04", "Декабрь, 2017", "2"],
       ["Новогоднее меню в Tokio", "19", "Ноябрь, 2017", "3"]
       ]
-
       var itemsPerRow = 3
 
 
-    .news__container
-      h1 Последние новости
+    .b-newspage__container
+      h2.center-mobile Последние новости
 
       while newsItems.length > 0
         - var splicedNews = newsItems.splice(0, itemsPerRow)
@@ -24,23 +23,18 @@ include ../shared/_mixins
         if splicedNews.length === 0
           break
 
-        .news__row
+        .b-newspage__row
           each item in splicedNews
-            +anchor(href="story_inner.html#").story
+            +anchor(href="story_inner.html#").b-story.root-block
               // # at the end is required to avoid fullpage bug
-              .story__inner
-                .story__wrapper
-                  .story__image_wrapper
-                    .story__image(style=`background-image: url('img/news/${item[3]}.jpeg')`)
-                      .story__image__filter
-                  .corner__date
-                    span.corner__date_day
-                      =item[1]
-                    span.corner__date_rest
-                      =item[2]
-                span.story__title
+              .b-story__inner
+                .b-story__wrapper
+                  .b-story__image
+                    .b-story__image_img(style=`background-image: url('img/news/${item[3]}.jpeg')`)
+                      .b-story__image_filter
+                  +date(item[1], item[2])
+                span.b-story__title
                   =item[0]
-    .news__button_wrapper
-      .container_hor.justifyContentCenter
-        +button(href="all_news.html#")
-          | Все новости
+    .b-newspage__button_wrapper
+      +button(href="all_news.html#")
+        | Все новости

@@ -1,15 +1,13 @@
 include ../shared/_mixins
 
-.container.menupage
-  .layout__offset.menupage__wrapper
-    +icon("icon-y-letter").background_letter.menupage__letter_y.b-wide
-    +icon("icon-o-letter").background_letter.menupage__letter_o.b-mob
-    +icon("icon-o-letter").background_letter.menupage__letter_o2.b-mob
+.container.b-menupage
+  .layout__offset.b-menupage__wrapper
+    +icon("icon-y-letter").background_letter.b-menupage__letter_y.br-wide
+    +icon("icon-o-letter").background_letter.b-menupage__letter_o
+    +icon("icon-o-letter").background_letter.b-menupage__letter_o2
 
-    .container.b-tab
-      .container_hor
-        h1 Наше меню
-    .categories
+    h2.br-tab.center-mobile Наше меню
+    .b-categories.root-block
       -
         var menuItems = [
         ["Роллы", "roll"],
@@ -20,8 +18,8 @@ include ../shared/_mixins
         ['Напитки', 'drinks']
         ]
       each item in menuItems
-        +anchor(href='menu.html#').category
-          span.category__title= item[0]
-          .category__image_wrapper
-            .category__image(style=`background-image: url(${'img/menu/' + item[1] + '.jpeg'})`)
-              .category__filter
+        +anchor(href='menu.html#').b-category
+          span.b-category__title= item[0]
+          .b-category__image_wrapper
+            .b-category__image(style=`background-image: url(${'img/menu/' + item[1] + '.jpeg'})`)
+              .b-category__filter

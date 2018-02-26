@@ -13,7 +13,8 @@ function renderHtml(onlyChanged) {
     .pipe(gulpif(onlyChanged, changed(config.dest.html, {extension: '.html'})))
     .pipe(frontMatter({property: 'data'}))
     .pipe(pug({
-      pretty: true
+      pretty: true,
+      verbose: true
     }))
     .pipe(gulp.dest(config.dest.html))
 }

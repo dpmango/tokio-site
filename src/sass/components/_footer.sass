@@ -1,7 +1,10 @@
 @import ../layout/responsive
 
 // FOOTER
-.footer
+.b-footer
+
+  &.root-block
+    +font-size-block($sizeSmallest)
 
   $blackFooterBorder: 1px solid $colorGray2
 
@@ -11,8 +14,6 @@
   right: 0
   height: $footerNormalHeight
   z-index: $footerZIndex
-  @extend .font-lato
-  font-size: 0.8em
   color: $colorGray
   background: $footerBackground
 
@@ -26,7 +27,7 @@
       +mediaMaxWidth(800)
         padding-bottom: $footerNormalHeight * 2
 
-  &__big
+  &--big
     position: relative
     background: $bigFooterBackground
     display: flex
