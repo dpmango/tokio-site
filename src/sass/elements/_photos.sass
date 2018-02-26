@@ -1,6 +1,4 @@
-.photos
-
-  $baseSize: 180
+@mixin photosMixin($baseSize: 180)
   $frameSize: $baseSize*2.4
   $aspectRatio: 1.7954
 
@@ -14,22 +12,23 @@
 
   &__letter
     position: absolute
+    transform: scale(1 + $frameSize * 0.0001)
 
     &-o
-      left: $frameSize*0.64px
-      top: $frameSize*0.61px
+      left: $frameSize*0.72px
+      top: $frameSize*0.52px
 
     &-y
-      left: $frameSize*-0.05px
-      top: $frameSize*0.03px
+      left: $frameSize*-0.04px
+      top: $frameSize*0.12px
 
   &__background
     z-index: 2
     position: absolute
     bottom: 0
-    left: $frameSize*0.06px
-    width: $baseSize*1.2px
-    height: $baseSize*0.8px
+    left: $frameSize*0.0px
+    width: $baseSize*1.3px
+    height: $baseSize*1.2px
   // TODO: CHECK. Could cause bugs
 
   &__photo
@@ -41,13 +40,13 @@
 
     &_1
       height: $baseSize*$aspectRatio*1px
-      left: $frameSize*0.2px
+      left: $frameSize*0.15px
       top: 0
 
     &_2
       height: $baseSize*$aspectRatio*1px
-      left: $frameSize*0.5px
-      top: 60px
+      left: $frameSize*0.45px
+      top: $frameSize*0.18px
 
     &_only
       height: $baseSize*$aspectRatio*1.1px
@@ -58,17 +57,24 @@
   &__label
     position: absolute
     z-index: $defaultZIndex + 5
-    transform: scale(0.6)
+    transform: scale($frameSize * 0.0015)
     //zoom: 0.6
 
     &_fish
-      top: $frameSize*0.6px
+      top: $frameSize*0.66px
       left: $frameSize*0.2px
-      transform: scale(0.6)
+      //transform: scale(0.6)
 
     &_k
-      top: $frameSize*0.87px
-      left: $frameSize*0.1px
+      top: $frameSize*0.85px
+      left: $frameSize*0.07px
+
+.photos
+  +photosMixin()
+
+  +mediaMinWidth(1700)
+    +photosMixin(320)
+
 
 @mixin photosMobileLayout()
   .photos

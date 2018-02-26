@@ -11,9 +11,10 @@
     justify-content: center
 
   &__container
+    padding-top: 2rem
     display: flex
     flex-direction: column
-    flex: 1
+    flex: 4
     //transform: translateY(20px)
 
   &__row
@@ -29,18 +30,21 @@
 
     &:nth-child(1)
       margin-top: 100px
-      padding-bottom: 40px
+      //padding-bottom: 40px
     &:nth-child(2)
-      padding-left: 30px
-      padding-right: 30px
+      padding-left: 40px
+      padding-right: 40px
     &:nth-child(3)
       margin-top: 40px
-      padding-bottom: 30px
+      padding-bottom: 15px
 
     &:not(:last-child)
       margin-right: 6rem
 
   &__button_wrapper
+    align-items: flex-start
+    justify-content: center
+    flex: 1
 
   +mediaMaxWidth(1170)
     h2
@@ -58,6 +62,9 @@
         padding-bottom: 0
       &:not(:last-child)
         margin-right: 3rem
+
+    &__container
+      flex: none
   +mediaMaxWidth(870)
     &__row
       flex-direction: column
@@ -111,6 +118,7 @@
     flex: 1
 
   &__title
+    @extend .font-bravo-rg
     position: relative
     +font-size-element($sizeNormal3)
     flex: 0
