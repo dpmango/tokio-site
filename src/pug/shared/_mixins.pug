@@ -21,7 +21,7 @@ mixin icon(name, modClass)
 
 mixin anchor()
   if href == null
-    a(href="#", onclick="return 0")&attributes(attributes)
+    a(href="#")&attributes(attributes)
       block
   else
     a&attributes(attributes)

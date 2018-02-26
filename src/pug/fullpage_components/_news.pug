@@ -25,7 +25,7 @@ include ../shared/_mixins
 
         .b-newspage__row
           each item in splicedNews
-            +anchor(href="story_inner.html#").b-story.root-block
+            +anchor(href="story_inner.html").b-story.root-block
               // # at the end is required to avoid fullpage bug
               .b-story__inner
                 .b-story__wrapper
@@ -36,5 +36,5 @@ include ../shared/_mixins
                 span.b-story__title
                   =item[0]
     .b-newspage__button_wrapper
-      +button(href="all_news.html#")
+      +button(href="all_news.html")
         | Все новости
