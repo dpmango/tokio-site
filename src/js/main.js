@@ -636,6 +636,10 @@ $(document)
         modalController.closeAllModals();
       });
 
+    $('video[autoplay]').each(function() {
+      this.play()
+    });
+
     //////////
     // DEVELOPMENT HELPER
     //////////
