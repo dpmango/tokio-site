@@ -3,10 +3,22 @@
   background: none
   z-index: $defaultZIndex + 3
 
-.svg-fish-sushi-wine
-  .group
-    animation: rotate 10s infinite linear
-    transform-origin: 46.5% 49%
+.svg-
+
+  &fish-sushi-wine
+    .group
+      animation: rotate 10s infinite linear
+      transform-origin: 46.5% 49%
+
+  &made-by
+    .logo
+      transition: fill $ease $transitionSpeed
+
+    &:hover
+      .logo
+        fill: #ff4725
+
+
 
 @keyframes rotate
   from

@@ -1,6 +1,8 @@
 // FOOTER :: START
 
 mixin footer(isBig)
+  include ../shared/_svgs
+
   - isBig = isBig || false
 
   footer.b-footer.root-block(class=isBig ? 'footer--big' : '')#footer
@@ -25,7 +27,9 @@ mixin footer(isBig)
         span.size-smallest
           | Copyright © 2017 TOKIOSUSHIBAR. All rights reserved
         .b-footer__made
-          .icon-made
+          +anchor()
+            +made-by
+          //.icon-made
           //+icon('ico-made')
 
 
