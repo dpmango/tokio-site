@@ -534,6 +534,12 @@ $(document)
       $fp.addClass('fullpage-active');
     }
 
+    $('[js-fullpage-link]')
+      .each(function() {
+        $.fn.fullpage.moveTo($(this)
+          .attr('js-fullpage-link'));
+      });
+
 
     /// Select box
 
