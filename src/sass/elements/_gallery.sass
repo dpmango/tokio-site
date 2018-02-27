@@ -1,13 +1,18 @@
 .gallery
   $baseSize: 230px
 
+  &__back_mob
+    display: none
+
   &__wrapper
+    padding: $paddingWrapperVertical 0
     flex: 1
     width: 100%
     display: flex
     flex-direction: column
     justify-content: center
     margin-top: -$baseSize / 3
+    margin-bottom: $baseSize / 3
 
   &__img
     overflow: hidden
@@ -74,3 +79,46 @@
         .gallery__img:last-child
           height: $baseSize*0.8
           width: $baseSize*1.3
+
+  +mediaMaxWidth(1100)
+    max-width: initial !important
+    width: 100%
+
+    &__back_mob
+      display: flex
+      padding-left: $paddingWrapperSide
+
+    &, &__inner
+      margin: 0
+      padding: 0
+
+    &__wrapper
+      margin: 0
+
+    &__heading
+      padding-left: $paddingWrapperSide
+
+    &__row
+      flex-direction: column
+
+      *
+        padding: 0 !important
+        margin: 0 !important
+        position: relative !important
+        width: 100% !important
+        height: 600px !important
+        left: initial !important
+        right: initial !important
+        top: initial !important
+        bottom: initial !important
+        flex-direction: column !important
+
+      .gallery__img
+        border-left: 0
+        border-right: 0
+
+      .right__side > .gallery__img
+        flex: 2.5
+        border-top: 0
+        border-bottom: 0
+
