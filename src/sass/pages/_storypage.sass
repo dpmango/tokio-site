@@ -1,11 +1,97 @@
 .storypage
-  &__back
+  &__back_mob
+    display: none
+
+  &__heading_mob
     display: none
 
   &__content
     display: flex
     flex-direction: column
-    justify-content: center
+    padding: 4rem 0 0 1.2rem
 
     &_inner
       padding: 0 10rem 0 5rem
+
+
+  +mediaMaxWidth(1700)
+    &__content
+      padding: 0
+      justify-content: center
+
+  +mediaMaxWidth(1000)
+    .photos--only-one
+      max-width: initial
+      max-height: initial
+      min-height: initial
+      min-width: initial
+      display: flex
+      justify-content: flex-end
+      margin-right: 4rem
+
+      .photos__background, .photos__letter, .photos__label
+        display: none
+
+      .photos__photo
+        position: relative
+        left: initial
+        right: initial
+        top: initial
+        bottom: initial
+
+    &__content_inner
+      padding: 0
+
+  +mediaMaxWidth(780)
+    margin: 0
+    padding: 0
+
+    &__heading_mob, &__back_mob
+      padding-left: $paddingWrapperSide
+
+    &__inner
+      width: 100%
+      max-width: 100%
+      flex-direction: column
+      align-items: center
+      padding-top: 0
+
+    .photos--only-one
+      width: 100vw
+      display: block
+      margin-right: 0
+      margin-left: 0
+      margin-bottom: 3rem
+      align-self: stretch
+
+      .photos__photo
+        width: 100%
+
+    &__back
+      display: none
+      &_mob
+        display: flex
+        margin-bottom: 15px
+        align-self: flex-start
+
+    &__heading
+      display: none
+      &_mob
+        display: flex
+        margin-bottom: 60px
+        align-self: flex-start
+
+    &__content
+      width: 100%
+      display: block
+      padding: 0 $paddingWrapperSide
+
+      &_inner
+        +font-size-block($sizeBig2)
+
+    +font-size-block($sizeBig)
+    +cornerDateAtTop
+    +noteMobileView
+
+    .caption
+      +font-size-element($sizeNormal3)

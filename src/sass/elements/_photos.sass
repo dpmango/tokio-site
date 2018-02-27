@@ -49,10 +49,10 @@
       top: $frameSize*0.18px
 
     &_only
-      height: $baseSize*$aspectRatio*1.1px
-      width: $baseSize*$aspectRatio*1.1px
-      left: $frameSize*0.2px
-      top: 0
+      height: $baseSize*$aspectRatio*0.9px
+      width: $baseSize*$aspectRatio*0.9px
+      left: $frameSize*0.22px
+      top: $frameSize*0.08px
 
   &__label
     position: absolute
@@ -68,6 +68,17 @@
     &_k
       top: $frameSize*0.85px
       left: $frameSize*0.07px
+
+  &--only-one
+    .photos
+      &__background
+        bottom: $frameSize*0.1px
+        left: $frameSize*0.03px
+        width: $baseSize*1.55px
+        height: $baseSize*1.05px
+
+      &__label_k
+        display: none
 
 .photos
   +photosMixin()
