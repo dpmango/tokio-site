@@ -243,3 +243,16 @@ body, html
 
 .hamburger-btn
   @include hamburger
+
+.down-button
+  position: absolute
+  top: 100vh
+  left: 50%
+  z-index: 9999
+  transform: translate(-50%, -110%)
+  opacity: 0
+
+  transition: opacity $ease $transitionSpeed
+
+  &.mouse-showed
+    opacity: 1

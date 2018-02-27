@@ -375,12 +375,12 @@ $(document)
     function initFixers() {
       const mobChrome = $('.mobile-chrome-fix-height');
 
-      _window.on("orientationchange", function() {
-        legacySupport()
+      _window.on('orientationchange', function() {
+        legacySupport();
         mobChrome.removeClass('mobile-chrome-fix-height-fix');
         setTimeout(function() {
           mobChrome.addClass('mobile-chrome-fix-height-fix');
-        }, 10)
+        }, 10);
       });
     }
 
@@ -492,16 +492,44 @@ $(document)
     if (_window.width() > bp.tablet && _window.height() > 500) {
       const $fp = $('#fullpage');
 
-        $fp.fullpage({
-          anchors: ['home', 'about', 'menu', 'news', 'contacts'],
-          paddingTop: '70px',
-          paddingBottom: '60px',
-          fixedElements: '#header, #footer',
-          scrollOverflow: true,
+      $fp.fullpage({
+        anchors: ['home', 'about', 'menu', 'news', 'contacts'],
+        paddingTop: '70px',
+        paddingBottom: '60px',
+        fixedElements: '#header, #footer',
+        scrollOverflow: true,
 
-          //Custom selectors
-          sectionSelector: '.fp-sect'
+        //Custom selectors
+        sectionSelector: '.fp-sect',
+
+        afterLoad: function(anchorLink, index) {
+          if (index === 1) {
+            $mouse.addClass('mouse-showed');
+          } else {
+            $mouse.removeClass('mouse-showed');
+          }
+        },
+        onSlideLeave: function(anchorLink, index) {
+          if (index === 1) {
+            $mouse.addClass('mouse-showed');
+          } else {
+            $mouse.removeClass('mouse-showed');
+          }
+        }
+      });
+
+      function createMouse() {
+        var $mouse = $('<a href="#" class="icon-mouse down-button" />');
+        $mouse.appendTo('body');
+        $mouse.click(function() {
+          $mouse.removeClass('mouse-showed');
+          $.fn.fullpage.moveSectionDown();
         });
+
+        return $mouse;
+      }
+
+      var $mouse = createMouse();
 
       $fp.addClass('fullpage-active');
     }
@@ -636,9 +664,10 @@ $(document)
         modalController.closeAllModals();
       });
 
-    $('video[autoplay]').each(function() {
-      this.play()
-    });
+    $('video[autoplay]')
+      .each(function() {
+        this.play();
+      });
 
     //////////
     // DEVELOPMENT HELPER
