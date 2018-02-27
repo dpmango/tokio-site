@@ -191,26 +191,29 @@ $(document)
 
       // other individual sliders goes here
       $('[js-main-page-slider]')
-        .slick({
-          autoplay: 20,
-          dots: true,
-          customPaging: function(slider, i) {
-            return '<a class="fish__bone">';
-          },
-          arrows: false,
-          prevArrow: slickNextArrow,
-          nextArrow: slickPrevArrow,
-          infinite: true,
-          speed: 300,
-          slidesToShow: 1,
-          accessibility: false,
-          adaptiveHeight: false,
-          draggable: true,
-          swipe: true,
-          swipeToSlide: true,
-          touchMove: true
+        .each(function(i, sl) {
+          $(sl).slick({
+            autoplay: 20,
+            dots: true,
+            customPaging: function(slider, i) {
+              return '<a class="fish__bone">';
+            },
+            vertical: $(sl).attr('vertical') !== undefined,
+            fade: $(sl).attr('fade') !== undefined,
+            arrows: false,
+            prevArrow: slickNextArrow,
+            nextArrow: slickPrevArrow,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            accessibility: false,
+            adaptiveHeight: false,
+            draggable: true,
+            swipe: true,
+            swipeToSlide: true,
+            touchMove: true
+          });
         });
-
     }
 
     //////////
