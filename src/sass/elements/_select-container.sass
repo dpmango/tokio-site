@@ -1,5 +1,6 @@
 // Basic logic
 .select_container
+  +font-size-block($sizeSmall)
   .select_container-block
     display: none
 
@@ -8,13 +9,16 @@
 
 // Styling
 .menu_select
-  max-width: 800px
+  max-width: 1100px
   flex: 1
+
+  +mediaMaxWidth(1700)
+    max-width: 800px
 
   &__nav
     border-top: 1px solid $colorGray5
     border-bottom: 1px solid $colorGray5
-    padding: 1.2rem 0
+    padding: 0.5rem 0
     display: flex
     align-items: center
     justify-content: space-around
@@ -22,6 +26,7 @@
 
     &_item
       @extend .font-bravo-rg
+      @extend .size-normal4
       margin: 0 1.3rem
       color: $colorGray4
       transition: color $ease $transitionSpeed
@@ -36,7 +41,7 @@
     display: flex
     flex-direction: row
     justify-content: stretch
-    padding-top: 40px
+    padding-top: 60px
 
     &_left
       flex: 3
@@ -44,17 +49,22 @@
   &__image
     position: relative
     flex: 2
-    margin-right: -100px
     min-height: 400px
-    max-height: 400px
+    max-height: 520px
+
+    +mediaMinWidth(1700)
+      margin-right: -240px
 
     &_text
       @extend .font-bravo-rg
-      @extend .size-bigger
+      //@extend .size-big3
+      +font-size-element(2.6)
+      letter-spacing: 0.3rem
       position: absolute
-      bottom: 20px
-      left: 20px
+      bottom: 3.4rem
+      left: 2.5rem
       color: $colorWhite
+      text-transform: uppercase
 
     &-frame
       background: no-repeat center
@@ -70,7 +80,7 @@
   &__content_wrapper
     flex: 3
     padding-right: 25px
-    padding-bottom: 4rem
+    padding-bottom: 3rem
     height: calc(100% - 50px)
 
   &__content
@@ -79,7 +89,7 @@
 
     .select__title
       @extend .font-bravo-rg
-      margin-bottom: 3rem
+      margin-bottom: 2rem
 
   $productItemHeight: 60px
   $productSpacing: 10px
@@ -94,34 +104,32 @@
     display: flex
     flex-direction: column
     min-height: $productItemHeight
-    max-height: $productItemHeight
 
     &:not(:last-child)
-      margin-bottom: 20px
+      margin-bottom: 4px
 
     &_heading
-      @extend .size-normal2
       @extend .font-lato
       @extend .weight-bold
       color: $colorBlack
 
-      & + .menu_select__product_inner
-        margin-top: 8px
+      & + .menu_select__product_description
+        margin-top: 5px
 
     &_content
-      flex: 1
+      flex: 4
 
     &_description
       display: flex
       flex-direction: row
-      align-items: baseline
+      align-items: center
       @extend .font-lato
       @extend .weight-light
-      @extend .size-normal
+      @extend .size-smallest
       color: transparentize($colorDimGray, 0.2)
 
     &_info
-      flex: 0
+      flex: 1
       display: flex
       flex-direction: row
       align-items: baseline
@@ -137,7 +145,7 @@
 
       .currency
         @extend .size-normal2
-        color: $colorGray6
+        //color: $colorGray6
 
       &:after
         content: '/'
@@ -151,3 +159,37 @@
     &_weight
       span
         @extend .size-normal
+
+@mixin selectContainerMobileView()
+  .select_container
+
+
+  .menu_select
+    display: flex
+    flex-direction: column
+
+    &__nav
+      align-self: center
+      min-width: 100px
+      max-width: 100px
+
+      &_item
+        &:not(.select_container-control--active)
+          display: none
+
+    &__image
+      display: none
+
+    &__product
+      padding: 1rem 0
+      margin-bottom: 0
+
+      &:first-child
+        border-top: 1px solid $colorGray5
+        border-bottom: 1px solid $colorGray5
+
+      &:not(:first-child)
+        border-bottom: 1px solid $colorGray5
+
+    &__content_wrapper
+      padding-right: 0

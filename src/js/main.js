@@ -608,7 +608,7 @@ $(document)
         } catch (e) {
         }
 
-        $modal.addClass('modal--open');
+        $modal.addClass('b-modal--open');
         $('html, body')
           .addClass('global-modal--open');
       },
@@ -618,8 +618,8 @@ $(document)
         } catch (e) {
         }
 
-        $('.modal--open')
-          .removeClass('modal--open');
+        $('.b-modal--open')
+          .removeClass('b-modal--open');
         $('html, body')
           .removeClass('global-modal--open');
       }

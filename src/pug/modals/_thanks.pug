@@ -1,11 +1,11 @@
 include ../shared/_input
 
-.modal#modal-thanks
-  .modal__inner
-    h1.modal__heading Спасибо!
-    span.modal__descr Мы свяжемся с вами в ближайшее время для подтверждения заказа.
-    +anchor(js-modal-closer="true").modal__close &times;
+.b-modal#modal-thanks
+  .b-modal__inner
+    h2.b-modal__heading Спасибо!
+    span.b-modal__descr Мы свяжемся с вами в ближайшее время для подтверждения заказа.
+    +anchor(js-modal-closer="true").b-modal__close &times;
     +button(href="index.htmlhome", js-modal-closer="true")
       | На главную
-  .modal__logo
+  .b-modal__logo
     .icon-modal-fish-label

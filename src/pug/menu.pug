@@ -6,8 +6,9 @@ block vars
     var title = 'Меню'
 
 block content
-  .container.storypage.header-offset
-    .container_hor.layout__vertical_offset.justifyContentCenter
+  .container.b-menupage.header-offset
+    +buttonBack(' ').b-menupage__back
+    .container_hor.justifyContentCenter.b-menupage__inner
       .select_container.menu_select
         nav.menu_select__nav
           -
@@ -23,10 +24,6 @@ block content
             /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278']]
             ],
             ['Супы','soup', 'img/menu/soup.jpeg', [
-            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278'],
-            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278'],
-            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278'],
-            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278'],
             /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278'],
             /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278'],
             /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278'],
@@ -54,7 +51,7 @@ block content
             .menu_select__content_wrapper
               each item, index in categories
                 .menu_select__content.select_container-block(data-id=item[1])
-                  h1.select__title= item[0]
+                  h3.select__title= item[0]
                   ul.menu_select__product_list
                     each catItem in item[3]
                       li.menu_select__product

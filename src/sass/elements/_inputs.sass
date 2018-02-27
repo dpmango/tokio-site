@@ -60,14 +60,14 @@ input
 
 input, select, .chosen-single span, .chosen-results li
   @extend .font-lato
-  @extend .size-normal
+  @extend .size-small
   @extend .weight-regular
   color: $formInputColor !important
 
 input, select, .chosen-container
   cursor: pointer
-  @extend .size-normal
-  @extend .weight-medium
+  @extend .size-small
+  @extend .weight-regular
   height: $inputHeight
   box-shadow: none !important
   background: $background !important
@@ -132,6 +132,7 @@ input, select, .chosen-container
   min-height: $inputHeight
   background: $background !important
   transition: background $ease $transitionSpeed
+  line-height: 1.4 !important
 
   &:not(:last-child)
     border-bottom: $formInputBorder
@@ -149,7 +150,7 @@ input, select, .chosen-container
   .chosen-single, .chosen-results li
     &:before
       @content
-      transform: scale($inputIconScale) translateY(40%)
+      transform: scale($inputIconScale) translateY(20%)
       content: ''
       padding: 0 5px
       margin-right: 0.5rem
@@ -166,7 +167,8 @@ input, select, .chosen-container
     @extend .icon-man
 
 .input__time_icon
-  @extend .icon-geo
+  @extend .icon-clock
+  top: 4px !important
 
 .input__date_icon
   @extend .icon-calendar

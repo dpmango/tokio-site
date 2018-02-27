@@ -1,25 +1,25 @@
 include ../shared/_input
 
-.modal#modal-reserve
-  .modal__inner
-    h1.modal__heading Бронирование
-    span.modal__descr Вы можете заказать столик для банкета в одном из наших заведений. Для лиц старше 18 лет.
-    +anchor(js-modal-closer="true").modal__close &times;
-    form.modal__form_wrapper
-      .modal__form_wrapper_left
-        .modal__form_wrapper_left_top.form__field
+.b-modal#modal-reserve
+  .b-modal__inner
+    h2.b-modal__heading Бронирование
+    span.b-modal__descr Вы можете заказать столик для банкета в одном из наших заведений. Для лиц старше 18 лет.
+    +anchor(js-modal-closer="true").b-modal__close &times;
+    form.b-modal__form_wrapper
+      .b-modal__form_wrapper_left
+        .b-modal__form_wrapper_left_top.form__field
           +select([
             ['Выберите адрес', null],
             ['Москва, Ореховый б-р.14.корп.3 ТРЦ "Домодедовский" 3 этаж', "1"],
             ['Малый Афанасьевский пер., 14/34 строение 2', "2"]
           ]).address__select
-        .modal__form_wrapper_left_bottom.form__field_multi
+        .b-modal__form_wrapper_left_bottom.form__field_multi
           .form__field
             input(name='name', type='text', placeholder='Ваше имя')
           .form__field
             input(name='phone', type='tel', placeholder='Номер телефона')
-      .modal__form_wrapper_right
-        .modal__form_wrapper_right_top.form__field_multi
+      .b-modal__form_wrapper_right
+        .b-modal__form_wrapper_right_top.form__field_multi
           .form__field
             +inputWithIcon().input__time_icon
               input(data-js-timeMask, name='time', placeholder='Время')
@@ -27,7 +27,7 @@ include ../shared/_input
           .form__field
             +inputWithIcon().input__date_icon
               input(name='time', placeholder='Date')
-        .modal__form_wrapper_right_bottom
+        .b-modal__form_wrapper_right_bottom
           .form__field
             +select([
               ['1-2 человека', null],
@@ -43,5 +43,5 @@ include ../shared/_input
       br
       +anchor(href='agreement.html').form__small_text
         | Пользовательское соглашение
-  .modal__logo
+  .b-modal__logo
     .icon-modal-fish-label

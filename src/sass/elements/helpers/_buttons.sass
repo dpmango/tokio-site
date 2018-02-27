@@ -8,9 +8,16 @@ button
     outline: none
 
 .btn-back
+  display: flex
+  flex-direction: row
+  align-items: center
   @extend .font-bravo-rg
-  @extend .size-normal3
+  @extend .size-normal2
   color: $colorGreen
+
+  [class^='icon-']
+    transform: scale(0.5)
+    //margin-right: px
 
 .btn
   @extend .font-bravo-rg

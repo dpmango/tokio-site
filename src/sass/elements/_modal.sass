@@ -4,7 +4,8 @@ $formPaddings: 10px
 .global-modal--open
   overflow: hidden
 
-.modal
+.b-modal
+  +font-size-block($sizeNormal)
   display: none
   z-index: $modalZIndex
   position: fixed
@@ -45,10 +46,14 @@ $formPaddings: 10px
   &__logo
     flex: 1
 
+  &__heading
+    margin-bottom: 2rem
+
   &__descr
     color: transparentize($colorDimGray, 0.2)
     padding-right: 50%
     margin-bottom: 2rem
+    line-height: 1.6
 
   &__form_wrapper
     display: flex

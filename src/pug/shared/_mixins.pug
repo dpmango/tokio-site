@@ -57,9 +57,11 @@ mixin instagram()
   +social('instagram', hrefIG)&attributes(attributes)
     block
 
-mixin buttonBack()
+mixin buttonBack(text)
+  - var text = text ||'&nbsp;назад'
   +anchor().btn-back&attributes(attributes)
-    | &larr;&nbsp;назад
+    .icon-back
+    | !{text}
 
 mixin photos(bgColor)
   include _svgs

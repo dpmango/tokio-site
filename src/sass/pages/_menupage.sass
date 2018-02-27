@@ -5,6 +5,27 @@
   height: 100%
   padding: 1rem 0
 
+  &__inner
+    padding: 3.5rem 2rem 0
+    //+mediaMinWidth(1700)
+
+  +mediaMinWidth(600)
+    &__back
+      display: none
+
+  +mediaMaxWidth(600)
+    +selectContainerMobileView
+    flex-direction: column
+
+    &__inner
+      padding-top: 0
+
+    &__back
+      padding-left: $paddingWrapperSide
+
+    .menu_select__nav
+      +font-size-block($sizeNormal3)
+
   .center-mobile
     padding-left: $paddingWrapperSide
 
@@ -33,7 +54,6 @@
     padding: 0 0 3rem
 
   +mediaMaxWidth(700)
-    margin: 0 0 8rem
     max-width: initial !important
     +categoriesMobileView()
 
