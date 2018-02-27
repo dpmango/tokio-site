@@ -498,6 +498,7 @@ $(document)
         paddingBottom: '60px',
         fixedElements: '#header, #footer',
         scrollOverflow: true,
+        normalScrollElements: '#map',
 
         //Custom selectors
         sectionSelector: '.fp-sect',
