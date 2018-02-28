@@ -52,5 +52,21 @@
       display: none !important
 
   +mediaMaxWidth(640)
-    padding-left: 3rem
-    padding-right: 3rem
+    padding-left: 0
+    padding-right: 0
+
+    &__slider
+      max-width: 100% !important
+      width: 100%
+      margin-left: 0
+      margin-right: 0
+
+      .slick-slide
+        padding-left: 3rem
+        padding-right: 3rem
+
+  +mediaMaxWidth(400)
+    &__slider
+      .slick-slide
+        padding-left: 1rem
+        padding-right: 1rem
