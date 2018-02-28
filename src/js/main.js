@@ -732,17 +732,9 @@ $(document)
         } catch (e) {
         }
 
-
         $modal.addClass('b-modal--open');
-
-        // https://stackoverflow.com/a/29299549/6119618
-        $('body').on('scroll mousewheel touchmove', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        });
-
-        // $('html, body').addClass('global-modal--open');
+        $('html, body')
+          .addClass('global-modal--open');
       },
       closeAllModals: function() {
         try {
@@ -752,12 +744,8 @@ $(document)
 
         $('.b-modal--open')
           .removeClass('b-modal--open');
-        $('body').on('scroll mousewheel touchmove', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        });
-        // $('html, body').removeClass('global-modal--open');
+        $('html, body')
+          .removeClass('global-modal--open');
       }
     };
 
