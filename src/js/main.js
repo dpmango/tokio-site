@@ -837,6 +837,11 @@ $(document)
         $(element).parent().removeClass('input-field-invalid')
       },
       ignore: ':hidden, [js-no-validate]',
+      submitHandler: function(form, e) {
+        e.preventDefault();
+        modalController.closeAllModals();
+        modalController.showModal('modal-thanks')
+      },
       // messages: {
       //   tel: {
       //     minLength: "Некорректный номер"

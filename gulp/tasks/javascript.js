@@ -22,7 +22,7 @@ gulp.task('javascript:vendor', function () {
       path.resolve('bower_components', 'animejs/anime.min.js'),
       path.resolve('bower_components', 'fullpage.js/vendors/scrolloverflow.js'),
       path.resolve('bower_components', 'fullpage.js/dist/jquery.fullpage.js'),
-      path.resolve('bower_components', 'chosen/chosen.jquery.min.js'),
+      // path.resolve('bower_components', 'chosen/chosen.jquery.min.js'), https://stackoverflow.com/questions/22016578/chosen-plugin-doesnt-seem-to-work-on-mobile-browsers
       path.resolve('bower_components', 'pickmeup/dist/pickmeup.min.js'),
       config.src.js + '/vendor/**/*.js'
     ])

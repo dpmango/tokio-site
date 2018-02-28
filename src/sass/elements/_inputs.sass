@@ -40,7 +40,6 @@ a.form__small_text
   align-items: stretch
   justify-content: stretch
   flex: 1
-  max-width: $inputWidth
 
   & > *
     width: 100%
@@ -50,9 +49,6 @@ a.form__small_text
   flex-direction: column
   input
     margin-bottom: 10px
-
-.form__field_multi
-  max-width: $inputWidth * 2
 
 //select, input, .chosen-container
   flex: 1
@@ -77,8 +73,6 @@ input, select, .chosen-container
   cursor: pointer
   @extend .size-small
   @extend .weight-regular
-  min-height: $inputHeight
-  max-height: $inputHeight
   box-shadow: none !important
   background: $background !important
   border: $formInputBorder
@@ -139,7 +133,6 @@ input, select, .chosen-container
   align-items: baseline
   justify-content: flex-start
   padding: 10px $formInputHorizontalPadding 14px
-  min-height: $inputHeight
   background: $background !important
   transition: background $ease $transitionSpeed
   line-height: 1.4 !important
@@ -279,3 +272,42 @@ label.error
 
     nav:first-child
       border-bottom: 1px solid $formInputDefaultBorderColor
+
+///
+
+input, select, .chosen-container, .chosen-results li
+  min-height: $inputHeight
+  max-height: $inputHeight
+
++mediaMinWidth(1700)
+  $inputHeight: 60px
+  $inputWidth: 450px
+
+  .b-modal__inner
+    max-width: 1500px
+
+  input, select, .chosen-container, .chosen-results li
+    min-height: $inputHeight
+    max-height: $inputHeight
+
+  .chosen-results li
+    max-height: initial
+
+  //.chosen-results li
+    padding: 1rem 0 !important
+
+  .input-icon
+    height: $inputHeight
+
+  .form__field, .form__field_multi
+    max-width: $inputWidth
+  .form__field_multi
+    max-width: $inputWidth * 2
+
+  .pickmeup
+    &, .pmu-instance
+      max-width: $inputWidth - 5
+    .pmu-instance
+      .pmu
+        &-days
+          max-width: $inputWidth
