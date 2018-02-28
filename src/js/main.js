@@ -296,10 +296,14 @@ $(document)
         .mask('99.99.99', { placeholder: 'ДД.ММ.ГГ' });
       $('input[type=\'tel\']')
         .mask('+7 (000) 000-0000', { placeholder: '+7 (___) ___-____' });
+
+      $('input[data-js-mask]');
+
       $('input[data-js-timeMask]')
         .mask('00:00', {
           placeholder: $(this)
-            .attr('placeholder')
+            .attr('placeholder'),
+          selectOnFocus: true
         });
     }
 
@@ -404,6 +408,25 @@ $(document)
         $(this)
           .next('.chosen-container')
           .attr('data-class', classes);
+      });
+
+      pickmeup.defaults = Object.assign(pickmeup.defaults, {
+        format: 'Y-m-d',
+        locales: {
+          ru: {
+            days: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+            daysShort: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+            daysMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+            months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+            monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек']
+          }
+        },
+        locale: 'ru',
+        title_format: 'B'
+      });
+
+      pickmeup('[js-datepicker]', {
+        format: 'Y-m-d'
       });
     }
 

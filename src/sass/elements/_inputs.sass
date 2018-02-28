@@ -171,8 +171,8 @@ input, select, .chosen-container
     &:before
       top: 15px
 
-  //.chosen-single:before
-    transform: scale($inputIconScale) translateY(-10%)
+//.chosen-single:before
+  transform: scale($inputIconScale) translateY(-10%)
 
 [data-class*='address__select']
   @include icon-on-select
@@ -195,3 +195,52 @@ input, select, .chosen-container
 
   & + *
     padding-left: 50px
+
+.pickmeup
+  @extend .font-lato
+  z-index: 10000
+
+  &, .pmu-instance
+    max-width: $inputWidth - 5
+
+  .pmu-instance
+    border: $formInputBorder
+    border-top: 0
+
+    .pmu
+      &-prev, &-next
+        transform: scale(0.7)
+        color: #C4C4C4 !important
+
+      &-month, &-day-of-week
+        color: $colorBlack
+
+      &-days
+        max-width: $inputWidth
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+
+        *
+          flex-basis: 14.2857143%
+
+      &-today
+        background-color: #f0f0f0
+
+      &-selected
+        background-color: $colorGreen !important
+        color: #1c1c1c
+
+      &-button
+        $color: #1c1c1c
+        color: $color
+        transition: color $ease $transitionSpeed
+
+        &:hover
+          color: lighten($color, 20%)
+
+      &-not-in-month
+        color: #dbdbdb
+
+    nav:first-child
+      border-bottom: 1px solid $formInputDefaultBorderColor

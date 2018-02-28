@@ -23,6 +23,7 @@ gulp.task('javascript:vendor', function () {
       path.resolve('bower_components', 'fullpage.js/vendors/scrolloverflow.js'),
       path.resolve('bower_components', 'fullpage.js/dist/jquery.fullpage.js'),
       path.resolve('bower_components', 'chosen/chosen.jquery.min.js'),
+      path.resolve('bower_components', 'pickmeup/dist/pickmeup.min.js'),
       config.src.js + '/vendor/**/*.js'
     ])
     .pipe(plumber({errorHandler: config.errorHandler}))

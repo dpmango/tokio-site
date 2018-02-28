@@ -27,6 +27,7 @@
     "animejs": "^2.2.0",
     "fullpage": "^2.9.6",
     "chosen": "^1.8.3",
-    "fullpage.js": "alvarotrigo/fullPage.js#dev"
+    "fullpage.js": "alvarotrigo/fullPage.js#dev",
+    "pickmeup": "nazar-pc/PickMeUp"
   }
 }
