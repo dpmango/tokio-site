@@ -698,6 +698,7 @@ $(document)
 
     $('[js-modal-invoker]')
       .click(function() {
+        modalController.closeAllModals();
         modalController.showModal($(this)
           .attr('js-modal-invoker'));
       });

@@ -1,10 +1,13 @@
 include ../shared/_input
 
 .b-modal#modal-reserve
+  .b-modal__header
+    .icon-tokio-icon-black
+  +anchor(js-modal-closer="true").b-modal__close &times;
+
   .b-modal__inner
     h2.b-modal__heading Бронирование
     span.b-modal__descr Вы можете заказать столик для банкета в одном из наших заведений. Для лиц старше 18 лет.
-    +anchor(js-modal-closer="true").b-modal__close &times;
     form.b-modal__form_wrapper
       .b-modal__form_wrapper_left
         .b-modal__form_wrapper_left_top.form__field_multi

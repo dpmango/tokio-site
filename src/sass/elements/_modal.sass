@@ -15,11 +15,20 @@ $formPaddings: 10px
   background: $background
   min-height: 350px
   padding: 3.8rem 0 5rem 0
+  flex-direction: column
   align-items: stretch
   justify-content: center
 
   &--open
     display: flex
+
+  &__header
+    display: none
+    margin-top: -3.8rem
+    //height: 45px
+    padding: 16px $paddingWrapperSide
+    //align-items: center
+    border-bottom: 1px solid $colorDimWhite
 
   &__close
     position: absolute
@@ -45,6 +54,7 @@ $formPaddings: 10px
 
   &__logo
     flex: 1
+    z-index: -1
 
   &__heading
     margin-bottom: 2rem
@@ -113,3 +123,69 @@ $formPaddings: 10px
 
     [class^="icon-"]
       transform: scale(0.8) translateY(-10%)
+
+  +mediaMaxWidth(1410)
+    &__logo
+      position: absolute
+      right: 100px
+      top: 100px
+
+  +mediaMaxWidth(1023)
+    &__form_wrapper
+      flex-direction: column
+
+      &_left
+        margin-right: 0
+
+      &_right
+        margin-top: $formPaddings
+
+    &__logo
+      display: none
+
+    &__inner
+      padding-right: 300px
+
+    &__descr
+      +font-size-block($sizeNormal3)
+      padding-right: 0
+
+  +mediaMaxWidth(968)
+    &__header
+      display: flex
+
+    &__close
+      position: absolute
+      top: 0
+      right: 0
+      left: initial
+      font-size: 3rem
+
+    &__inner
+      padding-right: 150px
+
+    .form__info
+      padding: 2rem 0 0
+      +font-size-block($sizeNormal4)
+
+  +mediaMaxWidth(768)
+    &__inner
+      padding: 2rem $paddingWrapperSide 0
+
+    &__form
+      &_wrapper
+        flex: 1
+        width: 100%
+
+    .form__field
+      &, &_multi
+        flex: 1 0 100%
+        max-width: 100% !important
+        width: 100%
+
+      &_multi
+        flex-wrap: wrap
+
+        &>.form__field:not(:last-child)
+          margin-bottom: $formPaddings
+
