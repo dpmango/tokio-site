@@ -1,0 +1,27 @@
+.b-modal__mobnav
+  min-height: 100vh
+  padding-bottom: 0
+
+  .b-modal__inner
+    +font-size-block($sizeBigger)
+    align-items: stretch
+
+  &_list
+    @extend .font-bravo-rg
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    flex: 5
+    width: 100%
+    li
+      margin: 1.5rem 0
+
+  &_socials
+    border-top: 1px solid $colorDimWhite
+    display: flex
+    flex: 2
+    flex-direction: row
+    align-items: center
+    justify-content: space-around
+    margin: 0 3rem

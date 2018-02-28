@@ -1,0 +1,21 @@
+include _modal-layout
+
+mixin mobileNav(absoluteLinks)
+  +modal('mobile-nav').b-modal__mobnav.root-block
+    .b-modal__inner
+      include ../shared/_vars
+      ul.b-modal__mobnav_list
+        each navItem in menus
+          li
+
+            +anchor(
+            href='index.html#' + navItem[1]
+            js-modal-closer='true'
+            js-fullpage-link=absoluteLinks ? false : navItem[1]
+            )= navItem[0]
+
+      .b-modal__mobnav_socials
+        +twitter
+        +facebook
+        +vk
+        +instagram

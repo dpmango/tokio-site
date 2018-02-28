@@ -1,4 +1,5 @@
 extends _layout
+include ../modals/_mobile-nav
 
 block header
   include ../components/_header
@@ -7,3 +8,6 @@ block header
 block footer
   include ../components/_footer
   +footer(true)
+
+block append modals
+  +mobileNav(true)

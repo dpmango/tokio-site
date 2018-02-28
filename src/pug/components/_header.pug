@@ -8,16 +8,15 @@ mixin header(absoluteLinks)
   header.b-header.root-block#header
     .container.layout__offset.b-header__wrapper
       nav.b-header__nav
-        -
-          var navigation = [
-          ['Меню', 'menu'],
-          ['О нас', 'about'],
-          ['Новости', 'news'],
-          ['Контакты', 'contacts'],
-          ]
-        each navItem in navigation
-          +anchor(href='index.html#' + navItem[1], js-fullpage-link=absoluteLinks ? false : navItem[1]).size-smallest.b-header__nav_item= navItem[0]
-      +anchor.hamburger-btn.hidden
+        include ../shared/_vars
+        each navItem in menus
+
+          +anchor(
+          href='index.html#' + navItem[1]
+          js-fullpage-link=absoluteLinks ? false : navItem[1]
+          ).size-smallest.b-header__nav_item= navItem[0]
+
+      +anchor(js-modal-invoker="mobile-nav").hamburger-btn.hidden
       .b-header__logo
         +anchor(href='index.html#home', js-fullpage-link=absoluteLinks ? false : 'home')
           .icon-logo.b-normal
