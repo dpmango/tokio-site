@@ -3,6 +3,9 @@ $formPaddings: 10px
 
 .global-modal--open
   overflow: hidden
+  // Fix ios scroll bug https://benfrain.com/preventing-body-scroll-for-modals-in-ios/
+  position: fixed
+  width: 100vw
 
 .b-modal
   +font-size-block($sizeNormal)
@@ -54,7 +57,7 @@ $formPaddings: 10px
     flex: 1
 
   &__inner
-    overflow: auto
+    overflow-y: auto
     display: flex
     flex-direction: column
     padding: 0 4rem
