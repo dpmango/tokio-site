@@ -15,7 +15,7 @@
     display: flex
     flex-direction: column
     flex: 4
-    //transform: translateY(20px)
+  //transform: translateY(20px)
 
   &__row
     //transform: translateY(0px)
@@ -30,7 +30,7 @@
 
     &:nth-child(1)
       margin-top: 100px
-      //padding-bottom: 40px
+    //padding-bottom: 40px
     &:nth-child(2)
       padding-left: 40px
       padding-right: 40px
@@ -44,7 +44,21 @@
   &__button_wrapper
     align-items: flex-start
     justify-content: center
-    flex: 1
+    flex: 0.5
+
+  +mediaMaxWidth(1366)
+    padding-bottom: 90px
+
+    &__container
+      flex: 1
+      justify-content: center
+
+    +mediaMinWidth(870)
+      &__row
+        max-height: 320px
+
+    &__button_wrapper
+      flex: 0
 
   +mediaMaxWidth(1170)
     h2
@@ -63,13 +77,16 @@
       &:not(:last-child)
         margin-right: 3rem
 
-    &__container
-      flex: none
+    //&__container
+      flex: 1
+      padding: 0
+
   +mediaMaxWidth(870)
     &__row
       flex-direction: column
 
     .b-story
+      +font-size-block($sizeBig2)
       &:not(:last-child)
         margin-right: 0
         margin-bottom: 5rem
