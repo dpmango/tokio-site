@@ -57,13 +57,14 @@
         margin-bottom: 20px
 
   &__socials
+    $socialsMargin: 20px
     $socialsLineWidth: 140px
     position: relative
     padding-left: $socialsLineWidth
 
     .social
       display: inline-block
-      margin-right: 20px
+      margin-right: $socialsMargin
 
     &:before
       content: ''
@@ -72,6 +73,15 @@
       top: 20px
       width: $socialsLineWidth - 40px
       border-top: 1px solid $colorGreen
+
+    +mediaMaxWidth(1100)
+      +mediaMinWidth(865)
+        $calculatedSpace: 100% - #{$socialsMargin * 4} - #{40px * 4}
+        padding-left: calc(#{$calculatedSpace})
+
+        &:before
+          width: calc(#{$calculatedSpace} - 20px)
+
 
   +mediaMaxWidth(865)
     padding-left: $paddingWrapperSide
