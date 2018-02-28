@@ -15,7 +15,7 @@ include ../shared/_mixins
 
 
     .b-newspage__container
-      h2.center-mobile Последние новости
+      h2.center-mobile(js-nav-anchor) Последние новости
 
       while newsItems.length > 0
         - var splicedNews = newsItems.splice(0, itemsPerRow)

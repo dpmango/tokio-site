@@ -478,7 +478,7 @@ $(document)
 
     Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
 
-      if ($.fn.fullpage) {
+      if (isFullpageActive()) {
         $.fn.fullpage.reBuild();
       }
 
@@ -518,22 +518,25 @@ $(document)
       return $mouse;
     }
 
+    function isFullpageActive() {
+      return $('html')
+        .hasClass('fp-enabled');
+    }
+
     function makeFooterFixed(isFixed) {
       var $footer = $('#footer');
       if (isFixed) {
-        $footer.addClass('b-footer--fixed')
+        $footer.addClass('b-footer--fixed');
       } else {
-        $footer.removeClass('b-footer--fixed')
+        $footer.removeClass('b-footer--fixed');
       }
     }
 
     function initDeinitFullpage() {
-      isFullPage = $('html')
-        .hasClass('fp-enabled');
       var shouldBeFullpage = _window.width() > bp.tablet && _window.height() > 500;
 
       if (shouldBeFullpage) {
-        if (isFullPage) {
+        if (isFullpageActive()) {
           // console.log('Rebuild');
           $.fn.fullpage.reBuild();
           makeFooterFixed(true);
@@ -559,15 +562,6 @@ $(document)
             } else {
               $mouse.removeClass('mouse-showed');
             }
-
-            $('[js-fullpage-link]')
-              .each(function(i, link) {
-                $(link)
-                  .click(function() {
-                    $.fn.fullpage.moveTo($(this)
-                      .attr('js-fullpage-link'));
-                  });
-              });
           },
           onSlideLeave: function(anchorLink, index) {
             if (index === 1) {
@@ -581,13 +575,39 @@ $(document)
         makeFooterFixed(true);
         $fp.addClass('fullpage-active');
       } else {
-        if (isFullPage) {
+        if (isFullpageActive()) {
           // console.log('Destroy');
           $.fn.fullpage.destroy('all');
           makeFooterFixed(false);
         }
       }
     }
+
+    $('[js-fullpage-link]')
+      .each(function(i, link) {
+        $(link)
+          .click(function() {
+            if (isFullpageActive()) {
+              $.fn.fullpage.moveTo($(this)
+                .attr('js-fullpage-link'));
+            } else {
+              var $anchor = $('[data-anchor=' + $(this)
+                .attr('js-fullpage-link') + ']');
+
+              if (!$anchor.length) {
+                return;
+              }
+
+              var $heading = $anchor.find('[js-nav-anchor]');
+
+              $('html, body')
+                .animate({
+                  scrollTop: ($heading.length ? $heading.offset().top - 10 : $anchor.offset().top) - $('#header')
+                    .height()
+                }, 1000);
+            }
+          });
+      });
 
 
     /// Select box
