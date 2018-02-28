@@ -518,6 +518,15 @@ $(document)
       return $mouse;
     }
 
+    function makeFooterFixed(isFixed) {
+      var $footer = $('#footer');
+      if (isFixed) {
+        $footer.addClass('b-footer--fixed')
+      } else {
+        $footer.removeClass('b-footer--fixed')
+      }
+    }
+
     function initDeinitFullpage() {
       isFullPage = $('html')
         .hasClass('fp-enabled');
@@ -527,6 +536,7 @@ $(document)
         if (isFullPage) {
           // console.log('Rebuild');
           $.fn.fullpage.reBuild();
+          makeFooterFixed(true);
           return;
         }
 
@@ -568,11 +578,13 @@ $(document)
           }
         });
 
+        makeFooterFixed(true);
         $fp.addClass('fullpage-active');
       } else {
         if (isFullPage) {
           // console.log('Destroy');
           $.fn.fullpage.destroy('all');
+          makeFooterFixed(false);
         }
       }
     }

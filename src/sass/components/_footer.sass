@@ -8,14 +8,17 @@
 
   $blackFooterBorder: 1px solid $colorGray2
 
-  position: fixed
-  bottom: 0
-  left: 0
-  right: 0
+  position: relative
   height: $footerNormalHeight
   z-index: $footerZIndex
   color: $colorGray
   background: $footerBackground
+
+  &--fixed
+    position: fixed
+    bottom: 0
+    left: 0
+    right: 0
 
   @at-root :not(#fullpage) .footer-offset
     padding-bottom: $footerNormalHeight
