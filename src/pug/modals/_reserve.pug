@@ -5,36 +5,70 @@ include _modal-layout
   .b-modal__inner
     h2.b-modal__heading Бронирование
     span.b-modal__descr Вы можете заказать столик для банкета в одном из наших заведений. Для лиц старше 18 лет.
-    form.b-modal__form_wrapper
-      .b-modal__form_wrapper_left
-        .b-modal__form_wrapper_left_top.form__field_multi
-          +select([
-            ['Выберите адрес', null],
-            ['Москва, Ореховый б-р.14.корп.3 ТРЦ "Домодедовский" 3 этаж', "1"],
-            ['Малый Афанасьевский пер., 14/34 строение 2', "2"]
-          ]).address__select
-        .b-modal__form_wrapper_left_bottom.form__field_multi
-          .form__field
-            input(name='name', type='text', placeholder='Ваше имя')
-          .form__field
-            input(name='phone', type='tel', placeholder='Номер телефона')
-      .b-modal__form_wrapper_right
-        .b-modal__form_wrapper_right_top.form__field_multi
-          .form__field
-            +input('icon-clock2x')(data-js-timeMask='true', name='time', placeholder='Время')
-          // datepicker
-          .form__field
-            +input('icon-calendar2x')(js-datepicker="true", data-js-timeMask='true', name='date', placeholder='Дата', value='Дата')
-        .b-modal__form_wrapper_right_bottom
-          .form__field
+    form(js-validate, action='#', method='get', id='reserve-form')
+      .b-modal__form_wrapper
+        .b-modal__form_wrapper_left
+          .b-modal__form_wrapper_left_top.form__field_multi
             +select([
-              ['1-2 человека', null],
-              ['1 человек', "1"],
-              ['2 человека', "2"]
-            ]).user__select.user_count__select
-          .form__field
-    +button(js-modal-invoker="modal-thanks")
-      | Забронировать
+              ['Выберите адрес', null],
+              ['Москва, Ореховый б-р.14.корп.3 ТРЦ "Домодедовский" 3 этаж', "1"],
+              ['Малый Афанасьевский пер., 14/34 строение 2', "2"]
+            ]).address__select
+          .b-modal__form_wrapper_left_bottom.form__field_multi
+
+            .form__field
+              +input()(
+              name='name',
+              type='text',
+              placeholder='Ваше имя',
+              required='required'
+              )
+
+            .form__field
+              +input()(
+              name='phone',
+              type='tel',
+              placeholder='Номер телефона',
+              required='required',
+              minlength=17
+              data-msg-minlength="Некорректный номер"
+              )
+
+        .b-modal__form_wrapper_right
+          .b-modal__form_wrapper_right_top.form__field_multi
+            .form__field
+
+              +input('icon-clock2x')(
+              data-js-timeMask='true',
+              name='time',
+              placeholder='Время',
+              required='required'
+              )
+
+            .form__field
+
+              +input('icon-calendar2x')(
+              js-datepicker='true',
+              js-no-validate="true",
+              data-js-timeMask='true',
+              type='text',
+              placeholder='Дата',
+              value='Дата'
+              )
+
+          .b-modal__form_wrapper_right_bottom
+            .form__field
+              +select([
+                ['1-2 человека', null],
+                ['1 человек', '1'],
+                ['2 человека', '2']
+              ]).user__select.user_count__select
+            .form__field
+
+      button(type='submit').btn
+        | Забронировать
+      //+button(js-modal-invoker='modal-thanks')
+        | Забронировать
     .form__info
       span.form__small_text
         | Нажимая на кнопку вы даете согласие на обработку своих персональных данных

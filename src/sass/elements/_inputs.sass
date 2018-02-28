@@ -46,6 +46,11 @@ a.form__small_text
     width: 100%
     flex: 1
 
+.form__field
+  flex-direction: column
+  input
+    margin-bottom: 10px
+
 .form__field_multi
   max-width: $inputWidth * 2
 
@@ -72,7 +77,8 @@ input, select, .chosen-container
   cursor: pointer
   @extend .size-small
   @extend .weight-regular
-  height: $inputHeight
+  min-height: $inputHeight
+  max-height: $inputHeight
   box-shadow: none !important
   background: $background !important
   border: $formInputBorder
@@ -189,12 +195,41 @@ input, select, .chosen-container
   top: 0
   bottom: 0
   width: 40px
+  height: $inputHeight
   display: flex
   align-items: center
   justify-content: center
 
   & + *
     padding-left: 50px
+
+  &__error
+    position: absolute
+    right: 0
+    left: initial
+    top: 0
+    bottom: 0
+    width: 20px
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    opacity: 0
+    transition: opacity $ease $transitionSpeed
+
+.input-field-invalid
+  .input-icon__error
+    opacity: 1
+
+  input.error
+    border: 1px solid $colorError
+
+label.error
+  +font-size-block($sizeSmall)
+  color: $colorError
+  margin-bottom: 2rem
+
+  +mediaMaxWidth(1023)
+    margin-bottom: 0
 
 .pickmeup
   @extend .font-lato

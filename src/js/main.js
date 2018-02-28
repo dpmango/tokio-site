@@ -358,7 +358,6 @@ $(document)
 
     }
 
-
     //////////
     // LAZY LOAD
     //////////
@@ -422,12 +421,11 @@ $(document)
           }
         },
         locale: 'ru',
-        title_format: 'B'
+        title_format: 'B',
+        min: Date.now().toString()
       });
 
-      pickmeup('[js-datepicker]', {
-        format: 'Y-m-d'
-      });
+      pickmeup('[js-datepicker]');
     }
 
     //////////
@@ -792,6 +790,60 @@ $(document)
         }, 1500);
       }
     }
+
+
+
+    //////////
+    // Validation
+    //////////
+
+    jQuery.extend(jQuery.validator.messages, {
+      required: "Поле не заполнено",
+      remote: "Please fix this field.",
+      email: "Введите корректный e-mail",
+      url: "Введите корректный URL",
+      date: "Введите корректную дату",
+      dateISO: "Введите корректную дату (ISO).",
+      number: "Введите корректное число",
+      digits: "Пожалуйста, введите только цифры",
+      creditcard: "Введите корректный номер карты",
+      equalTo: "Please enter the same value again.",
+      accept: "Please enter a value with a valid extension.",
+      maxlength: jQuery.validator.format("Не более {0} символов"),
+      minlength: jQuery.validator.format("Не менее {0} символов"),
+      rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
+      range: jQuery.validator.format("Please enter a value between {0} and {1}."),
+      max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
+      min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
+    });
+
+    // $('[type="tel"]').rules('add', {
+    //   messages: {
+    //     minLength:"Некорректный номер"
+    //   }
+    // });
+
+    $('[js-validate]').validate({
+      invalidHandler: function(e, validator) {
+        console.log($(validator.currentForm).find('input.error'));
+        $('input.error').parent().addClass('invalid-input')
+      },
+      highlight: function(element) {
+        $(element).addClass('error');
+        $(element).parent().addClass('input-field-invalid')
+      },
+      unhighlight: function(element) {
+        $(element).removeClass('error');
+        $(element).parent().removeClass('input-field-invalid')
+      },
+      ignore: ':hidden, [js-no-validate]',
+      // messages: {
+      //   tel: {
+      //     minLength: "Некорректный номер"
+      //   }
+      // }
+      // errorElement: ''
+    });
 
   });
 
