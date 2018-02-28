@@ -6,7 +6,7 @@ $formPaddings: 10px
 
 .b-modal
   +font-size-block($sizeNormal)
-  display: none
+  display: flex
   z-index: $modalZIndex
   position: fixed
   left: 0
@@ -19,8 +19,13 @@ $formPaddings: 10px
   align-items: stretch
   justify-content: center
 
+  opacity: 0
+  pointer-events: none
+  transition: opacity $ease $transitionSpeed
+
   &--open
-    display: flex
+    opacity: 1
+    pointer-events: all
 
   &__header
     display: none
