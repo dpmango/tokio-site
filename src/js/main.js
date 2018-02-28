@@ -192,27 +192,30 @@ $(document)
       // other individual sliders goes here
       $('[js-main-page-slider]')
         .each(function(i, sl) {
-          $(sl).slick({
-            autoplay: 20,
-            dots: true,
-            customPaging: function(slider, i) {
-              return '<a class="fish__bone">';
-            },
-            vertical: $(sl).attr('vertical') !== undefined,
-            fade: $(sl).attr('fade') !== undefined,
-            arrows: false,
-            prevArrow: slickNextArrow,
-            nextArrow: slickPrevArrow,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 1,
-            accessibility: false,
-            adaptiveHeight: false,
-            draggable: true,
-            swipe: true,
-            swipeToSlide: true,
-            touchMove: true
-          });
+          $(sl)
+            .slick({
+              autoplay: 20,
+              dots: true,
+              customPaging: function(slider, i) {
+                return '<a class="fish__bone">';
+              },
+              vertical: $(sl)
+                .attr('vertical') !== undefined,
+              fade: $(sl)
+                .attr('fade') !== undefined,
+              arrows: false,
+              prevArrow: slickNextArrow,
+              nextArrow: slickPrevArrow,
+              infinite: true,
+              speed: 300,
+              slidesToShow: 1,
+              accessibility: false,
+              adaptiveHeight: false,
+              draggable: true,
+              swipe: true,
+              swipeToSlide: true,
+              touchMove: true
+            });
         });
     }
 
@@ -492,57 +495,87 @@ $(document)
         .resize();
     }
 
-    if (_window.width() > bp.tablet && _window.height() > 500) {
-      const $fp = $('#fullpage');
+    var isFullPage;
+    var $mouse = createMouse();
+    initDeinitFullpage();
 
-      $fp.fullpage({
-        anchors: ['home', 'about', 'menu', 'news', 'contacts'],
-        paddingTop: '70px',
-        paddingBottom: '60px',
-        fixedElements: '#header, #footer',
-        scrollOverflow: true,
-        normalScrollElements: '#map',
+    _window.on('resize', debounce(initDeinitFullpage, 100));
 
-        //Custom selectors
-        sectionSelector: '.fp-sect',
+    function createMouse() {
 
-        afterLoad: function(anchorLink, index) {
-          if (index === 1) {
-            $mouse.addClass('mouse-showed');
-          } else {
-            $mouse.removeClass('mouse-showed');
-          }
-        },
-        onSlideLeave: function(anchorLink, index) {
-          if (index === 1) {
-            $mouse.addClass('mouse-showed');
-          } else {
-            $mouse.removeClass('mouse-showed');
-          }
-        }
-      });
-
-      function createMouse() {
-        var $mouse = $('<a href="#" class="icon-mouse down-button" />');
-        $mouse.appendTo('body');
-        $mouse.click(function() {
-          $mouse.removeClass('mouse-showed');
-          $.fn.fullpage.moveSectionDown();
-        });
-
+      var $mouse;
+      if ($mouse = $('.icon-mouse.down-button')) {
         return $mouse;
+
       }
+      $mouse = $('<a href="#" class="icon-mouse down-button" />');
+      $mouse.appendTo('body');
+      $mouse.click(function() {
+        $mouse.removeClass('mouse-showed');
+        $.fn.fullpage.moveSectionDown();
 
-      var $mouse = createMouse();
-
-      $fp.addClass('fullpage-active');
+      });
+      return $mouse;
     }
 
-    $('[js-fullpage-link]')
-      .each(function() {
-        $.fn.fullpage.moveTo($(this)
-          .attr('js-fullpage-link'));
-      });
+    function initDeinitFullpage() {
+      isFullPage = $('html')
+        .hasClass('fp-enabled');
+      var shouldBeFullpage = _window.width() > bp.tablet && _window.height() > 500;
+
+      if (shouldBeFullpage) {
+        if (isFullPage) {
+          // console.log('Rebuild');
+          $.fn.fullpage.reBuild();
+          return;
+        }
+
+        // console.log('Init');
+        const $fp = $('#fullpage');
+        $fp.fullpage({
+          anchors: ['home', 'about', 'menu', 'news', 'contacts'],
+          paddingTop: '70px',
+          paddingBottom: '60px',
+          fixedElements: '#header, #footer',
+          scrollOverflow: true,
+          normalScrollElements: '#map',
+
+          //Custom selectors
+          sectionSelector: '.fp-sect',
+
+          afterLoad: function(anchorLink, index) {
+            if (index === 1) {
+              $mouse.addClass('mouse-showed');
+            } else {
+              $mouse.removeClass('mouse-showed');
+            }
+
+            $('[js-fullpage-link]')
+              .each(function(i, link) {
+                $(link)
+                  .click(function() {
+                    $.fn.fullpage.moveTo($(this)
+                      .attr('js-fullpage-link'));
+                  });
+              });
+          },
+          onSlideLeave: function(anchorLink, index) {
+            if (index === 1) {
+              $mouse.addClass('mouse-showed');
+            } else {
+              $mouse.removeClass('mouse-showed');
+            }
+          }
+        });
+
+        $fp.addClass('fullpage-active');
+      } else {
+        if (isFullPage) {
+          // console.log('Destroy');
+          $.fn.fullpage.destroy('all');
+        }
+      }
+    }
 
 
     /// Select box
