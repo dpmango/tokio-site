@@ -26,6 +26,7 @@
   +mediaMaxWidth(910)
     @include noteMobileView
     @include photosMobileLayout
+    padding-top: 3rem
 
     &__wrapper
       flex-direction: column
@@ -35,7 +36,13 @@
       transform: scale(0.7)
 
     &__descr
-      padding: 0
+      padding: 0 6rem
 
   +mediaMaxWidth(768)
     padding-top: 4rem
+
+    .center-mobile
+      padding-left: $paddingWrapperSide
+
+    &__descr
+      padding: 0
