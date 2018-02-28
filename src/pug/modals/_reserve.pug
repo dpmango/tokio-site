@@ -7,7 +7,7 @@ include ../shared/_input
     +anchor(js-modal-closer="true").b-modal__close &times;
     form.b-modal__form_wrapper
       .b-modal__form_wrapper_left
-        .b-modal__form_wrapper_left_top.form__field
+        .b-modal__form_wrapper_left_top.form__field_multi
           +select([
             ['Выберите адрес', null],
             ['Москва, Ореховый б-р.14.корп.3 ТРЦ "Домодедовский" 3 этаж', "1"],
@@ -20,13 +20,11 @@ include ../shared/_input
             input(name='phone', type='tel', placeholder='Номер телефона')
       .b-modal__form_wrapper_right
         .b-modal__form_wrapper_right_top.form__field_multi
-          .form__field
-            +inputWithIcon().input__time_icon
-              input(data-js-timeMask, name='time', placeholder='Время')
+          +inputWithIcon().input__time_icon
+            input(data-js-timeMask, name='time', placeholder='Время')
           // datepicker
-          .form__field
-            +inputWithIcon().input__date_icon
-              input(name='time', placeholder='Date')
+          +inputWithIcon().input__date_icon
+            input(name='time', placeholder='Date')
         .b-modal__form_wrapper_right_bottom
           .form__field
             +select([
@@ -34,6 +32,7 @@ include ../shared/_input
               ['1 человек', "1"],
               ['2 человека', "2"]
             ]).user__select.user_count__select
+          .form__field
     +button(js-modal-invoker="modal-thanks")
       | Забронировать
     .form__info

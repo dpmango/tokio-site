@@ -33,30 +33,34 @@ a.form__small_text
   @extend .size-smallest
   padding: 2rem 70% 0 0
 
-.form__field
+.form__field, .form__field_multi
   position: relative
   display: flex
   flex-direction: row
   align-items: stretch
   justify-content: stretch
   flex: 1
+  max-width: $inputWidth
 
-  select, input, .chosen-container
+  & > *
+    width: 100%
     flex: 1
+
+.form__field_multi
+  max-width: $inputWidth * 2
+
+//select, input, .chosen-container
+  flex: 1
 
 .input_with_icon
   input
-    padding-left: calc(#{$formInputHorizontalPadding} + 32px)
+    padding-left: calc(#{$formInputHorizontalPadding} + 0.5rem)
 
   .input__icon
     position: absolute
-    left: $formInputHorizontalPadding
+    left: 0
     top: 0
     transform: scale($inputIconScale) translateY(50%)
-
-input
-  flex: none !important
-  width: $inputWidth !important
 
 input, select, .chosen-single span, .chosen-results li
   @extend .font-lato
