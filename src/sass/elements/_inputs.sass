@@ -100,7 +100,7 @@ input, select, .chosen-container
   border-radius: 0 !important
   box-shadow: none !important
   border: $formInputBorder !important
-  padding: $formInputPadding !important
+  padding: $formInputPadding
   background: none !important
   display: flex !important
   align-items: center !important
@@ -132,7 +132,7 @@ input, select, .chosen-container
   display: flex !important
   align-items: baseline
   justify-content: flex-start
-  padding: 10px $formInputHorizontalPadding 14px !important
+  padding: 10px $formInputHorizontalPadding 14px
   min-height: $inputHeight
   background: $background !important
   transition: background $ease $transitionSpeed
@@ -154,26 +154,44 @@ input, select, .chosen-container
   .chosen-single, .chosen-results li
     &:before
       @content
-      transform: scale($inputIconScale) translateY(20%)
       content: ''
-      padding: 0 5px
-      margin-right: 0.5rem
+      position: absolute
+      left: 10px
+      top: 50%
+      bottom: 0
+      width: 40px
+      transform: translate(20%, -50%)
 
-  .chosen-single:before
+  .chosen-single, .chosen-results li
+    padding-left: 50px
+
+  .chosen-results li
+    position: relative
+
+    &:before
+      top: 15px
+
+  //.chosen-single:before
     transform: scale($inputIconScale) translateY(-10%)
 
 [data-class*='address__select']
   @include icon-on-select
-    @extend .icon-geo
+    @extend .icon-geo2x
 
 [data-class*='user__select']
   @include icon-on-select
-    @extend .icon-man
+    @extend .icon-man2x
 
-.input__time_icon
-  @extend .icon-clock
-  //top: 4px !important
+.input-icon
+  pointer-events: none
+  position: absolute
+  left: 10px
+  top: 0
+  bottom: 0
+  width: 40px
+  display: flex
+  align-items: center
+  justify-content: center
 
-.input__date_icon
-  @extend .icon-calendar
-  //top: 4px !important
+  & + *
+    padding-left: 50px

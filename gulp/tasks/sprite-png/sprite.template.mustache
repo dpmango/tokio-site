@@ -45,7 +45,7 @@ $sprite: (
 	background-image: url($image-path-retina);
 }
 
-@mixin sprite($image, $size: true) {
+@mixin sprite($image, $size: true, $retina: false) {
 	@include sprite-image($image);
 	@include sprite-position($image);
 	background-repeat: no-repeat;
@@ -67,6 +67,15 @@ $sprite: (
 		@include sprite-image-retina($image);
 
 	}
+
+    @if $retina {
+        @include sprite-size($image);
+        @include sprite-image-retina($image);
+    }
+}
+
+@mixin sprite2x($image, $size: true) {
+    @include sprite($image, $size, true)
 }
 
 {{/options.functions}}
@@ -76,4 +85,8 @@ $sprite: (
 	.icon-{{name}} {
 		@include sprite({{name}})
 	}
+
+    .icon-{{name}}2x {
+        @include sprite2x({{name}})
+    }
 {{/items}}

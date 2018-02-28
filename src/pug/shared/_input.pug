@@ -1,7 +1,8 @@
 mixin select(opts, initialActive)
   - initialActive = initialActive || 0
   //opt = ["Text", "Value"]
-  select(js-select)&attributes(attributes)
+  select(js-select)&attributes(
+  attributes)
     each opt, index in opts
       if index === initialActive
         option(value=opt[1], selected, disabled)
@@ -9,7 +10,11 @@ mixin select(opts, initialActive)
       else
         option(value=opt[1])= opt[0]
 
-mixin inputWithIcon()
-  .input_with_icon.form__field
-    block
-    label.input__icon&attributes(attributes)
+
+mixin input(icon)
+  - icon = icon || null
+  if icon
+    label.input-icon
+      div(class=icon)
+  input&attributes(
+  attributes)

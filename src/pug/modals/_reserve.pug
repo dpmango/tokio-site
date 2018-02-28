@@ -20,11 +20,11 @@ include _modal-layout
             input(name='phone', type='tel', placeholder='Номер телефона')
       .b-modal__form_wrapper_right
         .b-modal__form_wrapper_right_top.form__field_multi
-          +inputWithIcon().input__time_icon
-            input(data-js-timeMask, name='time', placeholder='Время')
+          .form__field
+            +input('icon-clock2x')(data-js-timeMask='true', name='time', placeholder='Время')
           // datepicker
-          +inputWithIcon().input__date_icon
-            input(name='time', placeholder='Date')
+          .form__field
+            +input('icon-calendar2x')(data-js-timeMask='true', name='date', placeholder='Дата')
         .b-modal__form_wrapper_right_bottom
           .form__field
             +select([
