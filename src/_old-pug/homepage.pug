@@ -1,0 +1,21 @@
+extends shared/_basepage
+
+block append vars
+  -
+    var title = "Главная"
+
+block append content
+  #fullpage.fullpage-wrapper
+    include shared/_vars
+    div
+      - console.log(menus[0][1])
+      section.fp-sect.active(data-anchor='home')
+        include fullpage_components/_home
+      section.fp-sect(data-anchor=menus[1][1])
+        include fullpage_components/_about
+      section.fp-sect(data-anchor=menus[0][1])
+        include fullpage_components/_menu
+      section.fp-sect(data-anchor=menus[2][1])
+        include fullpage_components/_news
+      section.fp-sect(data-anchor=menus[3][1])
+        include fullpage_components/_contacts

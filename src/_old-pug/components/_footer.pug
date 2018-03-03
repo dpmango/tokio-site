@@ -1,0 +1,36 @@
+// FOOTER :: START
+
+mixin footer(isBig)
+  include ../shared/_svgs
+
+  - isBig = isBig || false
+
+  footer.b-footer.root-block(class=isBig ? 'b-footer--big' : '')#footer
+    .container.b-footer__inner
+      if isBig
+        .b-footer__top
+          .b-footer__socials
+            +twitter
+            +facebook
+            +vk
+            +instagram
+          .b-footer__logo
+            a(href='index.html#main')
+              .icon-logo_no_bg.b-break-black
+              .icon-tokio-icon.b-tab.b-mob
+          .b-footer__reserve
+            a(js-modal-invoker="modal-reserve")
+              .icon-reserve-white.b-tab.b-break-black
+              .icon-reserve-mobile.b-mob
+
+      .b-footer__bottom
+        span.size-smallest
+          | Copyright © 2017 TOKIOSUSHIBAR. All rights reserved
+        .b-footer__made
+          a()
+            +made-by
+          //.icon-made
+          //+icon('ico-made')
+
+
+// FOOTER :: END

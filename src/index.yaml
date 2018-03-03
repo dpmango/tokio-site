@@ -13,5 +13,7 @@ PageList:
   ready: 80
 - file: agreement.html
   ready: 80
-- file: 4804.html
+- file: 404.html
+  ready: 80
+- file: styleguide.html
   ready: 80

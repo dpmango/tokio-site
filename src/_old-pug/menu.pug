@@ -1,0 +1,76 @@
+extends shared/_outerpage
+include shared/_mixins
+
+block vars
+  -
+    var title = 'Меню'
+
+block content
+  .container.b-menupage.header-offset
+    +buttonBack(' ').b-menupage__back
+    .container_hor.justifyContentCenter.b-menupage__inner
+      .select_container.menu_select
+        nav.menu_select__nav
+          -
+            var categories = [
+            ['Роллы', 'roll', 'img/menu/roll.jpeg', [
+            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278'],
+            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278'],
+            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278']]
+            ],
+            ['Сашими', 'sashimi', 'img/menu/sashimi.jpeg', [
+            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278'],
+            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278'],
+            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278']]
+            ],
+            ['Супы','soup', 'img/menu/soup.jpeg', [
+            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278'],
+            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278'],
+            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278'],
+            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278']]
+            ],
+            ['Горячее','hot', 'img/menu/hot.jpeg', [
+            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278'],
+            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278'],
+            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278']]
+            ],
+            ['Холодное','cold', 'img/menu/cold.jpeg', [
+            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278']]
+            ],
+            ['Напитки','drinks', 'img/menu/drinks.jpeg', [
+            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278'],
+            /**/  ['Ацумари', 'рис, нори, краб, сыр, яблоко. кунжут, соус терияки', '398', '278']]
+            ]
+            ]
+
+          each item, index in categories
+            a(data-link=item[1], data-img=item[2]).select_container-control.menu_select__nav_item= item[0]
+
+        .menu_select__bottom
+          .menu_select__bottom_left
+            .menu_select__content_wrapper
+              each item, index in categories
+                .menu_select__content.select_container-block(data-id=item[1])
+                  h3.select__title= item[0]
+                  ul.menu_select__product_list
+                    each catItem in item[3]
+                      li.menu_select__product
+                        .menu_select__product_heading= catItem[0]
+                        .menu_select__product_description
+                          .menu_select__product_content= catItem[1]
+                          .menu_select__product_info
+                            .menu_select__product_price
+                              span= catItem[2]
+                              span.currency
+                                | &nbsp;₽
+                            .menu_select__product_weight
+                              span= catItem[3]
+                              span.unit
+                                | &nbsp;гр.
+            +button()
+              | забронировать столик
+
+          .menu_select__image
+            .menu_select__image-frame(style="background-image: url('" + categories[0][2] + "')")
+              .menu_select__image-filter
+            .menu_select__image_text= categories[0][0]

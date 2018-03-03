@@ -1,0 +1,73 @@
+---
+title: Styleguide
+---
+extends shared/_layout
+block content
+  style(type='text/css').
+    .list > * {
+    margin: 10px 0;
+    }
+    
+  .list(style='display: block; width: 100%; height: 100%; padding: 20px;')
+    h1 Заголовок 1
+    h2 Заголовок 2
+    h3 Заголовок 3
+    h4 Заголовок 4
+    h5 Заголовок 5
+    h6 Заголовок 6
+    br
+    p.font-lato.weight-thin Обычный текст (Lato thin)
+    p.font-lato.weight-light Обычный текст (Lato light)
+    p.font-lato.weight-regular Обычный текст (Lato regular)
+    p.font-lato.weight-medium Обычный текст (Lato medium)
+    p.font-lato.weight-bold Обычный текст (Lato bold)
+    p.font-lato.weight-black Обычный текст (Lato black)
+    br
+    p.font-bravo-rg.weight-thin Обычный текст (BravoRG thin)
+    p.font-bravo-rg.weight-light Обычный текст (BravoRG light)
+    p.font-bravo-rg.weight-regular Обычный текст (BravoRG regular)
+    p.font-bravo-rg.weight-medium Обычный текст (BravoRG medium)
+    p.font-bravo-rg.weight-bold Обычный текст (BravoRG bold)
+    p.font-bravo-rg.weight-black Обычный текст (BravoRG black)
+    br
+    p.font-pt-sans.weight-thin Обычный текст (PT Sans thin)
+    p.font-pt-sans.weight-light Обычный текст (PT Sans light)
+    p.font-pt-sans.weight-regular Обычный текст (PT Sans regular)
+    p.font-pt-sans.weight-medium Обычный текст (PT Sans medium)
+    p.font-pt-sans.weight-bold Обычный текст (PT Sans bold)
+    p.font-pt-sans.weight-black Обычный текст (PT Sans black)
+    br
+    a.btn(href='#')
+      .btn_fill
+      .btn_content
+        | Кнопка
+    a.twitter.social(href='http://twitter.com', target='_blank')
+    a.facebook.social(href='http://fb.com', target='_blank')
+    a.vk.social(href='http://vk.com', target='_blank')
+    a.instagram.social(href='http://instagram.com', target='_blank')
+    // block is required to handle passed blocks
+    .caption
+      .heading.caption__text
+        // Check if required
+        | Подпись
+    // Don't forget to clear to avoid unwanted block reusing
+    // //////////////////////////
+    // block is required to handle passed blocks
+    .caption.with-hash-tags
+      .heading.caption__text
+        // Check if required
+        | Подпись 2
+      span.hash_tags
+    // Don't forget to clear to avoid unwanted block reusing
+    // //////////////////////////
+    // block is required to handle passed blocks
+    .caption.with-hash-tags
+      .heading.caption__text
+        // Check if required
+        | Подпись 3
+      span.hash_tags
+        | #схештегами#aaaa#bbbb
+        br
+        | #brbrbrbr
+    // Don't forget to clear to avoid unwanted block reusing
+    // //////////////////////////

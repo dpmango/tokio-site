@@ -1,52 +1,89 @@
-extends shared/_outerpage
-include shared/_mixins
-
-block vars
-  -
-    var title = 'Последние новости'
-
+---
+title: All news
+---
+extends shared/_layout
 block content
+
   .container.news_page.header-offset
     .container_ver.layout__offset
       .layout__vertical_offset
-        +icon("icon-y-letter").background_letter.news_page__letter_y
-        +icon("icon-o-letter").background_letter.news_page__letter_o
-
-        -
-          var newsItems = [
-          ["Новогодние корпоративы в сети BB Grill", "14", "Декабрь, 2017", "1"],
-          ["Новогоднее меню в Tokio", "04", "Декабрь, 2017", "2"],
-          ["Новогоднее меню в Tokio", "19", "Ноябрь, 2017", "3"],
-          ["Новогодние корпоративы в сети BB Grill", "14", "Декабрь, 2017", "1"],
-          ["Новогоднее меню в Tokio", "04", "Декабрь, 2017", "2"],
-          ["Новогоднее меню в Tokio", "19", "Ноябрь, 2017", "3"]
-          ]
-
-          var itemsPerRow = 3
-
-
+        svg.ico.icon-y-letter.background_letter.news_page__letter_y
+          use(xlink:href='img/sprite.svg#icon-y-letter')
+        svg.ico.icon-o-letter.background_letter.news_page__letter_o
+          use(xlink:href='img/sprite.svg#icon-o-letter')
         .news__container
           h1 Последние новости
-
-          while newsItems.length > 0
-            - var splicedNews = newsItems.splice(0, itemsPerRow)
-
-            if splicedNews.length === 0
-              break
-
-            .news__row
-              each item in splicedNews
-                a(href="story_inner.html").story
-                  // # at the end is required to avoid fullpage bug
-                  .story__inner
-                    .story__wrapper
-                      .story__image_wrapper
-                        .story__image(style=`background-image: url('img/news/${item[3]}.jpeg')`)
-                          .story__image__filter
-                      +date(item[1], item[2])
-                    span.story__title
-                      =item[0]
+          .news__row
+            a.story(href='story_inner.html')
+              // # at the end is required to avoid fullpage bug
+              .story__inner
+                .story__wrapper
+                  .story__image_wrapper
+                    .story__image(style="background-image: url('img/news/1.jpeg');")
+                      .story__image__filter
+                  .b-corner__date.root-block
+                    .b-corner__date_day 14
+                    .b-corner__date_rest Декабрь, 2017
+                span.story__title Новогодние корпоративы в сети BB Grill
+            a.story(href='story_inner.html')
+              // # at the end is required to avoid fullpage bug
+              .story__inner
+                .story__wrapper
+                  .story__image_wrapper
+                    .story__image(style="background-image: url('img/news/2.jpeg');")
+                      .story__image__filter
+                  .b-corner__date.root-block
+                    .b-corner__date_day 04
+                    .b-corner__date_rest Декабрь, 2017
+                span.story__title Новогоднее меню в Tokio
+            a.story(href='story_inner.html')
+              // # at the end is required to avoid fullpage bug
+              .story__inner
+                .story__wrapper
+                  .story__image_wrapper
+                    .story__image(style="background-image: url('img/news/3.jpeg');")
+                      .story__image__filter
+                  .b-corner__date.root-block
+                    .b-corner__date_day 19
+                    .b-corner__date_rest Ноябрь, 2017
+                span.story__title Новогоднее меню в Tokio
+          .news__row
+            a.story(href='story_inner.html')
+              // # at the end is required to avoid fullpage bug
+              .story__inner
+                .story__wrapper
+                  .story__image_wrapper
+                    .story__image(style="background-image: url('img/news/1.jpeg');")
+                      .story__image__filter
+                  .b-corner__date.root-block
+                    .b-corner__date_day 14
+                    .b-corner__date_rest Декабрь, 2017
+                span.story__title Новогодние корпоративы в сети BB Grill
+            a.story(href='story_inner.html')
+              // # at the end is required to avoid fullpage bug
+              .story__inner
+                .story__wrapper
+                  .story__image_wrapper
+                    .story__image(style="background-image: url('img/news/2.jpeg');")
+                      .story__image__filter
+                  .b-corner__date.root-block
+                    .b-corner__date_day 04
+                    .b-corner__date_rest Декабрь, 2017
+                span.story__title Новогоднее меню в Tokio
+            a.story(href='story_inner.html')
+              // # at the end is required to avoid fullpage bug
+              .story__inner
+                .story__wrapper
+                  .story__image_wrapper
+                    .story__image(style="background-image: url('img/news/3.jpeg');")
+                      .story__image__filter
+                  .b-corner__date.root-block
+                    .b-corner__date_day 19
+                    .b-corner__date_rest Ноябрь, 2017
+                span.story__title Новогоднее меню в Tokio
         .news__button_wrapper
           .container_hor.justifyContentCenter
-            +button
-              | Показать еще
+            a.btn(href='#')
+              .btn_fill
+              .btn_content
+                | Показать еще

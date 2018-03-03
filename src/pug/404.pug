@@ -1,16 +1,17 @@
-extends shared/_errorpage
+---
+title: 404
+---
+extends shared/_layout
+block content
 
-block append vars
-  -
-    var title = "404"
-
-block errorcode
-  | 404
-
-block errortext
-  | Что то пошло не так... Страница не найдена. #[br]Вернуться на&nbsp;
-  a(href="index.html#home").error_page__link
-    | главную
-  | &nbsp;или перести в&nbsp;
-  a(href="index.html#menu").error_page__link
-    | меню
+  .container.header-offset
+    .container_ver.justifyContentCenter.alignItemsCenter
+      h1.error_page__h1
+        | 404
+      p.error_page__text
+        | Что то пошло не так... Страница не найдена. 
+        br
+        | Вернуться на 
+        a.error_page__link(href='index.html#home') главную
+        |  или перести в 
+        a.error_page__link(href='index.html#menu') меню

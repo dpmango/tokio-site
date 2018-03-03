@@ -1,0 +1,38 @@
+extends shared/_outerpage
+include shared/_mixins
+
+block vars
+  -
+    var title = 'Фотогалерея'
+
+mixin galleryImage(src)
+  .gallery__img
+    img(src='img/gallery/' + src + '.jpeg', alt="?")
+
+block content
+  .container.gallery.header-offset
+    .container_ver.layout__offset.gallery__inner
+      //+icon("icon-y-letter").background_letter.gallery_page__letter_y
+      //+icon("icon-o-letter").background_letter.gallery_page__letter_o
+
+      .gallery__container
+        +buttonBack.gallery__back_mob
+        h2.gallery__heading Фотогалерея
+
+        .gallery__wrapper
+          - for (var row = 0; row < 2; row++)
+          - var rowBegin = row * 5
+          .gallery__row
+            .left__side
+              +galleryImage(row + 1)
+              +galleryImage(row + 2)
+            .right__side
+              +galleryImage(row + 3)
+              .right__side_inner
+                +galleryImage(row + 4)
+                +galleryImage(row + 5)
+
+      .gallery__button_wrapper
+        //.container_hor.justifyContentCenter
+          +button
+            | Показать еще

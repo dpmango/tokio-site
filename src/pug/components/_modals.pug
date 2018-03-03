@@ -1,0 +1,98 @@
+#modal-reserve.b-modal
+  .b-modal__header
+    a(href='index.html#home', js-fullpage-link='home', js-modal-closer='true')
+      .icon-tokio-icon-black
+  a.b-modal__close(js-modal-closer='true') ×
+  .b-modal__wrapper
+    .b-modal__inner
+      h2.b-modal__heading Бронирование
+      span.b-modal__descr
+        | Вы можете заказать столик для банкета в одном из наших заведений. Для лиц старше 18 лет.
+      form#reserve-form(js-validate='', action='#', method='get')
+        .b-modal__form_wrapper
+          .b-modal__form_wrapper_left
+            .b-modal__form_wrapper_left_top.form__field_multi
+              // opt = ["Text", "Value"]
+              select.address__select(js-select='')
+                option(selected='', disabled='')
+                  span Выберите адрес
+                option(value='1') Москва, Ореховый б-р.14.корп.3 ТРЦ "Домодедовский" 3 этаж
+                option(value='2') Малый Афанасьевский пер., 14/34 строение 2
+            .b-modal__form_wrapper_left_bottom.form__field_multi
+              .form__field
+                input(name='name', type='text', placeholder='Ваше имя', required='required')
+                label.input-icon.input-icon__error
+                  .icon-exclamation-mark2x
+              .form__field
+                input(name='phone', type='tel', placeholder='Номер телефона', required='required', minlength='17', data-msg-minlength='Некорректный номер')
+                label.input-icon.input-icon__error
+                  .icon-exclamation-mark2x
+          .b-modal__form_wrapper_right
+            .b-modal__form_wrapper_right_top.form__field_multi
+              .form__field
+                label.input-icon
+                  .icon-clock2x
+                input(data-js-timemask='true', name='time', placeholder='Время', required='required')
+                label.input-icon.input-icon__error
+                  .icon-exclamation-mark2x
+              .form__field
+                label.input-icon
+                  .icon-calendar2x
+                input(js-datepicker='true', js-no-validate='true', data-js-timemask='true', type='text', placeholder='Дата', value='Дата')
+                label.input-icon.input-icon__error
+                  .icon-exclamation-mark2x
+            .b-modal__form_wrapper_right_bottom
+              .form__field
+                // opt = ["Text", "Value"]
+                select.user__select.user_count__select(js-select='')
+                  option(selected='', disabled='')
+                    span 1-2 человека
+                  option(value='1') 1 человек
+                  option(value='2') 2 человека
+              .form__field
+        button.btn(type='submit') Забронировать
+        //
+          +button(js-modal-invoker='modal-thanks')| Забронировать
+      .form__info
+        span.form__small_text Нажимая на кнопку вы даете согласие на обработку своих персональных данных
+        br
+        br
+        a.form__small_text(href='agreement.html') Пользовательское соглашение
+    .b-modal__logo
+      .icon-modal-fish-label
+#modal-thanks.b-modal
+  .b-modal__header
+    a(href='index.html#home', js-fullpage-link='home', js-modal-closer='true')
+      .icon-tokio-icon-black
+  a.b-modal__close(js-modal-closer='true') ×
+  .b-modal__wrapper
+    .b-modal__inner
+      h2.b-modal__heading Спасибо!
+      span.b-modal__descr Мы свяжемся с вами в ближайшее время для подтверждения заказа.
+      a.btn(href='index.html#home', js-modal-closer='true')
+        .btn_fill
+        .btn_content
+          | На главную
+    .b-modal__logo
+      .icon-modal-fish-label
+#mobile-nav.b-modal.b-modal__mobnav.root-block
+  .b-modal__header
+    a(href='index.html#home', js-fullpage-link='home', js-modal-closer='true')
+      .icon-tokio-icon-black
+  a.b-modal__close(js-modal-closer='true') ×
+  .b-modal__wrapper
+    .b-modal__inner
+      ul.b-modal__mobnav_list
+        li
+          a(href='index.html#menu', js-modal-closer='true', js-fullpage-link='menu') Меню
+        li
+          a(href='index.html#about', js-modal-closer='true', js-fullpage-link='about') О нас
+        li
+          a(href='index.html#news', js-modal-closer='true', js-fullpage-link='news') Новости
+        li
+          a(href='index.html#contacts', js-modal-closer='true', js-fullpage-link='contacts') Контакты
+      .b-modal__mobnav_socials
+        a.twitter.social(href='http://twitter.com', target='_blank')
+        a.facebook.social(href='http://fb.com', target='_blank')
+        a.vk.social(href='http://vk.com', target='_blank')
+        a.instagram.social(href='http://instagram.com', target='_blank')

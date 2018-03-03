@@ -1,0 +1,30 @@
+include ../shared/_mixins
+
+// HEADER :: START
+
+mixin header(absoluteLinks)
+  - absoluteLinks = absoluteLinks || false
+
+  header.b-header.root-block#header
+    .container.layout__offset.b-header__wrapper
+      nav.b-header__nav
+        include ../shared/_vars
+        each navItem in menus
+
+          a(
+          href='index.html#' + navItem[1]
+          js-fullpage-link=absoluteLinks ? false : navItem[1]
+          ).size-smallest.b-header__nav_item= navItem[0]
+
+      a(js-modal-invoker="mobile-nav").hamburger-btn.hidden
+      .b-header__logo
+        a(href='index.html#home', js-fullpage-link=absoluteLinks ? false : 'home')
+          .icon-logo.b-normal
+          .icon-tokio-icon.b-tab.b-mob
+      .b-header__reserve
+        a(js-modal-invoker="modal-reserve")
+          .icon-reserve.b-normal
+          .icon-reserve-white.b-tab
+          .icon-reserve-mobile.b-mob
+
+// HEADER :: END
