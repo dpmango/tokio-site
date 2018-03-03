@@ -46,21 +46,21 @@
     justify-content: center
     flex: 0.5
 
-  +mediaMaxWidth(1366)
+  +r(1366)
     padding-bottom: 90px
 
     &__container
       flex: 1
       justify-content: center
 
-    +mediaMinWidth(870)
+    +rmin(870)
       &__row
         max-height: 320px
 
     &__button_wrapper
       flex: 0
 
-  +mediaMaxWidth(1170)
+  +r(1170)
     h2
       transform: none
       margin-bottom: 60px
@@ -81,7 +81,7 @@
       flex: 1
       padding: 0
 
-  +mediaMaxWidth(870)
+  +r(870)
     &__row
       flex-direction: column
 
@@ -91,7 +91,7 @@
         margin-right: 0
         margin-bottom: 5rem
 
-  +mediaMaxWidth(768)
+  +r(768)
     width: 100%
     min-width: 100%
     margin-left: 0

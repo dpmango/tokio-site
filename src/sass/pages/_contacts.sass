@@ -74,8 +74,8 @@
       width: $socialsLineWidth - 40px
       border-top: 1px solid $colorGreen
 
-    +mediaMaxWidth(1100)
-      +mediaMinWidth(865)
+    +r(1100)
+      +rmin(865)
         $calculatedSpace: 100% - #{$socialsMargin * 4} - #{40px * 4}
         padding-left: calc(#{$calculatedSpace})
 
@@ -83,7 +83,7 @@
           width: calc(#{$calculatedSpace} - 20px)
 
 
-  +mediaMaxWidth(865)
+  +r(865)
     padding-left: $paddingWrapperSide
 
     +font-size-block($sizeBig2)

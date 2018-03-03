@@ -1,0 +1,14 @@
+<svg width="31" height="11" viewBox="0 0 31 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>reserve-center</title>
+    <desc>Created using Figma</desc>
+    <g id="Canvas" transform="translate(-13195 10889)">
+        <g id="reserve-center">
+            <g id="Rectangle">
+                <path d="M 0 0L 11 0L 11 2L 0 2L 0 0Z" transform="translate(13195 -10884.5)" fill="#7BB43A"></path>
+            </g>
+            <g id="Rectangle 2 (Stroke)">
+                <path fill-rule="evenodd" d="M 0 2C 0 0.898146 0.890639 0 1.99792 0L 21 0L 21 2L 2 2L 2 4L 21 4L 21 6L 2 6L 2 8L 21 8L 21 10L 2 10C 0.895431 10 0 9.10457 0 8L 0 2Z" transform="translate(13205 -10888.5)" fill="#7BB43A"></path>
+            </g>
+        </g>
+    </g>
+</svg>

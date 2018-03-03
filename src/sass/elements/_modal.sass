@@ -137,13 +137,13 @@ $formPaddings: 10px
     [class^="icon-"]
       transform: scale(0.8) translateY(-10%)
 
-  +mediaMaxWidth(1410)
+  +r(1410)
     &__logo
       position: absolute
       right: 100px
       top: 100px
 
-  +mediaMaxWidth(1023)
+  +r(1023)
     &__form_wrapper
       flex-direction: column
 
@@ -163,7 +163,7 @@ $formPaddings: 10px
       +font-size-block($sizeNormal3)
       padding-right: 0
 
-  +mediaMaxWidth(968)
+  +r(968)
     &__header
       display: flex
 
@@ -182,7 +182,7 @@ $formPaddings: 10px
       padding: 2rem 0 0
       +font-size-block($sizeNormal4)
 
-  +mediaMaxWidth(768)
+  +r(768)
     form
       width: 100%
 
@@ -205,4 +205,3 @@ $formPaddings: 10px
 
         &>.form__field:not(:last-child)
           margin-bottom: $formPaddings
-

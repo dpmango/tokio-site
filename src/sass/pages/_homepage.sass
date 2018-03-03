@@ -28,12 +28,12 @@
     top: 50%
     transform: scaleX(-1) translateY(-50%) translateX(-150%)
 
-  +mediaMaxWidth(1120)
+  +r(1120)
     &__slider
       padding-right: 30%
 
 
-  +mediaMaxWidth(900)
+  +r(900)
     // Make screen to fit viewport dimensions
     height: 100vh
 
@@ -41,7 +41,7 @@
       padding-left: 0
       padding-right: 20px
 
-  +mediaMaxWidth(768)
+  +r(768)
     max-width: 100%
 
     &__slider
@@ -51,7 +51,7 @@
     .slick-dots
       display: none !important
 
-  +mediaMaxWidth(640)
+  +r(640)
     padding-left: 0
     padding-right: 0
 
@@ -65,7 +65,7 @@
         padding-left: 3rem
         padding-right: 3rem
 
-  +mediaMaxWidth(400)
+  +r(400)
     &__slider
       .slick-slide
         padding-left: 1rem

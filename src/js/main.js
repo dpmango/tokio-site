@@ -846,7 +846,12 @@ $(document)
   });
 
 // Map init
-function initMap() {
+// When the window has finished loading create our google map below
+if ( $('#map').length > 0 ){
+  google.maps.event.addDomListener(window, 'load', init);
+}
+
+function init() {
   var map, marker;
 
   var mapElement = document.getElementById('map');

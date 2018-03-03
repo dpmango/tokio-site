@@ -1,0 +1,14 @@
+<svg width="30" height="12" viewBox="0 0 30 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>reserve-left</title>
+    <desc>Created using Figma</desc>
+    <g id="Canvas" transform="translate(-13010 10889)">
+        <g id="reserve-left">
+            <g id="Rectangle">
+                <path d="M 0 0L 12 0L 12 2L 0 2L 0 0Z" transform="translate(13028 -10884.5)" fill="#7BB43A"></path>
+            </g>
+            <g id="Ellipse (Stroke)">
+                <path fill-rule="evenodd" d="M 16.1072 7.63666C 17.6409 6.79313 18 5.95233 18 5.5C 18 5.04767 17.6409 4.20687 16.1072 3.36334C 14.6456 2.55942 12.4901 2 10 2C 7.50986 2 5.35444 2.55942 3.89277 3.36334C 2.35909 4.20687 2 5.04767 2 5.5C 2 5.95233 2.35909 6.79313 3.89277 7.63666C 5.35444 8.44058 7.50986 9 10 9C 12.4901 9 14.6456 8.44058 16.1072 7.63666ZM 10 11C 15.5228 11 20 8.53757 20 5.5C 20 2.46243 15.5228 0 10 0C 4.47715 0 0 2.46243 0 5.5C 0 8.53757 4.47715 11 10 11Z" transform="translate(13010 -10888.5)" fill="#7BB43A"></path>
+            </g>
+        </g>
+    </g>
+</svg>

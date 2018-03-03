@@ -15,7 +15,7 @@
     .fp-sect__inner
       padding-top: $headerNormalHeight
 
-      +mediaMaxWidth(800)
+      +r(800)
         padding-top: $headerMobileHeight
 
 
@@ -57,7 +57,7 @@
     align-items: center
     justify-content: center
 
-    +mediaMinWidth(1700)
+    +rmin(1700)
       transform: scale(0.95) translateY(10px)
 
   &__reserve
@@ -69,7 +69,7 @@
     align-items: center
     justify-content: flex-end
 
-    +mediaMinWidth(1700)
+    +rmin(1700)
       transform: scale(1)
 
   // .header
@@ -78,11 +78,11 @@
   .b-nav
     display: none
 
-  +mediaMaxWidth(835)
+  +r(835)
     &__logo
       transform: scale(0.7)
 
-  +mediaMaxWidth(800)
+  +r(800)
     height: $headerMobileHeight
     background: $colorBlack
 
@@ -100,7 +100,7 @@
       transform-origin: center
       margin: 0 -80px 0 0
 
-  +mediaMaxWidth(650)
+  +r(650)
     &__logo
       margin: 0
       flex: 0
@@ -111,7 +111,7 @@
     .icon-reserve-white
       display: none
 
-  +mediaMaxWidth(480)
+  +r(480)
     &__wrapper
       justify-content: flex-start
       margin: 0
@@ -133,3 +133,50 @@
       display: block
       order: 3
 
+
+.b-reserve
+  position: relative
+  display: flex
+  align-items: center
+  // font-family: 'PT Sans Narrow', sans-serif
+  font-weight: 400
+  &::after
+    display: inline-block
+    content: ' '
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    left: 20px
+    right: 100%
+    background: $colorGreen3
+    height: 2px
+    transition: .25s $ease
+  .ico
+    color: $colorGreen3
+  .ico-reserve-left
+    font-size: 11px
+    margin-right: 8px
+
+  .ico-reserve-right
+    font-size: 10px
+    margin-left: 8px
+
+  span:not(.b-reserve__center)
+    display: inline-block
+    font-size: 24px
+    vertical-align: middle
+    transform: translateY(-3px)
+
+  &__center
+    transform: rotate(90deg) translate(0px, -3px)
+    transform-origin: center center
+    color: $colorGreen3
+    font-size: 24px
+    margin: 0px 5px
+
+  &:hover
+    &::after
+      right: 25px
+
+  +r(800)
+    display: none

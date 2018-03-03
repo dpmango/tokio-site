@@ -52,38 +52,38 @@ $sizeBiggest: 6
 @mixin font-size-block($size)
   font-size: $size*1rem
 
-  +mediaMinWidth($hd)
+  +rmin($hd)
     font-size: $size*0.98rem
-  +mediaMaxWidth($wide)
+  +r($wide)
     font-size: $size*0.94rem
-  +mediaMaxWidth($desktop)
+  +r($desktop)
     font-size: $size*0.9rem
-  +mediaMaxWidth($tablet)
+  +r($tablet)
     font-size: $size*0.84rem
-  +mediaMaxWidth($mobile)
+  +r($mobile)
     font-size: $size*0.7rem
 
 @mixin font-size-element($size, $descreaseStep: 0.1)
   font-size: $size*1em
 
-  +mediaMaxWidth($hd)
+  +r($hd)
     font-size: $size*(1 - 1 * $descreaseStep)*1em
-  +mediaMaxWidth($wide)
+  +r($wide)
     font-size: $size*(1 - 2 * $descreaseStep)*1em
-  +mediaMaxWidth($desktop)
+  +r($desktop)
     font-size: $size*(1 - 3 * $descreaseStep)*1em
-  +mediaMaxWidth($tablet)
+  +r($tablet)
     font-size: $size*(1 - 4 * $descreaseStep)*1em
-  +mediaMaxWidth($mobile)
+  +r($mobile)
     font-size: $size*(1 - 5 * $descreaseStep)*1em
 
 html
   font-size: 16px
 
-  +mediaMinWidth($hd)
+  +rmin($hd)
     font-size: 18px
 
-  +mediaMinWidth(1700)
+  +rmin(1700)
     font-size: 22px
 
 *

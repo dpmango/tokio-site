@@ -7,13 +7,13 @@
 
   &__inner
     padding: 3.5rem 2rem 0
-  //+mediaMinWidth(1700)
+  //+rmin(1700)
 
-  +mediaMinWidth(600)
+  +rmin(600)
     &__back
       display: none
 
-  +mediaMaxWidth(600)
+  +r(600)
     +selectContainerMobileView
     flex-direction: column
 
@@ -50,10 +50,10 @@
 
   +generate-breakpoints((br-tab: 700, br-wide: 0))
 
-  +mediaMaxWidth(1170)
+  +r(1170)
     padding: 0 0 3rem
 
-  +mediaMaxWidth(768)
+  +r(768)
     max-width: initial !important
     +categoriesMobileView()
 

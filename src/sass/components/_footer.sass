@@ -27,7 +27,7 @@
     .fp-sect__inner
       padding-bottom: $footerNormalHeight
 
-      +mediaMaxWidth(800)
+      +r(800)
         padding-bottom: $footerNormalHeight * 2
 
   &--big
@@ -85,7 +85,7 @@
 
   +generate-breakpoints((b-mob: 580, b-tab: 745, b-break-black: 0))
 
-  +mediaMaxWidth(745)
+  +r(745)
     &__top
       flex-wrap: wrap
       justify-content: space-between
@@ -113,7 +113,7 @@
     &__reserve
       justify-content: flex-end
 
-  +mediaMaxWidth(550)
+  +r(550)
     height: auto
 
     &__top

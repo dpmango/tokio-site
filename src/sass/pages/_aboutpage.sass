@@ -9,21 +9,21 @@
   &__photos
     margin-right: 10%
 
-    +mediaMinWidth(1700)
+    +rmin(1700)
       margin-right: -2%
       left: -100px
 
   &__descr
     max-width: 38%
 
-  +mediaMaxWidth(1200)
+  +r(1200)
     &__photos
       margin-right: 0
 
     &__descr
       max-width: 100%
 
-  +mediaMaxWidth(910)
+  +r(910)
     @include noteMobileView
     @include photosMobileLayout
     padding-top: 3rem
@@ -38,7 +38,7 @@
     &__descr
       padding: 0 6rem
 
-  +mediaMaxWidth(768)
+  +r(768)
     padding-top: 4rem
 
     //.center-mobile

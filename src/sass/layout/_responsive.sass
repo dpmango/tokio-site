@@ -1,5 +1,5 @@
 
-//+mediaMaxWidth(768)
+//+r(768)
   h1.bigger_h1
     font-size: 4rem
   h1
@@ -59,17 +59,17 @@
   $lastWid: 0
   @each $breakName, $wid in $params
     @if $index == 0
-      +mediaMaxWidth($wid)
+      +r($wid)
         & .#{$breakName}
           display: block
 
     @else if $index != $allCount - 1
-      +mediaMinWidth($lastWid + 1)
-        +mediaMaxWidth($wid)
+      +rmin($lastWid + 1)
+        +r($wid)
           & .#{$breakName}
               display: block
     @else
-      +mediaMinWidth($lastWid + 1)
+      +rmin($lastWid + 1)
         & .#{$breakName}
           display: block
 

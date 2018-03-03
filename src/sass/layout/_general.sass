@@ -102,10 +102,10 @@ body, html
   max-width: 90vw
   //height: 100%
 
-  +mediaMinWidth($wide)
+  +rmin($wide)
     max-width: 1200px !important
 
-  +mediaMinWidth(1700)
+  +rmin(1700)
     max-width: 1600px !important
 
   margin-left: auto
@@ -144,7 +144,7 @@ body, html
   &End
     justify-content: flex-end
 
-+mediaMaxWidth($mobile)
++r($mobile)
   .container
     padding-left: 20px
     padding-right: 20px
