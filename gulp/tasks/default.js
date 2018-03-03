@@ -23,5 +23,6 @@ gulp.task('watch',
     'javascript:watch',
     'images:watch',
     'sprite:svg:watch',
-    'sprite:png:watch'
+    'sprite:png:watch',
+    'list-pages:watch'
   ])

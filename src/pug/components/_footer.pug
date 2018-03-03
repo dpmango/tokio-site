@@ -15,11 +15,11 @@ mixin footer(isBig)
             +vk
             +instagram
           .b-footer__logo
-            +anchor(href='index.html#main')
+            a(href='index.html#main')
               .icon-logo_no_bg.b-break-black
               .icon-tokio-icon.b-tab.b-mob
           .b-footer__reserve
-            +anchor(js-modal-invoker="modal-reserve")
+            a(js-modal-invoker="modal-reserve")
               .icon-reserve-white.b-tab.b-break-black
               .icon-reserve-mobile.b-mob
 
@@ -27,7 +27,7 @@ mixin footer(isBig)
         span.size-smallest
           | Copyright © 2017 TOKIOSUSHIBAR. All rights reserved
         .b-footer__made
-          +anchor()
+          a()
             +made-by
           //.icon-made
           //+icon('ico-made')

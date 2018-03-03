@@ -1,0 +1,17 @@
+ProjectTitle: TOKIO-SITE
+
+PageList:
+- file: homepage.html
+  ready: 80
+- file: menu.html
+  ready: 80
+- file: all_news.html
+  ready: 80
+- file: story_inner.html
+  ready: 80
+- file: gallery.html
+  ready: 80
+- file: agreement.html
+  ready: 80
+- file: 4804.html
+  ready: 80

@@ -6,7 +6,7 @@ mixin contactAddress(address, time, phone)
     .b-address__content
       span.b-address__place= address
       span.b-address__time= time
-      +anchor(href=`tel:${phone}`).b-address__phone= phone
+      a(href=`tel:${phone}`).b-address__phone= phone
 
 
 .container.justifyContentStart.b-contactspage.root-block

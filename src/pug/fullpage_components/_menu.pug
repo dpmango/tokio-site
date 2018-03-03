@@ -18,7 +18,7 @@ include ../shared/_mixins
         ['Напитки', 'drinks']
         ]
       each item in menuItems
-        +anchor(href='menu.html').b-category
+        a(href='menu.html').b-category
           span.b-category__title= item[0]
           .b-category__image_wrapper
             .b-category__image(style=`background-image: url(${'img/menu/' + item[1] + '.jpeg'})`)

@@ -8,7 +8,7 @@ mixin mobileNav(absoluteLinks)
         each navItem in menus
           li
 
-            +anchor(
+            a(
             href='index.html#' + navItem[1]
             js-modal-closer='true'
             js-fullpage-link=absoluteLinks ? false : navItem[1]

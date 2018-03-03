@@ -11,18 +11,18 @@ mixin header(absoluteLinks)
         include ../shared/_vars
         each navItem in menus
 
-          +anchor(
+          a(
           href='index.html#' + navItem[1]
           js-fullpage-link=absoluteLinks ? false : navItem[1]
           ).size-smallest.b-header__nav_item= navItem[0]
 
-      +anchor(js-modal-invoker="mobile-nav").hamburger-btn.hidden
+      a(js-modal-invoker="mobile-nav").hamburger-btn.hidden
       .b-header__logo
-        +anchor(href='index.html#home', js-fullpage-link=absoluteLinks ? false : 'home')
+        a(href='index.html#home', js-fullpage-link=absoluteLinks ? false : 'home')
           .icon-logo.b-normal
           .icon-tokio-icon.b-tab.b-mob
       .b-header__reserve
-        +anchor(js-modal-invoker="modal-reserve")
+        a(js-modal-invoker="modal-reserve")
           .icon-reserve.b-normal
           .icon-reserve-white.b-tab
           .icon-reserve-mobile.b-mob

@@ -44,7 +44,7 @@ block content
             ]
 
           each item, index in categories
-            +anchor(data-link=item[1], data-img=item[2]).select_container-control.menu_select__nav_item= item[0]
+            a(data-link=item[1], data-img=item[2]).select_container-control.menu_select__nav_item= item[0]
 
         .menu_select__bottom
           .menu_select__bottom_left

@@ -1,9 +1,9 @@
 mixin modal(id)
   .b-modal(id=id)&attributes(attributes)
     .b-modal__header
-      +anchor(href='index.html#home', js-fullpage-link='home', js-modal-closer='true')
+      a(href='index.html#home', js-fullpage-link='home', js-modal-closer='true')
         .icon-tokio-icon-black
-    +anchor(js-modal-closer='true').b-modal__close &times;
+    a(js-modal-closer='true').b-modal__close &times;
 
     .b-modal__wrapper
       block
