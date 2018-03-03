@@ -39,13 +39,6 @@ $(document)
       // development helper
       _window.on('resize', debounce(setBreakpoint, 200));
 
-      // AVAILABLE in _components folder
-      // copy paste in main.js and initialize here
-
-      // initTeleport();
-      // parseSvg();
-      // revealFooter();
-      // _window.on('resize', throttle(revealFooter, 100));
     }
 
     // this is a master function which should have all functionality
@@ -382,7 +375,7 @@ $(document)
     }
 
     function initFixers() {
-      const mobChrome = $('.mobile-chrome-fix-height');
+      var mobChrome = $('.mobile-chrome-fix-height');
 
       _window.on('orientationchange', function() {
         legacySupport();
@@ -398,12 +391,12 @@ $(document)
     //////////
 
     function initFormElements() {
-      const $selects = _document.find('[js-select]');
+      var $selects = _document.find('[js-select]');
       $selects.chosen({
         disable_search: true
       });
       $selects.each(function() { // Add data-class attribute from original select classes
-        const classes = $(this)[0].classList;
+        var classes = $(this)[0].classList;
         $(this)
           .next('.chosen-container')
           .attr('data-class', classes);
@@ -565,7 +558,7 @@ $(document)
         }
 
         // console.log('Init');
-        const $fp = $('#fullpage');
+        var $fp = $('#fullpage');
         $fp.fullpage({
           anchors: ['home', 'about', 'menu', 'news', 'contacts'],
           paddingTop: '70px',
@@ -633,7 +626,7 @@ $(document)
 
     /// Select box
 
-    const selectContainer = {
+    var selectContainer = {
       $base: $('.select_container'),
       exists: function() {
         return !!this.$base;
@@ -642,11 +635,11 @@ $(document)
         if (!this.exists()) {
           return null;
         }
-        const _this = this;
+        var _this = this;
 
-        const $controls = this.$base.find('.select_container-control');
+        var $controls = this.$base.find('.select_container-control');
 
-        const firstHref = $controls.eq(0)
+        var firstHref = $controls.eq(0)
           .attr('data-link');
         this.setActiveMenu(firstHref);
 
@@ -697,15 +690,15 @@ $(document)
 
     selectContainer.init();
     selectContainer.onMenuChange = function(href) {
-      const $imgEl = $('.menu_select__image');
+      var $imgEl = $('.menu_select__image');
 
       if (!$imgEl) {
         return;
       }
 
-      const $controller = $(`.select_container-control[data-link=${href}]`);
+      var $controller = $(`.select_container-control[data-link=${href}]`);
 
-      const imageURL = $controller.attr('data-img');
+      var imageURL = $controller.attr('data-img');
       $imgEl.find('.menu_select__image-frame')
         .eq(0)
         .css('background-image', `url("${imageURL}")`);
@@ -714,13 +707,13 @@ $(document)
         .text($controller.text());
     };
 
-    const modalController = {
+    var modalController = {
       showModal: function(href) {
         if (!href) {
           return;
         }
 
-        const $modal = $('#' + href);
+        var $modal = $('#' + href);
 
         if (!$modal.length) {
           console.error(`Modal with id ${href} doesn't exist`);
@@ -854,16 +847,15 @@ $(document)
 
 // Map init
 function initMap() {
-  let map,
-    marker;
+  var map, marker;
 
-  const mapElement = document.getElementById('map');
+  var mapElement = document.getElementById('map');
 
   if (!mapElement) {
     return;
   }
 
-  const mapInitPos = {
+  var mapInitPos = {
     lat: 40.757483,
     lng: -73.971084
   };
@@ -937,7 +929,7 @@ function initMap() {
   });
 
 
-  const infowindow = new google.maps.InfoWindow({
+  var infowindow = new google.maps.InfoWindow({
     content: `<div class="g-marker">
                <p>???</p>
               </div>`
