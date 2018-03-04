@@ -13,77 +13,80 @@ block content
           use(xlink:href='img/sprite.svg#icon-o-letter')
         .news__container
           h1 Последние новости
-          .news__row
-            a.story(href='story_inner.html')
+          
+          // first row
+          .b-newspage__row
+            a.b-story.root-block(href='story_inner.html')
               // # at the end is required to avoid fullpage bug
-              .story__inner
-                .story__wrapper
-                  .story__image_wrapper
-                    .story__image(style="background-image: url('img/news_1.jpeg');")
-                      .story__image__filter
+              .b-story__inner
+                .b-story__wrapper
+                  .b-story__image
+                    .b-story__image_img(style="background-image: url('img/news_1.jpeg');")
+                      .b-story__image_filter
                   .b-corner__date.root-block
                     .b-corner__date_day 14
                     .b-corner__date_rest Декабрь, 2017
-                span.story__title Новогодние корпоративы в сети BB Grill
-            a.story(href='story_inner.html')
+                span.b-story__title Новогодние корпоративы в сети BB Grill
+            a.b-story.root-block(href='story_inner.html')
               // # at the end is required to avoid fullpage bug
-              .story__inner
-                .story__wrapper
-                  .story__image_wrapper
-                    .story__image(style="background-image: url('img/news_2.jpeg');")
-                      .story__image__filter
+              .b-story__inner
+                .b-story__wrapper
+                  .b-story__image
+                    .b-story__image_img(style="background-image: url('img/news_2.jpeg');")
+                      .b-story__image_filter
                   .b-corner__date.root-block
                     .b-corner__date_day 04
                     .b-corner__date_rest Декабрь, 2017
-                span.story__title Новогоднее меню в Tokio
-            a.story(href='story_inner.html')
+                span.b-story__title Новогоднее меню в Tokio
+            a.b-story.root-block(href='story_inner.html')
               // # at the end is required to avoid fullpage bug
-              .story__inner
-                .story__wrapper
-                  .story__image_wrapper
-                    .story__image(style="background-image: url('img/news_3.jpeg');")
-                      .story__image__filter
+              .b-story__inner
+                .b-story__wrapper
+                  .b-story__image
+                    .b-story__image_img(style="background-image: url('img/news_3.jpeg');")
+                      .b-story__image_filter
                   .b-corner__date.root-block
                     .b-corner__date_day 19
                     .b-corner__date_rest Ноябрь, 2017
-                span.story__title Новогоднее меню в Tokio
-          .news__row
-            a.story(href='story_inner.html')
+                span.b-story__title Новогоднее меню в Tokio
+          //row 
+          .b-newspage__row
+            a.b-story.root-block(href='story_inner.html')
               // # at the end is required to avoid fullpage bug
-              .story__inner
-                .story__wrapper
-                  .story__image_wrapper
-                    .story__image(style="background-image: url('img/news_1.jpeg');")
-                      .story__image__filter
+              .b-story__inner
+                .b-story__wrapper
+                  .b-story__image
+                    .b-story__image_img(style="background-image: url('img/news_1.jpeg');")
+                      .b-story__image_filter
                   .b-corner__date.root-block
                     .b-corner__date_day 14
                     .b-corner__date_rest Декабрь, 2017
-                span.story__title Новогодние корпоративы в сети BB Grill
-            a.story(href='story_inner.html')
+                span.b-story__title Новогодние корпоративы в сети BB Grill
+            a.b-story.root-block(href='story_inner.html')
               // # at the end is required to avoid fullpage bug
-              .story__inner
-                .story__wrapper
-                  .story__image_wrapper
-                    .story__image(style="background-image: url('img/news_2.jpeg');")
-                      .story__image__filter
+              .b-story__inner
+                .b-story__wrapper
+                  .b-story__image
+                    .b-story__image_img(style="background-image: url('img/news_2.jpeg');")
+                      .b-story__image_filter
                   .b-corner__date.root-block
                     .b-corner__date_day 04
                     .b-corner__date_rest Декабрь, 2017
-                span.story__title Новогоднее меню в Tokio
-            a.story(href='story_inner.html')
+                span.b-story__title Новогоднее меню в Tokio
+            a.b-story.root-block(href='story_inner.html')
               // # at the end is required to avoid fullpage bug
-              .story__inner
-                .story__wrapper
-                  .story__image_wrapper
-                    .story__image(style="background-image: url('img/news_3.jpeg');")
-                      .story__image__filter
+              .b-story__inner
+                .b-story__wrapper
+                  .b-story__image
+                    .b-story__image_img(style="background-image: url('img/news_3.jpeg');")
+                      .b-story__image_filter
                   .b-corner__date.root-block
                     .b-corner__date_day 19
                     .b-corner__date_rest Ноябрь, 2017
-                span.story__title Новогоднее меню в Tokio
-        .news__button_wrapper
-          .container_hor.justifyContentCenter
-            a.btn(href='#')
-              .btn_fill
-              .btn_content
-                | Показать еще
+                span.b-story__title Новогоднее меню в Tokio
+        .b-newspage__button_wrapper
+          a.btn(href='all_news.html')
+            .btn_fill
+            .btn_content
+              | Все новости
+        

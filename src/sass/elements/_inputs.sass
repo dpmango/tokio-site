@@ -80,7 +80,7 @@ input, select, .chosen-container
   border: $formInputBorder
   color: $formInputColor !important
   padding: $formInputPadding
-  transition: border-color $ease $transitionSpeed !important
+  transition: border-color $transitionSpeed $ease  !important
 
   &:hover
     border-color: $formInputHoverBorderColor
@@ -136,7 +136,7 @@ input, select, .chosen-container
   justify-content: flex-start
   padding: 10px $formInputHorizontalPadding 14px
   background: $background !important
-  transition: background $ease $transitionSpeed
+  transition: background $transitionSpeed $ease
   line-height: 1.4 !important
 
   &:not(:last-child)
@@ -209,7 +209,7 @@ input, select, .chosen-container
     align-items: center
     justify-content: flex-start
     opacity: 0
-    transition: opacity $ease $transitionSpeed
+    transition: opacity $transitionSpeed $ease
 
 .input-field-invalid
   .input-icon__error
@@ -264,7 +264,7 @@ label.error
       &-button
         $color: #1c1c1c
         color: $color
-        transition: color $ease $transitionSpeed
+        transition: color $transitionSpeed $ease
 
         &:hover
           color: lighten($color, 20%)

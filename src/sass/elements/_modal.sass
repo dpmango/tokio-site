@@ -24,7 +24,7 @@ $formPaddings: 10px
 
   opacity: 0
   pointer-events: none
-  transition: opacity $ease $transitionSpeed
+  transition: opacity $transitionSpeed $ease
 
   &--open
     opacity: 1
@@ -47,7 +47,7 @@ $formPaddings: 10px
     @extend .weight-light
     padding: 1rem
     transform: translate(-0.5rem, -0.5rem)
-    transition: color $ease $transitionSpeed
+    transition: color $transitionSpeed $ease
 
     &:hover
       color: $colorGreen2

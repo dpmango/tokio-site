@@ -12,11 +12,13 @@
 
   &made-by
     .logo
-      transition: fill $ease $transitionSpeed
+      transition: all $transitionSpeed $ease , opacity .3s .1s ease
 
     &:hover
       .logo
         fill: #ff4725
+        fill-opacity: 1
+        opacity: 1
 
 
 

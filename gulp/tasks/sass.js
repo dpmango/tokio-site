@@ -33,7 +33,7 @@ var processors = [
   svginline(),
   animations(),
   respType(),
-  focus(),
+  // focus(),
   easings(),
   autoprefixer({
     browsers: ['last 10 versions'],
@@ -70,7 +70,10 @@ gulp.task('sass', function () {
     }))
     .on('error', config.errorHandler)
     .pipe(postcss(processors))
-    .pipe(config.production ? util.noop() : sourcemaps.write('.'))
+    .pipe(config.production ? util.noop() : sourcemaps.write('.',{
+            includeContent: false,
+            sourceRoot: config.src.sass
+        }))
     .pipe(config.production ? postcss([cssnano(cssNanoParams)]) : util.noop())
     .pipe(gulp.dest(config.dest.css))
 })
