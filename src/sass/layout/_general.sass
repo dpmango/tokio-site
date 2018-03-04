@@ -176,31 +176,33 @@ body, html
   background-size: cover
 
 .social
+  position: relative
   display: block
-  background: $colorGreen no-repeat center center
+  background: $colorGreen
   width: 40px
   height: 40px
-  border-radius: 1000px
+  border-radius: 100px
+  color: white
   transition: background-color $ease $transitionSpeed
-
+  .ico
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
   &:hover
     background-color: $colorGreen2
 
 .facebook
-  background-size: 25% !important
-  background-image: url("../img/socials/facebook.png") !important
+  font-size: 14px
 
 .twitter
-  background-size: 45% !important
-  background-image: url("../img/socials/twitter.png") !important
+  font-size: 11px
 
 .vk
-  background-size: 45% !important
-  background-image: url("../img/socials/vk.png") !important
+  font-size: 10px
 
 .instagram
-  background-size: 45% !important
-  background-image: url("../img/socials/instagram.png") !important
+  font-size: 17px
 
 @mixin hamburger($color: $colorWhite)
   $borderWidth: 1px
@@ -228,18 +230,6 @@ body, html
     height: 50%
     top: 50%
     border-top-width: $borderWidth
-
-// REMOVE FOR PRODUCTION !
-.dev-bp-debug
-  background: black
-  position: fixed
-  top: 0
-  right: 0
-  z-index: 9999
-  color: white
-  padding: 5px
-  font-size: 12px
-  border-bottom-left-radius: 5px
 
 .hamburger-btn
   @include hamburger
